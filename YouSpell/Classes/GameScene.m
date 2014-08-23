@@ -7,6 +7,7 @@
 //
 
 #import "GameScene.h"
+#import "LetterButton.h"
 
 @interface GameScene ()
 
@@ -28,17 +29,28 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    semanaquevem = 0;
+    
     [self startLoop];
 }
 
 - (void) renderFrame
 {
+    semanaquevem++;
     
+    if(semanaquevem == 5)
+    {
+        LetterButton *l = [[LetterButton alloc] initWithFrame: CGRectMake(self.view.center.x, self.view.center.y, 50, 50) andPosition:0];
+        
+        [self.view addSubview: l];
+    }
 }
 
 
 - (void) gameLoop
 {
+    
+    
     while (running)
     {
         [self renderFrame];

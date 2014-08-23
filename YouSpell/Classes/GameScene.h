@@ -12,5 +12,6 @@
 {
     BOOL running;
     NSTimer *timer;
+    NSInteger semanaquevem;
 }
 @end

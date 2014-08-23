@@ -10,19 +10,20 @@
 
 @implementation LetterButton
 
-- (id)initWithFrame:(CGRect)frame
+@synthesize position, selected;
+
+- (id)initWithFrame:(CGRect)frame andPosition: (NSInteger) pos
 {
     self = [super initWithFrame:frame];
     if (self)
     {
         // Initialization code
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"iPhone-Letter" owner:self options:nil];
+        
+        self = (LetterButton *)[nib objectAtIndex:0];
+        
     }
     return self;
-}
-
-- (void) makeSelected
-{
-    
 }
 
 /*
