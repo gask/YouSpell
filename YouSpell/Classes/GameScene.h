@@ -13,5 +13,7 @@
     BOOL running;
     NSTimer *timer;
     NSInteger semanaquevem;
+    
+    NSMutableArray *keysArray;
 }
 @end

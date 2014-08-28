@@ -23,6 +23,19 @@
     }
     return self;
 }
+- (IBAction)keyPressed:(id)sender
+{
+    UIButton *buttonPressed = (UIButton *) sender;
+    
+//    NSLog(@"%@",buttonPressed.titleLabel.text);
+    
+    LetterButton *l = [[LetterButton alloc] initWithFrame: CGRectMake(20+(keysArray.count+1)*50, self.view.center.y, 50, 50) position:keysArray.count+1 andLetter: buttonPressed.titleLabel.text];
+    
+    [keysArray addObject: l];
+    
+    [self.view addSubview:l];
+    
+}
 
 - (void)viewDidLoad
 {
@@ -30,6 +43,7 @@
     // Do any additional setup after loading the view.
     
     semanaquevem = 0;
+    keysArray = [NSMutableArray array];
     
     [self startLoop];
 }
@@ -38,12 +52,12 @@
 {
     semanaquevem++;
     
-    if(semanaquevem == 5)
+    /*if(semanaquevem == 5)
     {
         LetterButton *l = [[LetterButton alloc] initWithFrame: CGRectMake(self.view.center.x, self.view.center.y, 50, 50) andPosition:0];
         
         [self.view addSubview: l];
-    }
+    }*/
 }
 
 

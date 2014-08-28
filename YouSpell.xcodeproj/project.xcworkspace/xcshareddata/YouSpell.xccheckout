@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C99D006D-FA62-4071-A790-48BD7840032A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>YouSpell</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>644B7DC2-2008-444C-819F-A72C49132BAF</key>
+		<string>https://github.com/gask/YouSpell.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>YouSpell.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>644B7DC2-2008-444C-819F-A72C49132BAF</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/gask/YouSpell.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>644B7DC2-2008-444C-819F-A72C49132BAF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>644B7DC2-2008-444C-819F-A72C49132BAF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>YouSpell</string>
+		</dict>
+	</array>
+</dict>
+</plist>

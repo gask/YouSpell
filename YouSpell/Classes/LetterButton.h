@@ -10,7 +10,7 @@
 
 @interface LetterButton : UIButton
 
-- (id)initWithFrame:(CGRect)frame andPosition: (NSInteger) pos;
+- (id)initWithFrame:(CGRect)frame position: (NSInteger) pos andLetter: (NSString *) letter;
 
 @property (nonatomic) NSInteger position;
 @property (nonatomic) BOOL selected;

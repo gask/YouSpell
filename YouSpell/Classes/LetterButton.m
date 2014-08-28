@@ -12,7 +12,7 @@
 
 @synthesize position, selected;
 
-- (id)initWithFrame:(CGRect)frame andPosition: (NSInteger) pos
+- (id)initWithFrame:(CGRect)frame position: (NSInteger) pos andLetter: (NSString *) letter
 {
     self = [super initWithFrame:frame];
     if (self)
@@ -21,6 +21,10 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"iPhone-Letter" owner:self options:nil];
         
         self = (LetterButton *)[nib objectAtIndex:0];
+        self.frame = frame;
+        self.titleLabel.textAlignment = NSTextAlignmentCenter;
+        self.titleLabel.text = letter;
+        
         
     }
     return self;
