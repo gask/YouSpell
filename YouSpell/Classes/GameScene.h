@@ -15,5 +15,9 @@
     NSInteger semanaquevem;
     
     NSMutableArray *keysArray;
+    NSMutableArray *correctionArray;
+    NSString *theWord;
 }
+
+- (IBAction)finishedWord:(id)sender;
 @end

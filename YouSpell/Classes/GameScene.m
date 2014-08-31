@@ -23,6 +23,7 @@
     }
     return self;
 }
+
 - (IBAction)keyPressed:(id)sender
 {
     UIButton *buttonPressed = (UIButton *) sender;
@@ -37,6 +38,16 @@
     
 }
 
+- (IBAction)finishedWord:(id)sender
+{
+    for (NSInteger i = 0; i < keysArray.count ; i++)
+    {
+        const char *guessArray = [theWord UTF8String];
+        
+        
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -44,6 +55,9 @@
     
     semanaquevem = 0;
     keysArray = [NSMutableArray array];
+    correctionArray = [NSMutableArray array];
+    theWord = @"tiara";
+    
     
     [self startLoop];
 }
