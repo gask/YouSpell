@@ -40,12 +40,46 @@
 
 - (IBAction)finishedWord:(id)sender
 {
-    for (NSInteger i = 0; i < keysArray.count ; i++)
+    const char *wordArray = [theWord UTF8String];
+    
+    NSLog(@"GUESS SIZE: %i WORD SIZE: %lu", keysArray.count, strlen(wordArray));
+    
+    
+    if(strlen(wordArray) >= keysArray.count)
     {
-        const char *guessArray = [theWord UTF8String];
+        NSLog(@"guess bigger or equal.");
+        for (NSInteger k = 0; k < strlen(wordArray) ; k++) [correctionArray addObject: [NSNumber numberWithBool:NO]];
         
-        
+        for (NSInteger i = 0; i < keysArray.count ; i++)
+        {
+            LetterButton *tGuessedLetter = (LetterButton *) [keysArray objectAtIndex:i];
+            NSString* tCorrectLetter = [NSString stringWithFormat:@"%c" , wordArray[i]];
+            
+            NSLog(@"Guess %i: %@ and Letter %i: %@",i, tGuessedLetter.titleLabel.text, i, tCorrectLetter);
+            
+            if([tCorrectLetter isEqualToString: tGuessedLetter.titleLabel.text]) correctionArray[i] = [NSNumber numberWithBool:YES];
+            
+            
+        }
     }
+    else if(strlen(wordArray) < keysArray.count)
+    {
+        for (NSInteger k = 0; k < keysArray.count ; k++) [correctionArray addObject: [NSNumber numberWithBool:NO]];
+        
+        for (NSInteger i = 0; i < strlen(wordArray) ; i++)
+        {
+            LetterButton *tGuessedLetter = (LetterButton *) [keysArray objectAtIndex:i];
+            NSString* tCorrectLetter = [NSString stringWithFormat:@"%c" , wordArray[i]];
+            
+            NSLog(@"Guess %i: %@ and Letter %i: %@",i, tGuessedLetter.titleLabel.text, i, tCorrectLetter);
+            
+            if([tCorrectLetter isEqualToString: tGuessedLetter.titleLabel.text]) correctionArray[i] = [NSNumber numberWithBool:YES];
+            
+            
+        }
+    }
+    
+    for (NSInteger k = 0; k < correctionArray.count ; k++) NSLog(@"Answer %i: %i", k, [correctionArray[k] boolValue]);
 }
 
 - (void)viewDidLoad
@@ -56,7 +90,7 @@
     semanaquevem = 0;
     keysArray = [NSMutableArray array];
     correctionArray = [NSMutableArray array];
-    theWord = @"tiara";
+    theWord = @"TIARA";
     
     
     [self startLoop];
