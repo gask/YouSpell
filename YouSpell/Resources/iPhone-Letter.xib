@@ -12,7 +12,7 @@
             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
             <accessibility key="accessibilityConfiguration" label="LetterBtn"/>
             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-            <state key="normal" title="semana">
+            <state key="normal">
                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
             </state>
         </button>

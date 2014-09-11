@@ -13,6 +13,7 @@
     BOOL running;
     NSTimer *timer;
     NSInteger semanaquevem;
+    NSInteger positionSelected;
     
     NSMutableArray *keysArray;
     NSMutableArray *correctionArray;

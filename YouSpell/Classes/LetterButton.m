@@ -22,12 +22,28 @@
         
         self = (LetterButton *)[nib objectAtIndex:0];
         self.frame = frame;
-        self.titleLabel.textAlignment = NSTextAlignmentCenter;
-        self.titleLabel.text = letter;
         
-        
+        [self setTitle:letter forState:UIControlStateNormal];
+        [self setTitle:letter forState:UIControlStateSelected];
+        [self setTitle:letter forState:UIControlStateHighlighted];
+        self.position = pos;
+        self.selected = YES;
+
+        [self addTarget:self action:@selector(doIt) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
+}
+
+- (void) doIt
+{
+    NSLog(@"yay!");
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"FlushButtons" object:[NSNumber numberWithInteger:self.position]];
+    
+    //self.selected = YES;
+    //[self setBackgroundColor:[UIColor redColor]];
+    
+    
 }
 
 /*
