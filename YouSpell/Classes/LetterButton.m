@@ -28,6 +28,9 @@
         [self setTitle:letter forState:UIControlStateHighlighted];
         self.position = pos;
         self.selected = YES;
+        self.titleLabel.numberOfLines = 1;
+        self.titleLabel.adjustsFontSizeToFitWidth = YES;
+        self.titleLabel.lineBreakMode = NSLineBreakByClipping;
 
         [self addTarget:self action:@selector(doIt) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -36,7 +39,7 @@
 
 - (void) doIt
 {
-    NSLog(@"yay!");
+//    NSLog(@"yay!");
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"FlushButtons" object:[NSNumber numberWithInteger:self.position]];
     

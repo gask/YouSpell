@@ -20,5 +20,7 @@
     NSString *theWord;
 }
 
+- (IBAction)playWord:(id)sender;
 - (IBAction)finishedWord:(id)sender;
+
 @end

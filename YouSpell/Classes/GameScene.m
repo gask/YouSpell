@@ -8,11 +8,12 @@
 
 #import "GameScene.h"
 #import "LetterButton.h"
+@import AVFoundation;
 
 #define SPACE 300.0f
 #define INITIAL_LETTERSIZE 50.0f
 
-@interface GameScene ()
+@interface GameScene () <AVAudioPlayerDelegate>
 
 @end
 
@@ -32,7 +33,7 @@
     NSLog(@"posSel: %i keysCount: %i", positionSelected, keysArray.count);
     if(positionSelected <= (NSInteger)keysArray.count && positionSelected != 0)
     {
-        NSLog(@"editar!");
+//        NSLog(@"editar!");
         
         LetterButton *l = (LetterButton *)[keysArray objectAtIndex:positionSelected-1];
         
@@ -42,13 +43,16 @@
     }
     else
     {
-        NSLog(@"adicionar!");
+//        NSLog(@"adicionar!");
         
         float lSize = INITIAL_LETTERSIZE;
+        float keysSize = INITIAL_LETTERSIZE*(float)(keysArray.count+1);
         
-        if(INITIAL_LETTERSIZE*(float)keysArray.count >= SPACE)
+        NSLog(@"tenta ser um pouco inteligente: %f", keysSize);
+        
+        if(keysSize >= SPACE)
         {
-            lSize = SPACE/keysArray.count;
+            lSize = SPACE/(keysArray.count+1);
             [self resizeLetters:lSize];
         }
         
@@ -69,9 +73,50 @@
     for(NSInteger u = 0 ; u < keysArray.count ; u++)
     {
         LetterButton *tButton = (LetterButton *) [keysArray objectAtIndex:u];
+//        CGSize nSize = CGSizeMake(newSize, newSize);
         
         [tButton setFrame:CGRectMake(10+u*newSize, self.view.center.y, newSize, newSize)];
+        
     }
+}
+
+- (IBAction)playWord:(id)sender
+{
+    /* Use this code to play an audio file */
+    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:@"pew-pew-leid" ofType:@"caf"];
+    
+    
+    
+    //soundFilePath = [soundFilePath stringByReplacingOccurrencesOfString:@"tiara.mp3" withString:@"YouSpell/Resources/SoundFiles/tiara.mp3"];
+    
+    NSLog(@"%@", soundFilePath);
+    
+    NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+    NSError *error;
+    
+    AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL error:&error];
+
+    if(player == nil)
+    {
+        NSLog(@"%@", [error description]);
+    }
+    else
+    {
+        NSLog(@"meu cu com asas e oculos que isso tá tocando....");
+    }
+    
+    player.delegate = self;
+    player.numberOfLoops = 1; //-1 means Infinite
+    
+    [player prepareToPlay];
+    [player play];
+    
+    /*NSError *error;
+    self.view.
+    self.backgroundMusicPlayer = [[AVAudioPlayer alloc]
+                                  initWithContentsOfURL:backgroundMusicURL error:&error];
+    [self.backgroundMusicPlayer prepareToPlay];
+    [self.backgroundMusicPlayer play];*/
 }
 
 - (IBAction)finishedWord:(id)sender
@@ -125,7 +170,7 @@
 
 - (void)handleFlushWithPos: (NSInteger) pos
 {
-    NSLog(@"Posicao selecionada: %i", pos);
+//    NSLog(@"Posicao selecionada: %i", pos);
     
     for (NSInteger y = 0; y < keysArray.count; y++)
     {
