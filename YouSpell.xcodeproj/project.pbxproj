@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		85CEF66219C29C5100575D75 /* tiara.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85CEF66119C29C5100575D75 /* tiara.mp3 */; };
-		85CEF66419C29C8800575D75 /* pew-pew-leid.caf in Resources */ = {isa = PBXBuildFile; fileRef = 85CEF66319C29C8800575D75 /* pew-pew-leid.caf */; };
 		B0AA79D819A55FD300C9C554 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0AA79D719A55FD300C9C554 /* Foundation.framework */; };
 		B0AA79DA19A55FD300C9C554 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0AA79D919A55FD300C9C554 /* CoreGraphics.framework */; };
 		B0AA79DC19A55FD300C9C554 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0AA79DB19A55FD300C9C554 /* UIKit.framework */; };
@@ -26,6 +24,16 @@
 		B0AA7A0619A55FD300C9C554 /* YouSpellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0AA7A0519A55FD300C9C554 /* YouSpellTests.m */; };
 		B0AA7A1119A560E700C9C554 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B0AA7A1019A560E700C9C554 /* GameScene.m */; };
 		B0AA7A1819A5657F00C9C554 /* LetterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B0AA7A1719A5657F00C9C554 /* LetterButton.m */; };
+		B0F8142419C4E1A200D34B17 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F8142319C4E1A200D34B17 /* AudioToolbox.framework */; };
+		B0F8142619C4E41000D34B17 /* tiara.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B0F8142519C4E41000D34B17 /* tiara.mp3 */; };
+		B0F8142819C4E59200D34B17 /* iPhone-Letter.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0F8142719C4E59200D34B17 /* iPhone-Letter.xib */; };
+		B0F8143119C4EC7900D34B17 /* dog.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B0F8142A19C4EC7900D34B17 /* dog.mp3 */; };
+		B0F8143219C4EC7900D34B17 /* muscle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B0F8142B19C4EC7900D34B17 /* muscle.mp3 */; };
+		B0F8143319C4EC7900D34B17 /* pole.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B0F8142C19C4EC7900D34B17 /* pole.mp3 */; };
+		B0F8143419C4EC7900D34B17 /* poll.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B0F8142D19C4EC7900D34B17 /* poll.mp3 */; };
+		B0F8143519C4EC7900D34B17 /* pool.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B0F8142E19C4EC7900D34B17 /* pool.mp3 */; };
+		B0F8143619C4EC7900D34B17 /* soap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B0F8142F19C4EC7900D34B17 /* soap.mp3 */; };
+		B0F8143719C4EC7900D34B17 /* soup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B0F8143019C4EC7900D34B17 /* soup.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +47,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		85CEF66119C29C5100575D75 /* tiara.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tiara.mp3; sourceTree = "<group>"; };
-		85CEF66319C29C8800575D75 /* pew-pew-leid.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pew-pew-leid.caf"; sourceTree = "<group>"; };
 		B0AA79D419A55FD300C9C554 /* YouSpell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouSpell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0AA79D719A55FD300C9C554 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B0AA79D919A55FD300C9C554 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -65,6 +71,16 @@
 		B0AA7A1019A560E700C9C554 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameScene.m; path = Classes/GameScene.m; sourceTree = "<group>"; };
 		B0AA7A1619A5657F00C9C554 /* LetterButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LetterButton.h; path = Classes/LetterButton.h; sourceTree = "<group>"; };
 		B0AA7A1719A5657F00C9C554 /* LetterButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LetterButton.m; path = Classes/LetterButton.m; sourceTree = "<group>"; };
+		B0F8142319C4E1A200D34B17 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		B0F8142519C4E41000D34B17 /* tiara.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tiara.mp3; sourceTree = "<group>"; };
+		B0F8142719C4E59200D34B17 /* iPhone-Letter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "iPhone-Letter.xib"; path = "../iPhone-Letter.xib"; sourceTree = "<group>"; };
+		B0F8142A19C4EC7900D34B17 /* dog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dog.mp3; sourceTree = "<group>"; };
+		B0F8142B19C4EC7900D34B17 /* muscle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = muscle.mp3; sourceTree = "<group>"; };
+		B0F8142C19C4EC7900D34B17 /* pole.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pole.mp3; sourceTree = "<group>"; };
+		B0F8142D19C4EC7900D34B17 /* poll.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = poll.mp3; sourceTree = "<group>"; };
+		B0F8142E19C4EC7900D34B17 /* pool.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pool.mp3; sourceTree = "<group>"; };
+		B0F8142F19C4EC7900D34B17 /* soap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soap.mp3; sourceTree = "<group>"; };
+		B0F8143019C4EC7900D34B17 /* soup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soup.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0F8142419C4E1A200D34B17 /* AudioToolbox.framework in Frameworks */,
 				B0AA79DA19A55FD300C9C554 /* CoreGraphics.framework in Frameworks */,
 				B0AA79DC19A55FD300C9C554 /* UIKit.framework in Frameworks */,
 				B0AA79D819A55FD300C9C554 /* Foundation.framework in Frameworks */,
@@ -94,8 +111,6 @@
 		B0AA79CB19A55FD300C9C554 = {
 			isa = PBXGroup;
 			children = (
-				85CEF66319C29C8800575D75 /* pew-pew-leid.caf */,
-				85CEF66119C29C5100575D75 /* tiara.mp3 */,
 				B0AA79DD19A55FD300C9C554 /* YouSpell */,
 				B0AA79FF19A55FD300C9C554 /* YouSpellTests */,
 				B0AA79D619A55FD300C9C554 /* Frameworks */,
@@ -115,6 +130,7 @@
 		B0AA79D619A55FD300C9C554 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B0F8142319C4E1A200D34B17 /* AudioToolbox.framework */,
 				B0AA79D719A55FD300C9C554 /* Foundation.framework */,
 				B0AA79D919A55FD300C9C554 /* CoreGraphics.framework */,
 				B0AA79DB19A55FD300C9C554 /* UIKit.framework */,
@@ -142,6 +158,7 @@
 		B0AA79DE19A55FD300C9C554 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B0F8142919C4EC5200D34B17 /* Resources */,
 				B0AA79DF19A55FD300C9C554 /* YouSpell-Info.plist */,
 				B0AA79E019A55FD300C9C554 /* InfoPlist.strings */,
 				B0AA79E319A55FD300C9C554 /* main.m */,
@@ -177,6 +194,30 @@
 				B0AA7A1719A5657F00C9C554 /* LetterButton.m */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		B0F8142919C4EC5200D34B17 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B0F8143819C4EC8100D34B17 /* SoundFiles */,
+				B0F8142719C4E59200D34B17 /* iPhone-Letter.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B0F8143819C4EC8100D34B17 /* SoundFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B0F8142A19C4EC7900D34B17 /* dog.mp3 */,
+				B0F8142B19C4EC7900D34B17 /* muscle.mp3 */,
+				B0F8142C19C4EC7900D34B17 /* pole.mp3 */,
+				B0F8142D19C4EC7900D34B17 /* poll.mp3 */,
+				B0F8142E19C4EC7900D34B17 /* pool.mp3 */,
+				B0F8142F19C4EC7900D34B17 /* soap.mp3 */,
+				B0F8142519C4E41000D34B17 /* tiara.mp3 */,
+				B0F8143019C4EC7900D34B17 /* soup.mp3 */,
+			);
+			name = SoundFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,11 +297,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0AA79EE19A55FD300C9C554 /* Main_iPad.storyboard in Resources */,
+				B0F8143519C4EC7900D34B17 /* pool.mp3 in Resources */,
+				B0F8143719C4EC7900D34B17 /* soup.mp3 in Resources */,
+				B0F8143419C4EC7900D34B17 /* poll.mp3 in Resources */,
+				B0F8143219C4EC7900D34B17 /* muscle.mp3 in Resources */,
+				B0F8143319C4EC7900D34B17 /* pole.mp3 in Resources */,
+				B0F8143619C4EC7900D34B17 /* soap.mp3 in Resources */,
 				B0AA79F319A55FD300C9C554 /* Images.xcassets in Resources */,
-				85CEF66219C29C5100575D75 /* tiara.mp3 in Resources */,
+				B0F8142819C4E59200D34B17 /* iPhone-Letter.xib in Resources */,
+				B0F8142619C4E41000D34B17 /* tiara.mp3 in Resources */,
 				B0AA79EB19A55FD300C9C554 /* Main_iPhone.storyboard in Resources */,
 				B0AA79E219A55FD300C9C554 /* InfoPlist.strings in Resources */,
-				85CEF66419C29C8800575D75 /* pew-pew-leid.caf in Resources */,
+				B0F8143119C4EC7900D34B17 /* dog.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

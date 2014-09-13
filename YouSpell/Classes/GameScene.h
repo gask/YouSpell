@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface GameScene : UIViewController
 {
@@ -18,6 +19,8 @@
     NSMutableArray *keysArray;
     NSMutableArray *correctionArray;
     NSString *theWord;
+    
+    SystemSoundID sound;
 }
 
 - (IBAction)playWord:(id)sender;

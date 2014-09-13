@@ -13,8 +13,7 @@
 #define SPACE 300.0f
 #define INITIAL_LETTERSIZE 50.0f
 
-@interface GameScene () <AVAudioPlayerDelegate>
-
+@interface GameScene ()
 @end
 
 @implementation GameScene
@@ -56,6 +55,8 @@
             [self resizeLetters:lSize];
         }
         
+        // insert here calculateLetterPositionWithNumberOfLetters method.
+        
         LetterButton *l = [[LetterButton alloc] initWithFrame: CGRectMake(10+(keysArray.count)*lSize, self.view.center.y, lSize, lSize) position:keysArray.count+1 andLetter: buttonPressed.titleLabel.text];
         
         [keysArray addObject: l];
@@ -65,6 +66,14 @@
         [self handleFlushWithPos:keysArray.count+1];
     }
     
+}
+
+- (CGRect) calculateLetterPositionWithNumberOfLetters: (NSInteger) numberOfLetters
+{
+    /* TO DO: The logic must be: SIZE/numberOfLetters */
+    
+    
+    return CGRectMake(0,0,0,0);
 }
 
 - (void) resizeLetters: (float)newSize
@@ -83,40 +92,7 @@
 - (IBAction)playWord:(id)sender
 {
     /* Use this code to play an audio file */
-    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:@"pew-pew-leid" ofType:@"caf"];
-    
-    
-    
-    //soundFilePath = [soundFilePath stringByReplacingOccurrencesOfString:@"tiara.mp3" withString:@"YouSpell/Resources/SoundFiles/tiara.mp3"];
-    
-    NSLog(@"%@", soundFilePath);
-    
-    NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
-    NSError *error;
-    
-    AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL error:&error];
-
-    if(player == nil)
-    {
-        NSLog(@"%@", [error description]);
-    }
-    else
-    {
-        NSLog(@"meu cu com asas e oculos que isso tá tocando....");
-    }
-    
-    player.delegate = self;
-    player.numberOfLoops = 1; //-1 means Infinite
-    
-    [player prepareToPlay];
-    [player play];
-    
-    /*NSError *error;
-    self.view.
-    self.backgroundMusicPlayer = [[AVAudioPlayer alloc]
-                                  initWithContentsOfURL:backgroundMusicURL error:&error];
-    [self.backgroundMusicPlayer prepareToPlay];
-    [self.backgroundMusicPlayer play];*/
+    AudioServicesPlaySystemSound(sound);
 }
 
 - (IBAction)finishedWord:(id)sender
@@ -204,6 +180,9 @@
     correctionArray = [NSMutableArray array];
     theWord = @"TIARA";
     
+    NSURL *soundURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"tiara" ofType:@"mp3"]];
+    
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef) soundURL, &sound);
     
     [self startLoop];
 }
