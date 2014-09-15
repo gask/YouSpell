@@ -49,15 +49,12 @@
         
         NSLog(@"tenta ser um pouco inteligente: %f", keysSize);
         
-        if(keysSize >= SPACE)
-        {
-            lSize = SPACE/(keysArray.count+1);
-            [self resizeLetters:lSize];
-        }
+        lSize = SPACE/(keysArray.count+1);
         
-        // insert here calculateLetterPositionWithNumberOfLetters method.
+        if(lSize > INITIAL_LETTERSIZE) lSize = INITIAL_LETTERSIZE;
+        [self resizeLetters:lSize andNumberOfLetters:(float)keysArray.count+1];
         
-        LetterButton *l = [[LetterButton alloc] initWithFrame: CGRectMake(10+(keysArray.count)*lSize, self.view.center.y, lSize, lSize) position:keysArray.count+1 andLetter: buttonPressed.titleLabel.text];
+        LetterButton *l = [[LetterButton alloc] initWithFrame: [self calculateLetterPositionWithNumberOfLetters:(float)keysArray.count+1 andActualSize:lSize] position:keysArray.count+1 andLetter: buttonPressed.titleLabel.text];
         
         [keysArray addObject: l];
         
@@ -68,23 +65,29 @@
     
 }
 
-- (CGRect) calculateLetterPositionWithNumberOfLetters: (NSInteger) numberOfLetters
-{
-    /* TO DO: The logic must be: SIZE/numberOfLetters */
+- (CGRect) calculateLetterPositionWithNumberOfLetters: (float) numberOfLetters andActualSize: (float)size
+{    
+    float xPosition = self.view.center.x - (numberOfLetters/2.0f * size) + (numberOfLetters-1) * size;
     
-    
-    return CGRectMake(0,0,0,0);
+    return CGRectMake(xPosition,self.view.center.y,size,size);
 }
 
-- (void) resizeLetters: (float)newSize
+- (void) resizeLetters: (float)newSize andNumberOfLetters: (float) numberOfLetters
 {
     NSLog(@"newSize: %f",newSize);
+    
+    
+    
+    NSLog(@"Then newSize: %f",newSize);
+    
     for(NSInteger u = 0 ; u < keysArray.count ; u++)
     {
         LetterButton *tButton = (LetterButton *) [keysArray objectAtIndex:u];
 //        CGSize nSize = CGSizeMake(newSize, newSize);
         
-        [tButton setFrame:CGRectMake(10+u*newSize, self.view.center.y, newSize, newSize)];
+        float startingXPos = self.view.center.x - (numberOfLetters/2.0f * newSize);
+        
+        [tButton setFrame:CGRectMake(startingXPos+u*newSize, self.view.center.y, newSize, newSize)];
         
     }
 }
