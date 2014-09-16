@@ -27,6 +27,25 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    themeNames = [NSArray arrayWithObjects:
+                  @"Animals",
+                  @"Games",
+                  @"Body Parts",
+                  @"Cars",
+                  @"Colors",
+                  @"Countries",
+                  @"Enterprises",
+                  @"Flowers???",
+                  @"Fruits",
+                  @"Globe???",
+                  @"Case???",
+                  @"Movies",
+                  @"Bands",
+                  @"Utils",
+                  @"Soccer Teams",
+                  @"Sports",
+                  nil];
 }
 
 - (NSInteger) numberOfSectionsInTableView: (UITableView *)tableView
@@ -43,7 +62,7 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MainCell"];
     
-    UIImageView *image = nil;
+    //UIImageView *image = nil;
     
     
     
@@ -51,16 +70,29 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:@"MainCell"];
         
-        NSInteger row = indexPath.row+1;
+        //NSInteger row = indexPath.row+1;
         
-        image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%i.png", row]]];
-        [image setFrame:CGRectMake(0,0, 50, 50)];
-        [cell.contentView addSubview:image];
+        //image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"a%i.png", row]]];
+        //cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"a%i.png", row]];
+        //[image setFrame:CGRectMake(0,0, 50, 50)];
+        //image.tag = 100;
+        
+        //[cell.contentView addSubview:image];
+        
+       // NSLog(@"%i",row);
     }
-    else
+    
+    NSInteger row = indexPath.row+1;
+    cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"a%i.png", row]];
+    cell.textLabel.text = [themeNames objectAtIndex:row-1];
+    
+//    cell.textLabel.text = 
+    /*else
     {
+        image = [cell.contentView viewWithTag:100];
         
-    }
+        NSLog(@"hehehe %i",indexPath.row+1);
+    }*/
     
     //cell.textLabel.text = [NSString stringWithFormat:@"meu bilau verde: %d", indexPath.row];
 

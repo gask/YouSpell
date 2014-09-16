@@ -12,6 +12,7 @@
 {
     IBOutlet UITableView *mainTable;
     
+    NSArray *themeNames;
 }
 
 
