@@ -29,7 +29,7 @@
 
 - (IBAction)keyPressed:(UIButton *)buttonPressed
 {
-    NSLog(@"posSel: %i keysCount: %i", positionSelected, keysArray.count);
+    //NSLog(@"posSel: %i keysCount: %i", positionSelected, keysArray.count);
     if(positionSelected <= (NSInteger)keysArray.count && positionSelected != 0)
     {
 //        NSLog(@"editar!");
@@ -47,7 +47,7 @@
         float lSize = INITIAL_LETTERSIZE;
         float keysSize = INITIAL_LETTERSIZE*(float)(keysArray.count+1);
         
-        NSLog(@"tenta ser um pouco inteligente: %f", keysSize);
+        //NSLog(@"tenta ser um pouco inteligente: %f", keysSize);
         
         lSize = SPACE/(keysArray.count+1);
         
@@ -74,11 +74,8 @@
 
 - (void) resizeLetters: (float)newSize andNumberOfLetters: (float) numberOfLetters
 {
-    NSLog(@"newSize: %f",newSize);
-    
-    
-    
-    NSLog(@"Then newSize: %f",newSize);
+    //NSLog(@"newSize: %f",newSize);
+    //NSLog(@"Then newSize: %f",newSize);
     
     for(NSInteger u = 0 ; u < keysArray.count ; u++)
     {
@@ -100,7 +97,7 @@
 
 - (IBAction)finishedWord:(id)sender
 {
-    const char *wordArray = [theWord UTF8String];
+    const char *wordArray = [self.theWord UTF8String];
     
     NSLog(@"GUESS SIZE: %i WORD SIZE: %lu", keysArray.count, strlen(wordArray));
     
@@ -181,7 +178,9 @@
     positionSelected = 0;
     keysArray = [NSMutableArray array];
     correctionArray = [NSMutableArray array];
-    theWord = @"TIARA";
+    //self.theWord = @"TIARA";
+    NSLog(@"the Word: %@", self.theWord);
+    
     
     NSURL *soundURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"tiara" ofType:@"mp3"]];
     

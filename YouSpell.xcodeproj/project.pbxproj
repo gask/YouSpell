@@ -24,6 +24,7 @@
 		B0AA7A0619A55FD300C9C554 /* YouSpellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0AA7A0519A55FD300C9C554 /* YouSpellTests.m */; };
 		B0AA7A1119A560E700C9C554 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B0AA7A1019A560E700C9C554 /* GameScene.m */; };
 		B0AA7A1819A5657F00C9C554 /* LetterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B0AA7A1719A5657F00C9C554 /* LetterButton.m */; };
+		B0C30F5A19C91FD7005690C2 /* words.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0C30F5919C91FD7005690C2 /* words.plist */; };
 		B0CFBC3E19C600140053F02F /* ThemeSelection.m in Sources */ = {isa = PBXBuildFile; fileRef = B0CFBC3D19C600140053F02F /* ThemeSelection.m */; };
 		B0CFBC5319C61BFA0053F02F /* a1.png in Resources */ = {isa = PBXBuildFile; fileRef = B0CFBC4319C61BFA0053F02F /* a1.png */; };
 		B0CFBC5419C61BFA0053F02F /* a2.png in Resources */ = {isa = PBXBuildFile; fileRef = B0CFBC4419C61BFA0053F02F /* a2.png */; };
@@ -88,6 +89,7 @@
 		B0AA7A1019A560E700C9C554 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameScene.m; path = Classes/GameScene.m; sourceTree = "<group>"; };
 		B0AA7A1619A5657F00C9C554 /* LetterButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LetterButton.h; path = Classes/LetterButton.h; sourceTree = "<group>"; };
 		B0AA7A1719A5657F00C9C554 /* LetterButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LetterButton.m; path = Classes/LetterButton.m; sourceTree = "<group>"; };
+		B0C30F5919C91FD7005690C2 /* words.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words.plist; sourceTree = "<group>"; };
 		B0CFBC3C19C600140053F02F /* ThemeSelection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeSelection.h; sourceTree = "<group>"; };
 		B0CFBC3D19C600140053F02F /* ThemeSelection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeSelection.m; sourceTree = "<group>"; };
 		B0CFBC4319C61BFA0053F02F /* a1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = a1.png; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 		B0F8142919C4EC5200D34B17 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B0C30F5919C91FD7005690C2 /* words.plist */,
 				B0CFBC4319C61BFA0053F02F /* a1.png */,
 				B0CFBC4419C61BFA0053F02F /* a2.png */,
 				B0CFBC4519C61BFA0053F02F /* a3.png */,
@@ -353,6 +356,7 @@
 				B0CFBC6019C61BFA0053F02F /* a14.png in Resources */,
 				B0F8143519C4EC7900D34B17 /* pool.mp3 in Resources */,
 				B0F8143719C4EC7900D34B17 /* soup.mp3 in Resources */,
+				B0C30F5A19C91FD7005690C2 /* words.plist in Resources */,
 				B0F8143419C4EC7900D34B17 /* poll.mp3 in Resources */,
 				B0CFBC5619C61BFA0053F02F /* a4.png in Resources */,
 				B0CFBC5E19C61BFA0053F02F /* a12.png in Resources */,

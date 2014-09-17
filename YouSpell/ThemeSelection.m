@@ -7,6 +7,9 @@
 //
 
 #import "ThemeSelection.h"
+#import "GameScene.h"
+
+#define WORDS_PER_THEME 3
 
 @interface ThemeSelection ()
 
@@ -28,6 +31,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    wordsArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"words" ofType:@"plist"]];
+    selectedTheme = -1;
     themeNames = [NSArray arrayWithObjects:
                   @"Animals",
                   @"Games",
@@ -52,6 +57,32 @@
 {
     return 1;
 }
+
+- (NSIndexPath *) tableView: (UITableView *) tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"selecionei o %io botão!", indexPath.row+1);
+    selectedTheme = indexPath.row;
+    [self performSegueWithIdentifier:@"CallGameScene" sender:self];
+    
+    return indexPath;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSLog(@"selectedTheme: %i", selectedTheme);
+    
+    if ([[segue identifier] isEqualToString:@"CallGameScene"])
+    {
+        // Get destination view
+        GameScene *vc = [segue destinationViewController];
+        
+        int r = arc4random_uniform(WORDS_PER_THEME);
+        NSLog(@"selected Word: %i", r);
+        
+        vc.theWord = [[[wordsArray objectAtIndex:selectedTheme] objectAtIndex:r] uppercaseString];
+    }
+}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

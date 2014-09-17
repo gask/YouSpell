@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#include <stdlib.h>
 
-@interface ThemeSelection : UIViewController
+@interface ThemeSelection : UIViewController <UITableViewDelegate>
 {
     IBOutlet UITableView *mainTable;
     
+    NSInteger selectedTheme;
+    
     NSArray *themeNames;
+    NSArray *wordsArray;
 }
 
 

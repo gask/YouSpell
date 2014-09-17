@@ -18,10 +18,11 @@
     
     NSMutableArray *keysArray;
     NSMutableArray *correctionArray;
-    NSString *theWord;
     
     SystemSoundID sound;
 }
+
+@property NSString *theWord;
 
 - (IBAction)playWord:(id)sender;
 - (IBAction)finishedWord:(id)sender;
