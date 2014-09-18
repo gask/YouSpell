@@ -8,7 +8,7 @@
 
 #import "GameScene.h"
 #import "LetterButton.h"
-@import AVFoundation;
+#import "WinLose.h"
 
 #define SPACE 300.0f
 #define INITIAL_LETTERSIZE 50.0f
@@ -45,7 +45,7 @@
 //        NSLog(@"adicionar!");
         
         float lSize = INITIAL_LETTERSIZE;
-        float keysSize = INITIAL_LETTERSIZE*(float)(keysArray.count+1);
+        //float keysSize = INITIAL_LETTERSIZE*(float)(keysArray.count+1);
         
         //NSLog(@"tenta ser um pouco inteligente: %f", keysSize);
         
@@ -136,7 +136,40 @@
         }
     }
     
-    for (NSInteger k = 0; k < correctionArray.count ; k++) NSLog(@"Answer %i: %i", k, [correctionArray[k] boolValue]);
+    
+    
+    for (NSInteger k = 0; k < correctionArray.count ; k++)
+    {
+        NSLog(@"Answer %i: %i", k, [correctionArray[k] boolValue]);
+        if(![correctionArray[k] boolValue]) gameWon = NO;
+    }
+    
+    
+    [self performSegueWithIdentifier:@"CallWinLose" sender:self];
+   
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSLog(@"won: %i", gameWon);
+    
+    if ([[segue identifier] isEqualToString:@"CallWinLose"])
+    {
+        NSLog(@"é a segue");
+        
+        // Get destination view
+        WinLose *vc = [segue destinationViewController];
+        
+        if(gameWon)
+        {
+            vc.message = @"YAY! You won! :)";
+        }
+        else
+        {
+            vc.message = @"Sorry, better luck next time :(";
+        }
+    }
 }
 
 - (void)handleFlush: (NSNotification *) notification
@@ -179,10 +212,12 @@
     keysArray = [NSMutableArray array];
     correctionArray = [NSMutableArray array];
     //self.theWord = @"TIARA";
+    
+    gameWon = YES;
+    
     NSLog(@"the Word: %@", self.theWord);
     
-    
-    NSURL *soundURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"tiara" ofType:@"mp3"]];
+    NSURL *soundURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:[self.theWord lowercaseString] ofType:@"mp3"]];
     
     AudioServicesCreateSystemSoundID((__bridge CFURLRef) soundURL, &sound);
     
@@ -201,6 +236,7 @@
     }*/
 }
 
+// speech API: http://tts-api.com/tts.mp3?q=tiara
 
 - (void) gameLoop
 {

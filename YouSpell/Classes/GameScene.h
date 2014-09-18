@@ -14,6 +14,9 @@
     BOOL running;
     NSTimer *timer;
     NSInteger semanaquevem;
+    
+    BOOL gameWon;
+    
     NSInteger positionSelected;
     
     NSMutableArray *keysArray;
