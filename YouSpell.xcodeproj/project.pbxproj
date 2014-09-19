@@ -167,7 +167,6 @@
 		B0AA79E219A55FD300C9C554 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B0AA79E019A55FD300C9C554 /* InfoPlist.strings */; };
 		B0AA79E419A55FD300C9C554 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0AA79E319A55FD300C9C554 /* main.m */; };
 		B0AA79E819A55FD300C9C554 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0AA79E719A55FD300C9C554 /* AppDelegate.m */; };
-		B0AA79F119A55FD300C9C554 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0AA79F019A55FD300C9C554 /* ViewController.m */; };
 		B0AA79F319A55FD300C9C554 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0AA79F219A55FD300C9C554 /* Images.xcassets */; };
 		B0AA79FA19A55FD300C9C554 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0AA79F919A55FD300C9C554 /* XCTest.framework */; };
 		B0AA79FB19A55FD300C9C554 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0AA79D719A55FD300C9C554 /* Foundation.framework */; };
@@ -195,6 +194,8 @@
 		B0CFBC6219C61BFA0053F02F /* a16.png in Resources */ = {isa = PBXBuildFile; fileRef = B0CFBC5219C61BFA0053F02F /* a16.png */; };
 		B0F8142419C4E1A200D34B17 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F8142319C4E1A200D34B17 /* AudioToolbox.framework */; };
 		B0F8142819C4E59200D34B17 /* iPhone-Letter.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0F8142719C4E59200D34B17 /* iPhone-Letter.xib */; };
+		B0FFF7B219CBBA1700B1A50F /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FFF7B119CBBA1700B1A50F /* Menu.m */; };
+		B0FFF7B519CBD0E500B1A50F /* ThemeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FFF7B419CBD0E500B1A50F /* ThemeCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -377,8 +378,6 @@
 		B0AA79E719A55FD300C9C554 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B0AA79EA19A55FD300C9C554 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		B0AA79ED19A55FD300C9C554 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		B0AA79EF19A55FD300C9C554 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B0AA79F019A55FD300C9C554 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B0AA79F219A55FD300C9C554 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B0AA79F819A55FD300C9C554 /* YouSpellTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YouSpellTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0AA79F919A55FD300C9C554 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -410,6 +409,10 @@
 		B0CFBC5219C61BFA0053F02F /* a16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = a16.png; sourceTree = "<group>"; };
 		B0F8142319C4E1A200D34B17 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B0F8142719C4E59200D34B17 /* iPhone-Letter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "iPhone-Letter.xib"; path = "../iPhone-Letter.xib"; sourceTree = "<group>"; };
+		B0FFF7B019CBBA1700B1A50F /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Menu.h; path = ../Menu.h; sourceTree = "<group>"; };
+		B0FFF7B119CBBA1700B1A50F /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Menu.m; path = ../Menu.m; sourceTree = "<group>"; };
+		B0FFF7B319CBD0E500B1A50F /* ThemeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeCell.h; sourceTree = "<group>"; };
+		B0FFF7B419CBD0E500B1A50F /* ThemeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -476,8 +479,6 @@
 				B0AA79E719A55FD300C9C554 /* AppDelegate.m */,
 				B0AA79E919A55FD300C9C554 /* Main_iPhone.storyboard */,
 				B0AA79EC19A55FD300C9C554 /* Main_iPad.storyboard */,
-				B0AA79EF19A55FD300C9C554 /* ViewController.h */,
-				B0AA79F019A55FD300C9C554 /* ViewController.m */,
 				B0AA79F219A55FD300C9C554 /* Images.xcassets */,
 				B0AA79DE19A55FD300C9C554 /* Supporting Files */,
 			);
@@ -517,6 +518,8 @@
 		B0AA7A1219A560EB00C9C554 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B0FFF7B019CBBA1700B1A50F /* Menu.h */,
+				B0FFF7B119CBBA1700B1A50F /* Menu.m */,
 				B018E64F19CA6584000F1DDD /* DownloadMP3.h */,
 				B018E65019CA6584000F1DDD /* DownloadMP3.m */,
 				B0AA7A0F19A560E700C9C554 /* GameScene.h */,
@@ -527,6 +530,8 @@
 				B0AA7A1719A5657F00C9C554 /* LetterButton.m */,
 				B0CFBC3C19C600140053F02F /* ThemeSelection.h */,
 				B0CFBC3D19C600140053F02F /* ThemeSelection.m */,
+				B0FFF7B319CBD0E500B1A50F /* ThemeCell.h */,
+				B0FFF7B419CBD0E500B1A50F /* ThemeCell.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -985,10 +990,11 @@
 				B018E71519CA788A000F1DDD /* DownloadMP3.m in Sources */,
 				B018E72619CA788A000F1DDD /* GameScene.m in Sources */,
 				B0CFBC3E19C600140053F02F /* ThemeSelection.m in Sources */,
-				B0AA79F119A55FD300C9C554 /* ViewController.m in Sources */,
 				B0AA79E819A55FD300C9C554 /* AppDelegate.m in Sources */,
 				B018E78819CA7C1B000F1DDD /* WinLose.m in Sources */,
 				B0AA7A1819A5657F00C9C554 /* LetterButton.m in Sources */,
+				B0FFF7B519CBD0E500B1A50F /* ThemeCell.m in Sources */,
+				B0FFF7B219CBBA1700B1A50F /* Menu.m in Sources */,
 				B0AA79E419A55FD300C9C554 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

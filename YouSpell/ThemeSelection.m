@@ -8,6 +8,7 @@
 
 #import "ThemeSelection.h"
 #import "GameScene.h"
+#import "ThemeCell.h"
 
 #define WORDS_PER_THEME 3
 
@@ -16,15 +17,6 @@
 @end
 
 @implementation ThemeSelection
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -51,6 +43,27 @@
                   @"Soccer Teams",
                   @"Sports",
                   nil];
+    
+    themeScores = [NSMutableArray array];
+    themeTotals = [NSMutableArray array];
+    userScore = [[NSUserDefaults standardUserDefaults] objectForKey:@"Scores"];
+    
+    
+    for (NSInteger i = 0 ; i < userScore.count; i++)
+    {
+        NSLog(@"tema %i: %@", i+1, themeNames[i]);
+        NSArray *themeWords = [userScore objectAtIndex:i];
+        [themeTotals addObject:[NSNumber numberWithInt:themeWords.count]];
+        
+        NSInteger themeScore = 0;
+        for (NSInteger k = 0; k < themeWords.count; k++)
+        {
+            BOOL scoreValue = [[themeWords objectAtIndex:k] boolValue];
+            NSLog(@"%i",scoreValue);
+            if(scoreValue) themeScore++;
+        }
+        [themeScores addObject: [NSNumber numberWithInt:themeScore]];
+    }
 }
 
 - (NSInteger) numberOfSectionsInTableView: (UITableView *)tableView
@@ -62,6 +75,9 @@
 {
     NSLog(@"selecionei o %io botão!", indexPath.row+1);
     selectedTheme = indexPath.row;
+    
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:selectedTheme] forKey:@"selectedTheme"];
+    
     [self performSegueWithIdentifier:@"CallGameScene" sender:self];
     
     return indexPath;
@@ -79,6 +95,8 @@
         int r = arc4random_uniform(WORDS_PER_THEME);
         NSLog(@"selected Word: %i", r);
         
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:r] forKey:@"selectedWord"];
+        
         vc.theWord = [[[wordsArray objectAtIndex:selectedTheme] objectAtIndex:r] uppercaseString];
     }
 }
@@ -91,7 +109,7 @@
 
 - (UITableViewCell *)tableView: (UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MainCell"];
+    ThemeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MainCell"];
     
     //UIImageView *image = nil;
     
@@ -99,7 +117,7 @@
     
     if(cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:@"MainCell"];
+        cell = [[ThemeCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:@"MainCell"];
         
         //NSInteger row = indexPath.row+1;
         
@@ -114,8 +132,9 @@
     }
     
     NSInteger row = indexPath.row+1;
-    cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"a%i.png", row]];
-    cell.textLabel.text = [themeNames objectAtIndex:row-1];
+    cell.themeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"a%i.png", row]];
+    cell.themeName.text = [themeNames objectAtIndex:row-1];
+    cell.themeScore.text = [NSString stringWithFormat:@"%i/%i",[themeScores[row-1] intValue], [themeTotals[row-1] intValue] ];
     
 //    cell.textLabel.text = 
     /*else

@@ -13,6 +13,7 @@
     
 }
 @property (nonatomic) IBOutlet UILabel *feedback;
-@property (nonatomic) NSString *message;
+@property (nonatomic) BOOL didWon;
+@property (nonatomic) NSString *word;
 
 @end

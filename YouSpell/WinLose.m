@@ -29,8 +29,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSLog(@"%@",self.message);
-    self.feedback.text = self.message;
+    if(self.didWon) self.feedback.text = @"YAY! You won! :)";
+    else self.feedback.text = @"Sorry, better luck next time :(";
 }
 
 - (void)didReceiveMemoryWarning

@@ -163,11 +163,25 @@
         
         if(gameWon)
         {
-            vc.message = @"YAY! You won! :)";
+            vc.didWon = YES;
+            NSInteger selectedTheme = [[[NSUserDefaults standardUserDefaults] objectForKey:@"selectedTheme"] intValue];
+            NSInteger selectedWord = [[[NSUserDefaults standardUserDefaults] objectForKey:@"selectedWord"] intValue];
+            NSMutableArray *scoreArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"Scores"];
+            
+            NSMutableArray *subScoreArray = [scoreArray objectAtIndex: selectedTheme];
+            
+            NSLog(@"1");
+            subScoreArray[selectedWord] = [NSNumber numberWithBool:YES];
+            NSLog(@"2");
+            scoreArray[selectedTheme] = subScoreArray;
+            
+            [[NSUserDefaults standardUserDefaults] setObject:scoreArray forKey:@"Scores"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
         }
         else
         {
-            vc.message = @"Sorry, better luck next time :(";
+            vc.didWon = NO;
         }
     }
 }

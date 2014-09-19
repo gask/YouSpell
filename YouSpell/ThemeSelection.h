@@ -17,6 +17,9 @@
     
     NSArray *themeNames;
     NSArray *wordsArray;
+    NSArray *userScore;
+    NSMutableArray *themeScores;
+    NSMutableArray *themeTotals;
 }
 
 
