@@ -12,6 +12,8 @@
 
 - (id)initWithFrame:(CGRect)frame position: (NSInteger) pos andLetter: (NSString *) letter;
 
+- (IBAction)handlePan:(id)recognizer;
+
 @property (nonatomic) NSInteger position;
 @property (nonatomic) BOOL selected;
 

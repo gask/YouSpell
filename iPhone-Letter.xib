@@ -11,10 +11,19 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
             <accessibility key="accessibilityConfiguration" label="LetterBtn"/>
+            <gestureRecognizers/>
             <fontDescription key="fontDescription" type="system" pointSize="15"/>
             <state key="normal">
                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
             </state>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="tLM-dR-iGA" appends="YES" id="eBk-sg-Wj0"/>
+            </connections>
         </button>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="tLM-dR-iGA">
+            <connections>
+                <action selector="handlePan:" destination="Itt-k7-U2s" id="LcQ-m3-CaZ"/>
+            </connections>
+        </panGestureRecognizer>
     </objects>
 </document>

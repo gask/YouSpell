@@ -37,6 +37,21 @@
     return self;
 }
 
+- (IBAction)handlePan:(UIPanGestureRecognizer *)recognizer
+{
+    CGPoint translation = [recognizer translationInView:self];
+    
+    NSLog(@"tr: %f, %f", translation.x, translation.y);
+    //recognizer.view.center = CGPointMake(recognizer.view.center.x + translation.x, recognizer.view.center.y + translation.y);
+    
+    //[recognizer setTranslation:CGPointMake(0, 0) inView:self];
+}
+
+/*- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"event: %@", event);
+}*/
+
 - (void) doIt
 {
 //    NSLog(@"yay!");

@@ -166,12 +166,14 @@
             vc.didWon = YES;
             NSInteger selectedTheme = [[[NSUserDefaults standardUserDefaults] objectForKey:@"selectedTheme"] intValue];
             NSInteger selectedWord = [[[NSUserDefaults standardUserDefaults] objectForKey:@"selectedWord"] intValue];
-            NSMutableArray *scoreArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"Scores"];
+            NSMutableArray *scoreArray = [[[NSUserDefaults standardUserDefaults] objectForKey:@"Scores"] mutableCopy];
             
-            NSMutableArray *subScoreArray = [scoreArray objectAtIndex: selectedTheme];
+            NSMutableArray *subScoreArray = [[scoreArray objectAtIndex: selectedTheme] mutableCopy];
             
             NSLog(@"1");
-            subScoreArray[selectedWord] = [NSNumber numberWithBool:YES];
+            
+            [subScoreArray setObject:[NSNumber numberWithBool:YES] atIndexedSubscript:selectedWord];
+//            subScoreArray[selectedWord] = [NSNumber numberWithBool:YES];
             NSLog(@"2");
             scoreArray[selectedTheme] = subScoreArray;
             

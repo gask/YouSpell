@@ -23,9 +23,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    wordsArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"words" ofType:@"plist"]];
+    wordsArray = [[NSMutableArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"words" ofType:@"plist"]] mutableCopy];
     selectedTheme = -1;
-    themeNames = [NSArray arrayWithObjects:
+    themeNames = [NSMutableArray arrayWithObjects:
                   @"Animals",
                   @"Games",
                   @"Body Parts",
@@ -46,13 +46,13 @@
     
     themeScores = [NSMutableArray array];
     themeTotals = [NSMutableArray array];
-    userScore = [[NSUserDefaults standardUserDefaults] objectForKey:@"Scores"];
+    userScore = [[[NSUserDefaults standardUserDefaults] objectForKey:@"Scores"] mutableCopy];
     
     
     for (NSInteger i = 0 ; i < userScore.count; i++)
     {
         NSLog(@"tema %i: %@", i+1, themeNames[i]);
-        NSArray *themeWords = [userScore objectAtIndex:i];
+        NSMutableArray *themeWords = [[userScore objectAtIndex:i] mutableCopy];
         [themeTotals addObject:[NSNumber numberWithInt:themeWords.count]];
         
         NSInteger themeScore = 0;

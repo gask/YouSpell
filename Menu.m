@@ -20,7 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSArray *themesArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"words" ofType:@"plist"]];
+    NSMutableArray *themesArray = [[NSMutableArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"words" ofType:@"plist"]] mutableCopy];
     
     if([[NSUserDefaults standardUserDefaults] objectForKey:@"Scores"] == nil)
     {
@@ -31,7 +31,7 @@
         {
             [scoreArray addObject: [NSMutableArray array]];
             
-            NSArray *wordsArray = themesArray[i];
+            NSMutableArray *wordsArray = themesArray[i];
             
             for (NSInteger k = 0; k < wordsArray.count; k++)
             {
@@ -39,7 +39,7 @@
             }
         }
         
-        [[NSUserDefaults standardUserDefaults] setObject:scoreArray forKey:@"Scores"];
+        [[NSUserDefaults standardUserDefaults] setObject:[scoreArray mutableCopy] forKey:@"Scores"];
     }
     
     [[NSUserDefaults standardUserDefaults] synchronize];
