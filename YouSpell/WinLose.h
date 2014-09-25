@@ -10,10 +10,10 @@
 
 @interface WinLose : UIViewController
 {
-    
+    NSMutableArray *rightWordLetters;
 }
 @property (nonatomic) IBOutlet UILabel *feedback;
 @property (nonatomic) BOOL didWon;
-@property (nonatomic) NSString *word;
+@property (nonatomic) const char *word;
 
 @end

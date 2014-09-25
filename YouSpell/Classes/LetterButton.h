@@ -10,12 +10,14 @@
 
 @interface LetterButton : UIButton
 
-- (id)initWithFrame:(CGRect)frame position: (NSInteger) pos andLetter: (NSString *) letter;
+enum LetterButtonType {typeButton, typeLabel};
+
+- (id)initWithFrame:(CGRect)frame position: (NSInteger) pos andLetter: (NSString *) letter andState: (enum LetterButtonType) state;
 
 - (IBAction)handlePan:(id)recognizer;
 
 @property (nonatomic) NSInteger position;
 @property (nonatomic) BOOL selected;
-
+@property (nonatomic) enum LetterButtonType isButton;
 
 @end

@@ -7,6 +7,8 @@
 //
 
 #import "WinLose.h"
+#import "LetterButton.h"
+#import "AppConstants.h"
 
 @interface WinLose ()
 
@@ -15,6 +17,7 @@
 @implementation WinLose
 
 @synthesize feedback;
+@synthesize word;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -24,13 +27,57 @@
     return self;
 }
 
+- (void) resizeLetters: (float)newSize andNumberOfLetters: (float) numberOfLetters
+{
+    //NSLog(@"newSize: %f",newSize);
+    //NSLog(@"Then newSize: %f",newSize);
+    
+    for(NSInteger u = 0 ; u < strlen(self.word) ; u++)
+    {
+        LetterButton *tButton = (LetterButton *) [rightWordLetters objectAtIndex:u];
+        //        CGSize nSize = CGSizeMake(newSize, newSize);
+        
+        float startingXPos = self.view.center.x - (numberOfLetters/2.0f * newSize);
+        
+        [tButton setFrame:CGRectMake(startingXPos+u*newSize, self.view.center.y, newSize, newSize)];
+        
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    rightWordLetters = [NSMutableArray array];
+    NSLog(@"pernambucano também: %s com tam: %lu", self.word, strlen(self.word));
+    float lSize = INITIAL_LETTERSIZE;
+    
+    lSize = SPACE/(strlen(self.word));
+    
+    if(lSize > INITIAL_LETTERSIZE) lSize = INITIAL_LETTERSIZE;
+    //
+    
+    for(NSInteger i = 0 ; i < strlen(self.word) ; i++)
+    {
+        NSLog(@"%d",i);
+        LetterButton *l = [[LetterButton alloc] initWithFrame: CGRectMake(0,0,0,0) position:i andLetter: [NSString stringWithFormat:@"%c" , self.word[i]] andState:typeLabel];
+        
+        [rightWordLetters addObject:l];
+        [self.view addSubview:l];
+    }
+    [self resizeLetters:lSize andNumberOfLetters:(float)strlen(self.word)];
+
+    
     if(self.didWon) self.feedback.text = @"YAY! You won! :)";
     else self.feedback.text = @"Sorry, better luck next time :(";
+}
+
+- (CGRect) calculateLetterPositionWithNumberOfLetters: (float) numberOfLetters andActualSize: (float)size
+{
+    float xPosition = self.view.center.x - (numberOfLetters/2.0f * size) + (numberOfLetters-1) * size;
+    
+    return CGRectMake(xPosition,self.view.center.y,size,size);
 }
 
 - (void)didReceiveMemoryWarning

@@ -12,7 +12,9 @@
 
 @synthesize position, selected;
 
-- (id)initWithFrame:(CGRect)frame position: (NSInteger) pos andLetter: (NSString *) letter
+
+
+- (id)initWithFrame:(CGRect)frame position: (NSInteger) pos andLetter: (NSString *) letter andState: (enum LetterButtonType) state
 {
     self = [super initWithFrame:frame];
     if (self)
@@ -28,32 +30,46 @@
         [self setTitle:letter forState:UIControlStateHighlighted];
         self.position = pos;
         self.selected = YES;
+        self.isButton = state;
         self.titleLabel.numberOfLines = 1;
         self.titleLabel.adjustsFontSizeToFitWidth = YES;
         self.titleLabel.lineBreakMode = NSLineBreakByClipping;
 
-        [self addTarget:self action:@selector(doIt) forControlEvents:UIControlEventTouchUpInside];
+        if(state == typeButton) [self addTarget:self action:@selector(doIt) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
 }
 
 - (IBAction)handlePan:(UIPanGestureRecognizer *)recognizer
 {
+    if(self.isButton == typeLabel) return;
+    
     CGPoint translation = [recognizer translationInView:self];
     
-    NSLog(@"tr: %f, %f", translation.x, translation.y);
+    NSLog(@"tr: %f, %f, %d", translation.x, translation.y, recognizer.state);
+    
+    if(recognizer.state == UIGestureRecognizerStateChanged)
+    {
+        
+    }
+    if(recognizer.state == UIGestureRecognizerStateEnded)
+    {
+        if(translation.y < -30.0f)
+        {
+            //confirm remove
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"RemoveLetter" object:[NSNumber numberWithInteger:self.position]];
+        }
+    }
+    
+    
     //recognizer.view.center = CGPointMake(recognizer.view.center.x + translation.x, recognizer.view.center.y + translation.y);
     
     //[recognizer setTranslation:CGPointMake(0, 0) inView:self];
 }
 
-/*- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    NSLog(@"event: %@", event);
-}*/
-
 - (void) doIt
 {
+    if(self.isButton == typeLabel) return;
 //    NSLog(@"yay!");
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"FlushButtons" object:[NSNumber numberWithInteger:self.position]];

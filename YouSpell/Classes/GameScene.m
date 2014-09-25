@@ -9,9 +9,7 @@
 #import "GameScene.h"
 #import "LetterButton.h"
 #import "WinLose.h"
-
-#define SPACE 300.0f
-#define INITIAL_LETTERSIZE 50.0f
+#import "AppConstants.h"
 
 @interface GameScene ()
 @end
@@ -54,7 +52,7 @@
         if(lSize > INITIAL_LETTERSIZE) lSize = INITIAL_LETTERSIZE;
         [self resizeLetters:lSize andNumberOfLetters:(float)keysArray.count+1];
         
-        LetterButton *l = [[LetterButton alloc] initWithFrame: [self calculateLetterPositionWithNumberOfLetters:(float)keysArray.count+1 andActualSize:lSize] position:keysArray.count+1 andLetter: buttonPressed.titleLabel.text];
+        LetterButton *l = [[LetterButton alloc] initWithFrame: [self calculateLetterPositionWithNumberOfLetters:(float)keysArray.count+1 andActualSize:lSize] position:keysArray.count+1 andLetter: buttonPressed.titleLabel.text andState:typeButton];
         
         [keysArray addObject: l];
         
@@ -95,8 +93,20 @@
     AudioServicesPlaySystemSound(sound);
 }
 
+-(void) presentMessage:(NSString *)message {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You Spell" message: message delegate: nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    
+    [alert show];
+}
+
 - (IBAction)finishedWord:(id)sender
 {
+    if(keysArray.count <= 0)
+    {
+        [self presentMessage:@"You have to type at least one character"];
+        return;
+    }
+    
     const char *wordArray = [self.theWord UTF8String];
     
     NSLog(@"GUESS SIZE: %i WORD SIZE: %lu", keysArray.count, strlen(wordArray));
@@ -128,7 +138,7 @@
             LetterButton *tGuessedLetter = (LetterButton *) [keysArray objectAtIndex:i];
             NSString* tCorrectLetter = [NSString stringWithFormat:@"%c" , wordArray[i]];
             
-            NSLog(@"Guess %i: %@ and Letter %i: %@",i, tGuessedLetter.titleLabel.text, i, tCorrectLetter);
+            //NSLog(@"Guess %i: %@ and Letter %i: %@",i, tGuessedLetter.titleLabel.text, i, tCorrectLetter);
             
             if([tCorrectLetter isEqualToString: tGuessedLetter.titleLabel.text]) correctionArray[i] = [NSNumber numberWithBool:YES];
             
@@ -140,7 +150,7 @@
     
     for (NSInteger k = 0; k < correctionArray.count ; k++)
     {
-        NSLog(@"Answer %i: %i", k, [correctionArray[k] boolValue]);
+        //NSLog(@"Answer %i: %i", k, [correctionArray[k] boolValue]);
         if(![correctionArray[k] boolValue]) gameWon = NO;
     }
     
@@ -152,29 +162,32 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSLog(@"won: %i", gameWon);
+    //NSLog(@"won: %i", gameWon);
     
     if ([[segue identifier] isEqualToString:@"CallWinLose"])
     {
-        NSLog(@"é a segue");
+        //NSLog(@"é a segue");
         
         // Get destination view
         WinLose *vc = [segue destinationViewController];
         
+        vc.word = [self.theWord cStringUsingEncoding:NSASCIIStringEncoding];
+        
         if(gameWon)
         {
             vc.didWon = YES;
+            
             NSInteger selectedTheme = [[[NSUserDefaults standardUserDefaults] objectForKey:@"selectedTheme"] intValue];
             NSInteger selectedWord = [[[NSUserDefaults standardUserDefaults] objectForKey:@"selectedWord"] intValue];
             NSMutableArray *scoreArray = [[[NSUserDefaults standardUserDefaults] objectForKey:@"Scores"] mutableCopy];
             
             NSMutableArray *subScoreArray = [[scoreArray objectAtIndex: selectedTheme] mutableCopy];
             
-            NSLog(@"1");
+            //NSLog(@"1");
             
             [subScoreArray setObject:[NSNumber numberWithBool:YES] atIndexedSubscript:selectedWord];
 //            subScoreArray[selectedWord] = [NSNumber numberWithBool:YES];
-            NSLog(@"2");
+            //NSLog(@"2");
             scoreArray[selectedTheme] = subScoreArray;
             
             [[NSUserDefaults standardUserDefaults] setObject:scoreArray forKey:@"Scores"];
@@ -216,12 +229,44 @@
     positionSelected = pos;
 }
 
+-(void) removeLetter:(NSNotification *) notification
+{
+    NSInteger removingButtonIndex = [(NSNumber *)[notification object] integerValue]-1;
+    
+    [keysArray[removingButtonIndex] removeFromSuperview];
+    [keysArray removeObjectAtIndex: removingButtonIndex];
+    
+    for (NSInteger y = 0; y < keysArray.count; y++)
+    {
+        LetterButton *tb =(LetterButton *)keysArray[y];
+        
+        tb.position = y+1;
+    }
+    
+    float lSize = INITIAL_LETTERSIZE;
+    
+    //NSLog(@"tenta ser um pouco inteligente: %f", keysSize);
+    
+    lSize = SPACE/(keysArray.count);
+    
+    if(lSize > INITIAL_LETTERSIZE) lSize = INITIAL_LETTERSIZE;
+    [self resizeLetters:lSize andNumberOfLetters:(float)keysArray.count];
+    
+    /*for (NSInteger y = 0; y < keysArray.count; y++)
+    {
+        LetterButton *tb =(LetterButton *)keysArray[y];
+        NSLog(@"at del: %@",tb.titleLabel.text);
+        NSLog(@"at del: %d",tb.position);
+    }*/
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleFlush:) name:@"FlushButtons" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeLetter:) name:@"RemoveLetter" object:nil];
     
     semanaquevem = 0;
     positionSelected = 0;

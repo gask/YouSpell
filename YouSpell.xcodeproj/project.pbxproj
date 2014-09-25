@@ -209,6 +209,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8551C3B019D3B94F00BA7402 /* AppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppConstants.h; path = Classes/AppConstants.h; sourceTree = "<group>"; };
 		B018E64F19CA6584000F1DDD /* DownloadMP3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadMP3.h; sourceTree = "<group>"; };
 		B018E65019CA6584000F1DDD /* DownloadMP3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadMP3.m; sourceTree = "<group>"; };
 		B018E65219CA788A000F1DDD /* alexia.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alexia.mp3; sourceTree = "<group>"; };
@@ -518,6 +519,7 @@
 		B0AA7A1219A560EB00C9C554 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8551C3B019D3B94F00BA7402 /* AppConstants.h */,
 				B0FFF7B019CBBA1700B1A50F /* Menu.h */,
 				B0FFF7B119CBBA1700B1A50F /* Menu.m */,
 				B018E64F19CA6584000F1DDD /* DownloadMP3.h */,
