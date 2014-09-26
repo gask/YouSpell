@@ -73,7 +73,7 @@
 
 - (NSIndexPath *) tableView: (UITableView *) tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"selecionei o %io botão!", indexPath.row+1);
+    //NSLog(@"selecionei o %io botão!", indexPath.row+1);
     selectedTheme = indexPath.row;
     
     [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:selectedTheme] forKey:@"selectedTheme"];
@@ -85,7 +85,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSLog(@"selectedTheme: %i", selectedTheme);
+    //NSLog(@"selectedTheme: %i", selectedTheme);
     
     if ([[segue identifier] isEqualToString:@"CallGameScene"])
     {

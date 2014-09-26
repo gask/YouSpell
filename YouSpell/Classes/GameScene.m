@@ -109,12 +109,12 @@
     
     const char *wordArray = [self.theWord UTF8String];
     
-    NSLog(@"GUESS SIZE: %i WORD SIZE: %lu", keysArray.count, strlen(wordArray));
+    //NSLog(@"GUESS SIZE: %i WORD SIZE: %lu", keysArray.count, strlen(wordArray));
     
     
     if(strlen(wordArray) >= keysArray.count)
     {
-        NSLog(@"guess bigger or equal.");
+        //NSLog(@"guess bigger or equal.");
         for (NSInteger k = 0; k < strlen(wordArray) ; k++) [correctionArray addObject: [NSNumber numberWithBool:NO]];
         
         for (NSInteger i = 0; i < keysArray.count ; i++)
@@ -122,7 +122,7 @@
             LetterButton *tGuessedLetter = (LetterButton *) [keysArray objectAtIndex:i];
             NSString* tCorrectLetter = [NSString stringWithFormat:@"%c" , wordArray[i]];
             
-            NSLog(@"Guess %i: %@ and Letter %i: %@",i, tGuessedLetter.titleLabel.text, i, tCorrectLetter);
+            //NSLog(@"Guess %i: %@ and Letter %i: %@",i, tGuessedLetter.titleLabel.text, i, tCorrectLetter);
             
             if([tCorrectLetter isEqualToString: tGuessedLetter.titleLabel.text]) correctionArray[i] = [NSNumber numberWithBool:YES];
             

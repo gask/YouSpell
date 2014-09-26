@@ -46,7 +46,7 @@
     
     CGPoint translation = [recognizer translationInView:self];
     
-    NSLog(@"tr: %f, %f, %d", translation.x, translation.y, recognizer.state);
+    //NSLog(@"tr: %f, %f, %d", translation.x, translation.y, recognizer.state);
     
     if(recognizer.state == UIGestureRecognizerStateChanged)
     {

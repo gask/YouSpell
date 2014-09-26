@@ -49,8 +49,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self setModalPresentationStyle:UIModalPresentationCurrentContext];
+    //[self setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+    
     rightWordLetters = [NSMutableArray array];
-    NSLog(@"pernambucano também: %s com tam: %lu", self.word, strlen(self.word));
+    //NSLog(@"pernambucano também: %s com tam: %lu", self.word, strlen(self.word));
     float lSize = INITIAL_LETTERSIZE;
     
     lSize = SPACE/(strlen(self.word));
@@ -60,7 +63,7 @@
     
     for(NSInteger i = 0 ; i < strlen(self.word) ; i++)
     {
-        NSLog(@"%d",i);
+        //NSLog(@"%d",i);
         LetterButton *l = [[LetterButton alloc] initWithFrame: CGRectMake(0,0,0,0) position:i andLetter: [NSString stringWithFormat:@"%c" , self.word[i]] andState:typeLabel];
         
         [rightWordLetters addObject:l];
