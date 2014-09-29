@@ -9,6 +9,8 @@
 #import "WinLose.h"
 #import "LetterButton.h"
 #import "AppConstants.h"
+#import "DefinitionView.h"
+
 
 @interface WinLose ()
 
@@ -18,6 +20,8 @@
 
 @synthesize feedback;
 @synthesize word;
+@synthesize transitionController;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -44,12 +48,22 @@
     }
 }
 
+- (IBAction)displaySecondVC:(id)sender
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+    DefinitionView *vc = [storyboard instantiateViewControllerWithIdentifier:@"DefinitionVC"];
+    vc.view.backgroundColor = [UIColor clearColor];
+    [vc setTransitioningDelegate:transitionController];
+    vc.modalPresentationStyle= UIModalPresentationCustom;
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self setModalPresentationStyle:UIModalPresentationCurrentContext];
+    //[self setModalPresentationStyle:UIModalPresentationCurrentContext];
     //[self setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
     
     rightWordLetters = [NSMutableArray array];

@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TransitionDelegate.h"
 
 @interface WinLose : UIViewController
 {
     NSMutableArray *rightWordLetters;
 }
+
 @property (nonatomic) IBOutlet UILabel *feedback;
 @property (nonatomic) BOOL didWon;
 @property (nonatomic) const char *word;
+@property (nonatomic, strong) TransitionDelegate *transitionController;
 
 @end

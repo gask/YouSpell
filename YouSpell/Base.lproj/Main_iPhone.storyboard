@@ -459,13 +459,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEO-mh-ry4">
-                                <rect key="frame" x="128" y="331" width="65" height="30"/>
+                                <rect key="frame" x="128" y="362" width="65" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Definition">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="wWq-0A-4B1" kind="modal" identifier="AskForDefinition" modalTransitionStyle="flipHorizontal" id="oa6-u4-GUe"/>
+                                    <action selector="displaySecondVC:" destination="JLt-Mk-BIj" eventType="touchUpInside" id="uHO-em-VKL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -477,60 +477,51 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fsP-xL-yFd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="800" y="9"/>
+            <point key="canvasLocation" x="657" y="-47"/>
         </scene>
         <!--Definition View-->
-        <scene sceneID="ckQ-gZ-z7z">
+        <scene sceneID="ix3-po-yWr">
             <objects>
-                <viewController id="wWq-0A-4B1" customClass="DefinitionView" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DefinitionVC" id="mgA-D7-R8j" customClass="DefinitionView" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mmG-fC-HSL"/>
-                        <viewControllerLayoutGuide type="bottom" id="JrA-2t-fZr"/>
+                        <viewControllerLayoutGuide type="top" id="FKU-ET-DVT"/>
+                        <viewControllerLayoutGuide type="bottom" id="f8r-vL-uq1"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="VtV-i0-glz">
+                    <view key="view" contentMode="scaleToFill" id="ZN6-D4-hd6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qP6-pc-BJS">
-                                <rect key="frame" x="20" y="134" width="280" height="300"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.019390358060000001" green="0.34922561870000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wjW-d2-zUM">
+                                <rect key="frame" x="10" y="134" width="300" height="300"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.30776780829794737" green="0.62126134698239033" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jbb-1E-6Xr">
-                                <rect key="frame" x="139" y="147" width="42" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="7HW-FT-69d">
+                                <rect key="frame" x="20" y="144" width="280" height="280"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Vodka ou água de coco, pra mim tanto faz, eu já tô cheio de tesão e cada vez eu quero MAAAAAAAAAAA-AIS, cada vez eu quero MAAAAAAAAAAIS. Um. Dois. Três. Pra ficar legal eu jogo a porra lá no ALTO! ALTO CIMA ALTO CIMA ALTO CIMA. EM CIMA! EM CIMA! EM CIMA! ALTO CIMA ALTO CIMA ALTO. EM CIMA! EM CIMA! EM CIMA! :)</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="99" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="m13-eV-3HD">
-                                <rect key="frame" x="20" y="176" width="280" height="216"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Label is a label which is a label very labeling the other labels that points out to selling labels that sell them out without even asking the leave to other labels. Label is a label which is a label very labeling the other labels that points out to selling labels that sell them out without even asking the leave to other labels.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgR-jo-tW5">
-                                <rect key="frame" x="254" y="377" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JpE-6i-Grb">
+                                <rect key="frame" x="254" y="394" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="OK">
-                                    <color key="titleColor" red="1" green="0.94771746402143442" blue="0.041208979384016353" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="dismissDefinition:" destination="wWq-0A-4B1" eventType="touchUpInside" id="ypB-iH-kHH"/>
+                                    <segue destination="JLt-Mk-BIj" kind="modal" id="Jdh-vX-b9j"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Umi-tw-GNC"/>
-                    <size key="freeformSize" width="300" height="300"/>
+                    <navigationItem key="navigationItem" id="bbS-JH-fWn"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mRD-6R-mRR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uIS-iq-byv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1223" y="277"/>
+            <point key="canvasLocation" x="1201" y="-77"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -538,4 +529,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="Jdh-vX-b9j"/>
+    </inferredMetricsTieBreakers>
 </document>

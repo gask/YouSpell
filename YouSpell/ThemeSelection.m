@@ -51,7 +51,7 @@
     
     for (NSInteger i = 0 ; i < userScore.count; i++)
     {
-        NSLog(@"tema %i: %@", i+1, themeNames[i]);
+        //NSLog(@"tema %i: %@", i+1, themeNames[i]);
         NSMutableArray *themeWords = [[userScore objectAtIndex:i] mutableCopy];
         [themeTotals addObject:[NSNumber numberWithInt:themeWords.count]];
         
@@ -59,7 +59,7 @@
         for (NSInteger k = 0; k < themeWords.count; k++)
         {
             BOOL scoreValue = [[themeWords objectAtIndex:k] boolValue];
-            NSLog(@"%i",scoreValue);
+            //NSLog(@"%i",scoreValue);
             if(scoreValue) themeScore++;
         }
         [themeScores addObject: [NSNumber numberWithInt:themeScore]];
@@ -93,7 +93,7 @@
         GameScene *vc = [segue destinationViewController];
         
         int r = arc4random_uniform(WORDS_PER_THEME);
-        NSLog(@"selected Word: %i", r);
+        //NSLog(@"selected Word: %i", r);
         
         [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:r] forKey:@"selectedWord"];
         
