@@ -10,4 +10,9 @@
 
 @interface DefinitionView : UIViewController
 
+@property (strong, nonatomic) NSString *word;
+@property (strong, nonatomic) NSString *definition;
+@property (strong, nonatomic) IBOutlet UILabel *definitionLabel;
+@property (strong, nonatomic) IBOutlet UILabel *wordLabel;
+
 @end

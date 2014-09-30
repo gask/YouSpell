@@ -45,7 +45,7 @@
         for (int k = 0; k <  innerArray.count; k++)
         {
             NSString *startingString = @"http://tts-api.com/tts.mp3?q=";
-            NSString *word = [[innerArray objectAtIndex:k] lowercaseString];
+            NSString *word = [[[innerArray objectAtIndex:k] objectForKey:@"word"] lowercaseString];
             NSLog(@"word being downloaded: %@",word);
             
             NSURL *url = [NSURL URLWithString: [startingString stringByAppendingString: word]];

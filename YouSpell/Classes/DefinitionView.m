@@ -7,6 +7,7 @@
 //
 
 #import "DefinitionView.h"
+#import "WinLose.h"
 
 @interface DefinitionView ()
 
@@ -27,8 +28,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    [self setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+    //NSLog(@"4 5 6");
+    self.definitionLabel.text = self.definition;
+    self.wordLabel.text = self.word;
+    //[self setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,9 +40,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)dismissDefinition:(id)sender
+- (IBAction)dismissDefinitionVC:(id)sender
 {
-    [self dismissViewControllerAnimated:YES completion:Nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*

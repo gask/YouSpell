@@ -97,7 +97,7 @@
         
         [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:r] forKey:@"selectedWord"];
         
-        vc.theWord = [[[wordsArray objectAtIndex:selectedTheme] objectAtIndex:r] uppercaseString];
+        vc.theWord = [[[[wordsArray objectAtIndex:selectedTheme] objectAtIndex:r] objectForKey:@"word"] uppercaseString];
     }
 }
 

@@ -50,9 +50,21 @@
 
 - (IBAction)displaySecondVC:(id)sender
 {
+    //NSLog(@"1 2 3");
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+    //NSLog(@"1- 2 3");
     DefinitionView *vc = [storyboard instantiateViewControllerWithIdentifier:@"DefinitionVC"];
+    //NSLog(@"1 2- 3");
+    vc.word = self.stringWord;
+    
+    vc.definition = [NSString stringWithFormat: @"%@ é uma palavra muito bonita, que tem nas suas raízes vodka ou água de coco, pra mim tanto faz, eu já tô cheio de tesão e cada vez eu quero MAAAAAAAAAAA-AIS, cada vez eu quero MAAAAAAAAAAIS. Um. Dois. Três. Pra ficar legal eu jogo a porra lá no ALTO! ALTO CIMA ALTO CIMA ALTO CIMA. EM CIMA! EM CIMA! EM CIMA! ALTO CIMA ALTO CIMA ALTO. EM CIMA! EM CIMA! EM CIMA! :)", vc.word];
+    
     vc.view.backgroundColor = [UIColor clearColor];
+    //NSLog(@"1 2 3-");
+    
+    //NSLog(@"word before def: %@", [NSString stringWithUTF8String:self.word]);
+    
+    
     [vc setTransitioningDelegate:transitionController];
     vc.modalPresentationStyle= UIModalPresentationCustom;
     [self presentViewController:vc animated:YES completion:nil];
@@ -63,14 +75,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    //[self setModalPresentationStyle:UIModalPresentationCurrentContext];
-    //[self setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+    self.stringWord = [NSString stringWithUTF8String:self.word];
+    self.transitionController = [[TransitionDelegate alloc] init];
     
     rightWordLetters = [NSMutableArray array];
     //NSLog(@"pernambucano também: %s com tam: %lu", self.word, strlen(self.word));
     float lSize = INITIAL_LETTERSIZE;
     
     lSize = SPACE/(strlen(self.word));
+    
     
     if(lSize > INITIAL_LETTERSIZE) lSize = INITIAL_LETTERSIZE;
     //

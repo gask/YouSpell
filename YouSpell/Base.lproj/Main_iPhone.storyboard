@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="29M-58-mOO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="29M-58-mOO">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -451,6 +451,9 @@
                                 <state key="normal" title="OK">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="29M-58-mOO" kind="modal" id="ZGQ-Gu-sIi"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="181" translatesAutoresizingMaskIntoConstraints="NO" id="qwG-WN-dVO">
                                 <rect key="frame" x="70" y="78" width="181" height="95"/>
@@ -496,11 +499,10 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.30776780829794737" green="0.62126134698239033" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="7HW-FT-69d">
-                                <rect key="frame" x="20" y="144" width="280" height="280"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vodka" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="7HW-FT-69d">
+                                <rect key="frame" x="20" y="144" width="280" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Vodka ou água de coco, pra mim tanto faz, eu já tô cheio de tesão e cada vez eu quero MAAAAAAAAAAA-AIS, cada vez eu quero MAAAAAAAAAAIS. Um. Dois. Três. Pra ficar legal eu jogo a porra lá no ALTO! ALTO CIMA ALTO CIMA ALTO CIMA. EM CIMA! EM CIMA! EM CIMA! ALTO CIMA ALTO CIMA ALTO. EM CIMA! EM CIMA! EM CIMA! :)</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -511,13 +513,25 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="JLt-Mk-BIj" kind="modal" id="Jdh-vX-b9j"/>
+                                    <action selector="dismissDefinitionVC:" destination="mgA-D7-R8j" eventType="touchUpInside" id="O8i-Rq-ZQu"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="A7W-Y6-STp">
+                                <rect key="frame" x="20" y="171" width="280" height="248"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Vodka ou água de coco, pra mim tanto faz, eu já tô cheio de tesão e cada vez eu quero MAAAAAAAAAAA-AIS, cada vez eu quero MAAAAAAAAAAIS. Um. Dois. Três. Pra ficar legal eu jogo a porra lá no ALTO! ALTO CIMA ALTO CIMA ALTO CIMA. EM CIMA! EM CIMA! EM CIMA! ALTO CIMA ALTO CIMA ALTO. EM CIMA! EM CIMA! EM CIMA! :)</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="bbS-JH-fWn"/>
+                    <connections>
+                        <outlet property="definitionLabel" destination="A7W-Y6-STp" id="Ihh-1z-row"/>
+                        <outlet property="wordLabel" destination="7HW-FT-69d" id="4sh-XO-9PM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uIS-iq-byv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -529,7 +543,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="Jdh-vX-b9j"/>
-    </inferredMetricsTieBreakers>
 </document>

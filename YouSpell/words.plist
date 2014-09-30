@@ -3,10 +3,25 @@
 <plist version="1.0">
 <array>
 	<array>
-		<string>Dog</string>
-		<string>Cat</string>
-		<string>Worm</string>
-		<string>Bird</string>
+		<dict>
+			<key>word</key>
+			<string>Dog</string>
+			<key>definition</key>
+			<string>n.m. an animal lalalala.</string>
+		</dict>
+		<dict>
+			<key>word</key>
+			<string>Cat</string>
+			<key>definition</key>
+			<string>sn cat car cat</string>
+		</dict>
+		<dict>
+			<key>word</key>
+			<string>Worm</string>
+			<key>definition</key>
+			<string>wormo womes woman yes</string>
+		</dict>
+		<dict/>
 		<string>Peacock</string>
 		<string>Serpent</string>
 	</array>
