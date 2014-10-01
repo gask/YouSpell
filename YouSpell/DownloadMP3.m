@@ -37,7 +37,7 @@
     
     
     
-    wordsArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"words" ofType:@"plist"]];
+    wordsArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"giovannao" ofType:@"plist"]];
     
     for (int i = 0; i < wordsArray.count; i++)
     {
@@ -48,7 +48,7 @@
             NSString *word = [[[innerArray objectAtIndex:k] objectForKey:@"word"] lowercaseString];
             NSLog(@"word being downloaded: %@",word);
             
-            NSURL *url = [NSURL URLWithString: [startingString stringByAppendingString: word]];
+            /*NSURL *url = [NSURL URLWithString: [startingString stringByAppendingString: word]];
             
             // NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
             
@@ -82,7 +82,7 @@
             
             [dataTask resume];
             
-        }
+        */}
     }
     
     

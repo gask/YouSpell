@@ -26,22 +26,25 @@
     wordsArray = [[NSMutableArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"words" ofType:@"plist"]] mutableCopy];
     selectedTheme = -1;
     themeNames = [NSMutableArray arrayWithObjects:
-                  @"Animals",
-                  @"Games",
                   @"Body Parts",
-                  @"Cars",
-                  @"Colors",
+                  @"Animals",
                   @"Countries",
-                  @"Enterprises",
-                  @"Flowers???",
+                  @"Colors",
+                  @"Objects",
                   @"Fruits",
-                  @"Globe???",
-                  @"Case???",
-                  @"Movies",
+                  @"Cars",
                   @"Bands",
-                  @"Utils",
+                  @"Movies",
                   @"Soccer Teams",
-                  @"Sports",
+                  @"Other Teams",
+                  @"Enterprises",
+                  @"Body Parts 2",
+                  @"Enterprises 2",
+                  @"Countries 2",
+                  @"Movies 2",
+                  @"Soccer Teams 2",
+                  @"Countries 3",
+                  @"Animals 2",
                   nil];
     
     themeScores = [NSMutableArray array];
@@ -92,7 +95,7 @@
         // Get destination view
         GameScene *vc = [segue destinationViewController];
         
-        int r = arc4random_uniform(WORDS_PER_THEME);
+        int r = arc4random_uniform([[wordsArray objectAtIndex:selectedTheme] count]);
         //NSLog(@"selected Word: %i", r);
         
         [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:r] forKey:@"selectedWord"];

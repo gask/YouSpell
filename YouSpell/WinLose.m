@@ -57,7 +57,9 @@
     //NSLog(@"1 2- 3");
     vc.word = self.stringWord;
     
-    vc.definition = [NSString stringWithFormat: @"%@ é uma palavra muito bonita, que tem nas suas raízes vodka ou água de coco, pra mim tanto faz, eu já tô cheio de tesão e cada vez eu quero MAAAAAAAAAAA-AIS, cada vez eu quero MAAAAAAAAAAIS. Um. Dois. Três. Pra ficar legal eu jogo a porra lá no ALTO! ALTO CIMA ALTO CIMA ALTO CIMA. EM CIMA! EM CIMA! EM CIMA! ALTO CIMA ALTO CIMA ALTO. EM CIMA! EM CIMA! EM CIMA! :)", vc.word];
+    NSArray *wordsArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"words" ofType:@"plist"]];
+    
+    vc.definition = [NSString stringWithFormat: @"%@", @"sss"];
     
     vc.view.backgroundColor = [UIColor clearColor];
     //NSLog(@"1 2 3-");

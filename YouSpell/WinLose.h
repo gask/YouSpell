@@ -18,6 +18,7 @@
 @property (nonatomic) BOOL didWon;
 @property (nonatomic) const char *word;
 @property (nonatomic) NSString *stringWord;
+
 @property (nonatomic, strong) TransitionDelegate *transitionController;
 
 @end
