@@ -14,7 +14,6 @@
 		B018E78519CA7A58000F1DDD /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0AA79EC19A55FD300C9C554 /* Main_iPad.storyboard */; };
 		B018E78819CA7C1B000F1DDD /* WinLose.m in Sources */ = {isa = PBXBuildFile; fileRef = B018E78719CA7C1B000F1DDD /* WinLose.m */; };
 		B022200819DB890000CC15A5 /* words.plist in Resources */ = {isa = PBXBuildFile; fileRef = B022200719DB890000CC15A5 /* words.plist */; };
-		B022200A19DB8AC800CC15A5 /* missing.plist in Resources */ = {isa = PBXBuildFile; fileRef = B022200919DB8AC800CC15A5 /* missing.plist */; };
 		B02223F919DB996F00CC15A5 /* abdomen.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B022200B19DB996500CC15A5 /* abdomen.mp3 */; };
 		B02223FA19DB996F00CC15A5 /* accent.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B022200C19DB996500CC15A5 /* accent.mp3 */; };
 		B02223FB19DB996F00CC15A5 /* accenture.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B022200D19DB996500CC15A5 /* accenture.mp3 */; };
@@ -1085,7 +1084,6 @@
 		B018E78619CA7C1B000F1DDD /* WinLose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinLose.h; sourceTree = "<group>"; };
 		B018E78719CA7C1B000F1DDD /* WinLose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WinLose.m; sourceTree = "<group>"; };
 		B022200719DB890000CC15A5 /* words.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words.plist; sourceTree = "<group>"; };
-		B022200919DB8AC800CC15A5 /* missing.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = missing.plist; sourceTree = "<group>"; };
 		B022200B19DB996500CC15A5 /* abdomen.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = abdomen.mp3; sourceTree = "<group>"; };
 		B022200C19DB996500CC15A5 /* accent.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = accent.mp3; sourceTree = "<group>"; };
 		B022200D19DB996500CC15A5 /* accenture.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = accenture.mp3; sourceTree = "<group>"; };
@@ -3312,7 +3310,6 @@
 				B02227E719DB99AF00CC15A5 /* Sounds */,
 				B0F8143819C4EC8100D34B17 /* Stuff */,
 				B0F8142719C4E59200D34B17 /* iPhone-Letter.xib */,
-				B022200919DB8AC800CC15A5 /* missing.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -4387,7 +4384,6 @@
 				B022264019DB997000CC15A5 /* mexico.mp3 in Resources */,
 				B0CFBC5719C61BFA0053F02F /* a4.png in Resources */,
 				B022257019DB997000CC15A5 /* greece.mp3 in Resources */,
-				B022200A19DB8AC800CC15A5 /* missing.plist in Resources */,
 				B022256B19DB997000CC15A5 /* gorillaz.mp3 in Resources */,
 				B022246519DB997000CC15A5 /* blondie.mp3 in Resources */,
 				B022246119DB997000CC15A5 /* blackrock.mp3 in Resources */,

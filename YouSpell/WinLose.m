@@ -10,6 +10,7 @@
 #import "LetterButton.h"
 #import "AppConstants.h"
 #import "DefinitionView.h"
+#import "GameScene.h"
 
 
 @interface WinLose ()
@@ -48,8 +49,60 @@
     }
 }
 
+- (IBAction)nextWord:(id)sender
+{
+    [self performSegueWithIdentifier:@"CallNextWord" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    //NSLog(@"selectedTheme: %i", selectedTheme);
+    
+    if ([[segue identifier] isEqualToString:@"CallNextWord"])
+    {
+        // Get destination view
+        GameScene *vc = [segue destinationViewController];
+        
+        NSMutableArray *wordsToBeTried = [[[NSUserDefaults standardUserDefaults] objectForKey:@"wordsToBeTried"] mutableCopy];
+        
+        if(!self.didWon)
+        {
+            // reinicia palavras do tema //
+            
+            wordsToBeTried = [NSMutableArray array];
+            for (NSInteger x = 0; x < [[wordsArray objectAtIndex:selectedTheme] count] ; x++)
+            {
+                [wordsToBeTried addObject:[NSNumber numberWithInt:x]];
+            }
+
+        }
+        
+        //NSLog(@"wtbt: %@", wordsToBeTried);
+        
+        int r = arc4random_uniform([wordsToBeTried count]);
+        
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:r] forKey:@"selectedWord"];
+        
+        NSInteger index = [[wordsToBeTried objectAtIndex:r] integerValue];
+        //NSLog(@"selected Word: %i", index);
+        
+        
+        vc.theWord = [[[[wordsArray objectAtIndex:selectedTheme] objectAtIndex:index] objectForKey:@"word"] uppercaseString];
+        
+        //vc.theWord = [[[[wordsArray objectAtIndex:selectedTheme] objectAtIndex:r] objectForKey:@"word"] uppercaseString];
+        
+        [wordsToBeTried removeObjectAtIndex:r];
+        
+        //NSLog(@"%@", wordsToBeTried);
+        [[NSUserDefaults standardUserDefaults] setObject:wordsToBeTried forKey: @"wordsToBeTried"];
+    }
+    
+    //isReseting = YES;
+}
+
 - (IBAction)displaySecondVC:(id)sender
 {
+    
     //NSLog(@"1 2 3");
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
     //NSLog(@"1- 2 3");
@@ -57,10 +110,8 @@
     //NSLog(@"1 2- 3");
     vc.word = self.stringWord;
     
-    NSArray *wordsArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"words" ofType:@"plist"]];
-    NSInteger selTheme = [[[NSUserDefaults standardUserDefaults] objectForKey:@"selectedTheme"] integerValue];
     NSInteger selWord = [[[NSUserDefaults standardUserDefaults] objectForKey:@"selectedWord"] integerValue];
-    NSDictionary *td = [[wordsArray objectAtIndex: selTheme] objectAtIndex:selWord];
+    NSDictionary *td = [[wordsArray objectAtIndex: selectedTheme] objectAtIndex:selWord];
     //NSLog(@"def: %@", [td objectForKey:@"definition"]);
     NSString *selectedDefinition = [td objectForKey:@"definition"];
     //NSLog(@"def: %@", selectedDefinition);
@@ -83,9 +134,42 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    wordsArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"words" ofType:@"plist"]];
+    NSMutableArray *wordsToBeTried = [[[NSUserDefaults standardUserDefaults] objectForKey:@"wordsToBeTried"] mutableCopy];
+    selectedTheme = [[[NSUserDefaults standardUserDefaults] objectForKey:@"selectedTheme"] integerValue];
+    NSInteger themeWords = [[wordsArray objectAtIndex:selectedTheme] count];
+    
+    float percentage = 0.0f;
+    
+    self.view.autoresizesSubviews = NO;
+    
+    CGRect frame = CGRectMake(40, 54, 240, 10);
+    
+    if(self.didWon)
+    {
+        percentage = (float)(themeWords-wordsToBeTried.count)/themeWords;
+        self.nextWordBtn.titleLabel.text = @"Next word";
+        self.progressPerc.text = [NSString stringWithFormat:@"%.0f%%", percentage*100];
+        
+        frame.size.width *= percentage;
+    }
+    else
+    {
+        percentage = (float)(themeWords-wordsToBeTried.count-1)/themeWords;
+        self.nextWordBtn.titleLabel.text = @"Restart";
+        self.progressPerc.text = [NSString stringWithFormat:@"%.0f%%", percentage*100];
+        
+        frame.size.width *= percentage;
+    }
+    
+    UIView *bar = [[UIView alloc] initWithFrame: frame];
+    bar.backgroundColor = [UIColor greenColor];
+    [self.view addSubview:bar];
     
     self.stringWord = [NSString stringWithUTF8String:self.word];
     self.transitionController = [[TransitionDelegate alloc] init];
+    
+    self.themeLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"selectedThemeName"];
     
     rightWordLetters = [NSMutableArray array];
     //NSLog(@"pernambucano também: %s com tam: %lu", self.word, strlen(self.word));
@@ -110,6 +194,7 @@
     
     if(self.didWon) self.feedback.text = @"YAY! You won! :)";
     else self.feedback.text = @"Sorry, better luck next time :(";
+    
 }
 
 - (CGRect) calculateLetterPositionWithNumberOfLetters: (float) numberOfLetters andActualSize: (float)size

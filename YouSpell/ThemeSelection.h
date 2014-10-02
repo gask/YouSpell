@@ -16,7 +16,7 @@
     NSInteger selectedTheme;
     
     NSMutableArray *themeNames;
-    NSMutableArray *wordsArray;
+    NSArray *wordsArray;
     NSMutableArray *userScore;
     NSMutableArray *themeScores;
     NSMutableArray *themeTotals;

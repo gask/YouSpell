@@ -23,7 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    wordsArray = [[NSMutableArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"words" ofType:@"plist"]] mutableCopy];
+    wordsArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"words" ofType:@"plist"]];
     selectedTheme = -1;
     themeNames = [NSMutableArray arrayWithObjects:
                   @"Body Parts",
@@ -80,6 +80,7 @@
     selectedTheme = indexPath.row;
     
     [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:selectedTheme] forKey:@"selectedTheme"];
+    [[NSUserDefaults standardUserDefaults] setObject: [themeNames objectAtIndex:selectedTheme] forKey:@"selectedThemeName"];
     
     [self performSegueWithIdentifier:@"CallGameScene" sender:self];
     
@@ -96,7 +97,17 @@
         GameScene *vc = [segue destinationViewController];
         
         int r = arc4random_uniform([[wordsArray objectAtIndex:selectedTheme] count]);
-        //NSLog(@"selected Word: %i", r);
+        NSLog(@"selected Word: %i", r);
+        
+        NSMutableArray *wordsToBeTried = [NSMutableArray array];
+        for (NSInteger x = 0; x < [[wordsArray objectAtIndex:selectedTheme] count] ; x++)
+        {
+            [wordsToBeTried addObject:[NSNumber numberWithInt:x]];
+        }
+        
+        [wordsToBeTried removeObjectAtIndex:r];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:wordsToBeTried forKey:@"wordsToBeTried"];
         
         [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:r] forKey:@"selectedWord"];
         
