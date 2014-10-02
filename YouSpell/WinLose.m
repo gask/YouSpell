@@ -58,8 +58,14 @@
     vc.word = self.stringWord;
     
     NSArray *wordsArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"words" ofType:@"plist"]];
+    NSInteger selTheme = [[[NSUserDefaults standardUserDefaults] objectForKey:@"selectedTheme"] integerValue];
+    NSInteger selWord = [[[NSUserDefaults standardUserDefaults] objectForKey:@"selectedWord"] integerValue];
+    NSDictionary *td = [[wordsArray objectAtIndex: selTheme] objectAtIndex:selWord];
+    //NSLog(@"def: %@", [td objectForKey:@"definition"]);
+    NSString *selectedDefinition = [td objectForKey:@"definition"];
+    //NSLog(@"def: %@", selectedDefinition);
     
-    vc.definition = [NSString stringWithFormat: @"%@", @"sss"];
+    vc.definition = [NSString stringWithFormat: @"%@", selectedDefinition];
     
     vc.view.backgroundColor = [UIColor clearColor];
     //NSLog(@"1 2 3-");
@@ -76,6 +82,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     
     self.stringWord = [NSString stringWithUTF8String:self.word];
     self.transitionController = [[TransitionDelegate alloc] init];

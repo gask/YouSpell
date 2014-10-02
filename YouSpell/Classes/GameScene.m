@@ -276,7 +276,7 @@
     
     gameWon = YES;
     
-    NSLog(@"the Word: %@", self.theWord);
+    //NSLog(@"the Word: %@", self.theWord);
     
     NSURL *soundURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:[self.theWord lowercaseString] ofType:@"mp3"]];
     
