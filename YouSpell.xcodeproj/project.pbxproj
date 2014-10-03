@@ -1029,6 +1029,11 @@
 		B02227F519DB9C5600CC15A5 /* a19.png in Resources */ = {isa = PBXBuildFile; fileRef = B02227EE19DB9C5600CC15A5 /* a19.png */; };
 		B02227F619DB9D7100CC15A5 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B0AA7A1019A560E700C9C554 /* GameScene.m */; };
 		B094960B19DA4A0E000BEB9F /* DownloadWords.m in Sources */ = {isa = PBXBuildFile; fileRef = B094960A19DA4A0E000BEB9F /* DownloadWords.m */; };
+		B096CC7A19DDEE0B00168EEE /* back-pattern.png in Resources */ = {isa = PBXBuildFile; fileRef = B096CC7919DDEE0B00168EEE /* back-pattern.png */; };
+		B096CC7C19DDF0FC00168EEE /* back-pattern50.png in Resources */ = {isa = PBXBuildFile; fileRef = B096CC7B19DDF0FB00168EEE /* back-pattern50.png */; };
+		B096CC7E19DDF18200168EEE /* back72.png in Resources */ = {isa = PBXBuildFile; fileRef = B096CC7D19DDF18200168EEE /* back72.png */; };
+		B096CC8019DE070500168EEE /* symbol.png in Resources */ = {isa = PBXBuildFile; fileRef = B096CC7F19DE070500168EEE /* symbol.png */; };
+		B096CC8219DE094400168EEE /* Theme0.png in Resources */ = {isa = PBXBuildFile; fileRef = B096CC8119DE094400168EEE /* Theme0.png */; };
 		B0AA79D819A55FD300C9C554 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0AA79D719A55FD300C9C554 /* Foundation.framework */; };
 		B0AA79DA19A55FD300C9C554 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0AA79D919A55FD300C9C554 /* CoreGraphics.framework */; };
 		B0AA79DC19A55FD300C9C554 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0AA79DB19A55FD300C9C554 /* UIKit.framework */; };
@@ -2099,6 +2104,11 @@
 		B02227EE19DB9C5600CC15A5 /* a19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = a19.png; sourceTree = "<group>"; };
 		B094960919DA4A0E000BEB9F /* DownloadWords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadWords.h; sourceTree = "<group>"; };
 		B094960A19DA4A0E000BEB9F /* DownloadWords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadWords.m; sourceTree = "<group>"; };
+		B096CC7919DDEE0B00168EEE /* back-pattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-pattern.png"; sourceTree = "<group>"; };
+		B096CC7B19DDF0FB00168EEE /* back-pattern50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-pattern50.png"; sourceTree = "<group>"; };
+		B096CC7D19DDF18200168EEE /* back72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back72.png; sourceTree = "<group>"; };
+		B096CC7F19DE070500168EEE /* symbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = symbol.png; sourceTree = "<group>"; };
+		B096CC8119DE094400168EEE /* Theme0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Theme0.png; sourceTree = "<group>"; };
 		B0AA79D419A55FD300C9C554 /* YouSpell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouSpell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0AA79D719A55FD300C9C554 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B0AA79D919A55FD300C9C554 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -3307,6 +3317,11 @@
 		B0F8142919C4EC5200D34B17 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B096CC8119DE094400168EEE /* Theme0.png */,
+				B096CC7F19DE070500168EEE /* symbol.png */,
+				B096CC7919DDEE0B00168EEE /* back-pattern.png */,
+				B096CC7D19DDF18200168EEE /* back72.png */,
+				B096CC7B19DDF0FB00168EEE /* back-pattern50.png */,
 				B02227E719DB99AF00CC15A5 /* Sounds */,
 				B0F8143819C4EC8100D34B17 /* Stuff */,
 				B0F8142719C4E59200D34B17 /* iPhone-Letter.xib */,
@@ -3685,6 +3700,7 @@
 				B02227A319DB997000CC15A5 /* tuvalu.mp3 in Resources */,
 				B022254619DB997000CC15A5 /* fuchsia.mp3 in Resources */,
 				B02227CF19DB997000CC15A5 /* weasel.mp3 in Resources */,
+				B096CC7E19DDF18200168EEE /* back72.png in Resources */,
 				B022276119DB997000CC15A5 /* sudan.mp3 in Resources */,
 				B022277E19DB997000CC15A5 /* thorax.mp3 in Resources */,
 				B0CFBC5E19C61BFA0053F02F /* a9.png in Resources */,
@@ -3723,6 +3739,7 @@
 				B022273E19DB997000CC15A5 /* skunk.mp3 in Resources */,
 				B022267719DB997000CC15A5 /* nike.mp3 in Resources */,
 				B022257B19DB997000CC15A5 /* guinea.mp3 in Resources */,
+				B096CC8219DE094400168EEE /* Theme0.png in Resources */,
 				B022251419DB997000CC15A5 /* equinox.mp3 in Resources */,
 				B022274419DB997000CC15A5 /* slovakia.mp3 in Resources */,
 				B022252219DB997000CC15A5 /* exorcist.mp3 in Resources */,
@@ -4036,6 +4053,7 @@
 				B022277819DB997000CC15A5 /* testicles.mp3 in Resources */,
 				B02224BC19DB997000CC15A5 /* chipmunk.mp3 in Resources */,
 				B022262119DB997000CC15A5 /* malta.mp3 in Resources */,
+				B096CC8019DE070500168EEE /* symbol.png in Resources */,
 				B022272D19DB997000CC15A5 /* sharks.mp3 in Resources */,
 				B022248B19DB997000CC15A5 /* burlywood.mp3 in Resources */,
 				B022263419DB997000CC15A5 /* mazda.mp3 in Resources */,
@@ -4163,6 +4181,7 @@
 				B022260319DB997000CC15A5 /* linen.mp3 in Resources */,
 				B022241319DB996F00CC15A5 /* andorra.mp3 in Resources */,
 				B022241B19DB996F00CC15A5 /* aorta.mp3 in Resources */,
+				B096CC7A19DDEE0B00168EEE /* back-pattern.png in Resources */,
 				B02226F419DB997000CC15A5 /* red.mp3 in Resources */,
 				B022250C19DB997000CC15A5 /* elbow.mp3 in Resources */,
 				B022276D19DB997000CC15A5 /* taiwan.mp3 in Resources */,
@@ -4301,6 +4320,7 @@
 				B022249C19DB997000CC15A5 /* carrefour.mp3 in Resources */,
 				B02224A719DB997000CC15A5 /* cerebellum.mp3 in Resources */,
 				B022278219DB997000CC15A5 /* thymus.mp3 in Resources */,
+				B096CC7C19DDF0FC00168EEE /* back-pattern50.png in Resources */,
 				B022254819DB997000CC15A5 /* fujitsu.mp3 in Resources */,
 				B02226D219DB997000CC15A5 /* porto.mp3 in Resources */,
 				B02224CB19DB997000CC15A5 /* collateral.mp3 in Resources */,
