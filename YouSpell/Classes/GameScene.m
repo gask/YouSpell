@@ -67,7 +67,7 @@
 {    
     float xPosition = self.view.center.x - (numberOfLetters/2.0f * size) + (numberOfLetters-1) * size;
     
-    return CGRectMake(xPosition,self.view.center.y,size,size);
+    return CGRectMake(xPosition,self.view.center.y,size*1.3f,size);
 }
 
 - (void) resizeLetters: (float)newSize andNumberOfLetters: (float) numberOfLetters
@@ -82,7 +82,7 @@
         
         float startingXPos = self.view.center.x - (numberOfLetters/2.0f * newSize);
         
-        [tButton setFrame:CGRectMake(startingXPos+u*newSize, self.view.center.y, newSize, newSize)];
+        [tButton setFrame:CGRectMake(startingXPos+u*newSize, self.view.center.y, newSize*1.3f, newSize)];
         
     }
 }
@@ -99,8 +99,18 @@
     [alert show];
 }
 
+- (void)showHideView: (UIButton *)sender
+{
+    
+}
+
+
 - (IBAction)finishedWord:(id)sender
 {
+    //[self showHideView:sender];
+    
+    //return;
+    
     if(keysArray.count <= 0)
     {
         [self presentMessage:@"You have to type at least one character"];
@@ -108,6 +118,10 @@
     }
     
     const char *wordArray = [self.theWord UTF8String];
+    
+    
+    
+    
     
     //NSLog(@"GUESS SIZE: %i WORD SIZE: %lu", keysArray.count, strlen(wordArray));
     
@@ -154,8 +168,100 @@
         if(![correctionArray[k] boolValue]) gameWon = NO;
     }
     
+    NSLog(@"champas meu, conseguiu aquele velho bloco!");
     
-    [self performSegueWithIdentifier:@"CallWinLose" sender:self];
+    CGFloat newSize = 0;
+    NSInteger letras = 0;
+    
+    if(self.theWord.length > keysArray.count) letras = self.theWord.length;
+    else letras = keysArray.count;
+    
+    newSize = SPACE/letras;
+    
+    if(newSize > INITIAL_LETTERSIZE) newSize = INITIAL_LETTERSIZE;
+    
+    [self resizeLetters:newSize andNumberOfLetters:letras];
+    
+    LetterButton *firstKey = [keysArray objectAtIndex:0];
+    LetterButton *lastKey = [keysArray objectAtIndex:keysArray.count-1];
+    
+    [firstKey setBackgroundImage:[UIImage imageNamed:@"First Piece"] forState:UIControlStateNormal];
+    [lastKey setBackgroundImage:[UIImage imageNamed:@"Last Piece"] forState:UIControlStateNormal];
+    
+    [lastKey setFrame:CGRectMake(lastKey.frame.origin.x, lastKey.frame.origin.y, lastKey.frame.size.width/1.3f, lastKey.frame.size.height)];
+    
+    NSMutableArray *correctKeysArray = [NSMutableArray array];
+    float startingXPos = self.view.center.x - (letras/2.0f * newSize);
+    
+    NSLog(@"champas meu, conseguiu o segundo bloco!");
+    for (NSInteger j = 0 ; j < self.theWord.length ; j++)
+    {
+        //LetterButton *key = [keysArray objectAtIndex:j];
+        
+        CGRect tRect = CGRectMake(startingXPos+j*newSize, self.view.center.y, newSize*1.3f, newSize);
+        
+        if(j == self.theWord.length-1) tRect = CGRectMake(startingXPos+j*newSize, self.view.center.y, newSize, newSize);
+        
+        NSLog(@"%f / %f / %f / %f",tRect.origin.x,tRect.origin.y,tRect.size.width, tRect.size.height);
+        
+        UIButton *jButton = [[UIButton alloc] initWithFrame: tRect];
+        
+        if([[correctionArray objectAtIndex:j] boolValue])
+        {
+            if(j == 0)[jButton setBackgroundImage:[UIImage imageNamed:@"First Piece_Correct"] forState:UIControlStateNormal];
+            else if(j == self.theWord.length-1) [jButton setBackgroundImage:[UIImage imageNamed:@"Last Piece_Correct"] forState:UIControlStateNormal];
+            else [jButton setBackgroundImage:[UIImage imageNamed:@"Mid Piece_Correct"] forState:UIControlStateNormal];
+        }
+        else
+        {
+            if(j == 0)[jButton setBackgroundImage:[UIImage imageNamed:@"First Piece_Incorrect"] forState:UIControlStateNormal];
+            else if(j == self.theWord.length-1) [jButton setBackgroundImage:[UIImage imageNamed:@"Last Piece_Incorrect"] forState:UIControlStateNormal];
+            else [jButton setBackgroundImage:[UIImage imageNamed:@"Mid Piece_Incorrect"] forState:UIControlStateNormal];
+        }
+        
+        jButton.titleLabel.text = [NSString stringWithFormat:@"%c", wordArray[j]];
+        
+        NSLog(@"%@", jButton.titleLabel.text);
+        
+        [jButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        
+        [self.view addSubview:jButton];
+        
+        [correctKeysArray addObject:jButton];
+    }
+    
+    NSLog(@"champas meu, conseguiu o terceiro bloco!");
+    UIButton *firstCorrectKey = [correctKeysArray objectAtIndex:0];
+    
+    // Fade out the view right away
+    [UIView animateWithDuration:1.0
+                          delay: 0.0
+                        options: UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         firstCorrectKey.frame = CGRectMake(firstCorrectKey.frame.origin.x, firstCorrectKey.frame.origin.y-firstCorrectKey.frame.size.height, firstCorrectKey.frame.size.width, firstCorrectKey.frame.size.height);
+                     }
+                     completion:^(BOOL finished){
+                         NSLog(@"champas meu, conseguiu o quarto bloco!");
+                         for(NSInteger b = 1 ; b < correctKeysArray.count ; b++)
+                         {
+                             UIButton *correctKey = [correctKeysArray objectAtIndex:b];
+                             
+                             // Wait one second and then fade in the view
+                             [UIView animateWithDuration:1.0
+                                                   delay: 0.5
+                                                 options:UIViewAnimationOptionCurveEaseOut
+                                              animations:^{
+                                                  correctKey.frame = CGRectMake(correctKey.frame.origin.x, correctKey.frame.origin.y-correctKey.frame.size.height, correctKey.frame.size.width, correctKey.frame.size.height);
+                                              }
+                                              completion:nil];
+                         }
+                         
+                         
+                     }];
+    
+    
+    
+    //[self performSegueWithIdentifier:@"CallWinLose" sender:self];
    
     
 }
@@ -214,7 +320,8 @@
     {
         LetterButton *tButton = (LetterButton *)[keysArray objectAtIndex:y];
         
-        [tButton setBackgroundColor:[UIColor blackColor]];
+        //[tButton setBackgroundColor:[UIColor blackColor]];
+        [tButton setBackgroundImage:[UIImage imageNamed:@"Mid Piece"] forState:UIControlStateNormal];
         tButton.selected = NO;
     }
     
@@ -222,7 +329,8 @@
     {
         LetterButton *rButton = (LetterButton *)[keysArray objectAtIndex:pos-1];
         
-        [rButton setBackgroundColor:[UIColor redColor]];
+        //[rButton setBackgroundColor:[UIColor redColor]];
+        [rButton setBackgroundImage:[UIImage imageNamed:@"Mid Piece Selected"] forState:UIControlStateNormal];
         rButton.selected = YES;
     }
     
@@ -264,6 +372,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"back72.png"]]];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleFlush:) name:@"FlushButtons" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeLetter:) name:@"RemoveLetter" object:nil];

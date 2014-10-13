@@ -1028,6 +1028,24 @@
 		B02227F419DB9C5600CC15A5 /* a18.png in Resources */ = {isa = PBXBuildFile; fileRef = B02227ED19DB9C5600CC15A5 /* a18.png */; };
 		B02227F519DB9C5600CC15A5 /* a19.png in Resources */ = {isa = PBXBuildFile; fileRef = B02227EE19DB9C5600CC15A5 /* a19.png */; };
 		B02227F619DB9D7100CC15A5 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B0AA7A1019A560E700C9C554 /* GameScene.m */; };
+		B06F7D0619EC3F5F00BB43C3 /* ContainerThemesJig.png in Resources */ = {isa = PBXBuildFile; fileRef = B06F7D0519EC3F5F00BB43C3 /* ContainerThemesJig.png */; };
+		B06F7D0819EC3F9700BB43C3 /* Delicious-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = B06F7D0719EC3F9700BB43C3 /* Delicious-Roman.otf */; };
+		B06F7D0A19EC489900BB43C3 /* tecla.png in Resources */ = {isa = PBXBuildFile; fileRef = B06F7D0919EC489800BB43C3 /* tecla.png */; };
+		B06F7D0C19EC493300BB43C3 /* teclaPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = B06F7D0B19EC493300BB43C3 /* teclaPressed.png */; };
+		B06F7D0F19EC4F8500BB43C3 /* Ok_Pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = B06F7D0D19EC4F8500BB43C3 /* Ok_Pressed.png */; };
+		B06F7D1019EC4F8500BB43C3 /* Ok.png in Resources */ = {isa = PBXBuildFile; fileRef = B06F7D0E19EC4F8500BB43C3 /* Ok.png */; };
+		B06F7D1319EC4FCD00BB43C3 /* Listen_Pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = B06F7D1119EC4FCD00BB43C3 /* Listen_Pressed.png */; };
+		B06F7D1419EC4FCD00BB43C3 /* Listen.png in Resources */ = {isa = PBXBuildFile; fileRef = B06F7D1219EC4FCD00BB43C3 /* Listen.png */; };
+		B06F7D1E19EC537C00BB43C3 /* First Piece_Correct.png in Resources */ = {isa = PBXBuildFile; fileRef = B06F7D1519EC537B00BB43C3 /* First Piece_Correct.png */; };
+		B06F7D1F19EC537C00BB43C3 /* First Piece_Incorrect.png in Resources */ = {isa = PBXBuildFile; fileRef = B06F7D1619EC537B00BB43C3 /* First Piece_Incorrect.png */; };
+		B06F7D2019EC537C00BB43C3 /* First Piece.png in Resources */ = {isa = PBXBuildFile; fileRef = B06F7D1719EC537C00BB43C3 /* First Piece.png */; };
+		B06F7D2119EC537C00BB43C3 /* Last Piece_Correct.png in Resources */ = {isa = PBXBuildFile; fileRef = B06F7D1819EC537C00BB43C3 /* Last Piece_Correct.png */; };
+		B06F7D2219EC537C00BB43C3 /* Last Piece_Incorrect.png in Resources */ = {isa = PBXBuildFile; fileRef = B06F7D1919EC537C00BB43C3 /* Last Piece_Incorrect.png */; };
+		B06F7D2319EC537C00BB43C3 /* Last Piece.png in Resources */ = {isa = PBXBuildFile; fileRef = B06F7D1A19EC537C00BB43C3 /* Last Piece.png */; };
+		B06F7D2419EC537C00BB43C3 /* Mid Piece_Correct.png in Resources */ = {isa = PBXBuildFile; fileRef = B06F7D1B19EC537C00BB43C3 /* Mid Piece_Correct.png */; };
+		B06F7D2519EC537C00BB43C3 /* Mid Piece_Incorrect.png in Resources */ = {isa = PBXBuildFile; fileRef = B06F7D1C19EC537C00BB43C3 /* Mid Piece_Incorrect.png */; };
+		B06F7D2619EC537C00BB43C3 /* Mid Piece.png in Resources */ = {isa = PBXBuildFile; fileRef = B06F7D1D19EC537C00BB43C3 /* Mid Piece.png */; };
+		B06F7D2819EC58AE00BB43C3 /* Mid Piece Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = B06F7D2719EC58AE00BB43C3 /* Mid Piece Selected.png */; };
 		B094960B19DA4A0E000BEB9F /* DownloadWords.m in Sources */ = {isa = PBXBuildFile; fileRef = B094960A19DA4A0E000BEB9F /* DownloadWords.m */; };
 		B096CC7A19DDEE0B00168EEE /* back-pattern.png in Resources */ = {isa = PBXBuildFile; fileRef = B096CC7919DDEE0B00168EEE /* back-pattern.png */; };
 		B096CC7C19DDF0FC00168EEE /* back-pattern50.png in Resources */ = {isa = PBXBuildFile; fileRef = B096CC7B19DDF0FB00168EEE /* back-pattern50.png */; };
@@ -2102,6 +2120,24 @@
 		B02227EC19DB9C5600CC15A5 /* a17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = a17.png; sourceTree = "<group>"; };
 		B02227ED19DB9C5600CC15A5 /* a18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = a18.png; sourceTree = "<group>"; };
 		B02227EE19DB9C5600CC15A5 /* a19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = a19.png; sourceTree = "<group>"; };
+		B06F7D0519EC3F5F00BB43C3 /* ContainerThemesJig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ContainerThemesJig.png; sourceTree = "<group>"; };
+		B06F7D0719EC3F9700BB43C3 /* Delicious-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delicious-Roman.otf"; sourceTree = "<group>"; };
+		B06F7D0919EC489800BB43C3 /* tecla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tecla.png; sourceTree = "<group>"; };
+		B06F7D0B19EC493300BB43C3 /* teclaPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teclaPressed.png; sourceTree = "<group>"; };
+		B06F7D0D19EC4F8500BB43C3 /* Ok_Pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ok_Pressed.png; sourceTree = "<group>"; };
+		B06F7D0E19EC4F8500BB43C3 /* Ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ok.png; sourceTree = "<group>"; };
+		B06F7D1119EC4FCD00BB43C3 /* Listen_Pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Listen_Pressed.png; sourceTree = "<group>"; };
+		B06F7D1219EC4FCD00BB43C3 /* Listen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Listen.png; sourceTree = "<group>"; };
+		B06F7D1519EC537B00BB43C3 /* First Piece_Correct.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "First Piece_Correct.png"; sourceTree = "<group>"; };
+		B06F7D1619EC537B00BB43C3 /* First Piece_Incorrect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "First Piece_Incorrect.png"; sourceTree = "<group>"; };
+		B06F7D1719EC537C00BB43C3 /* First Piece.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "First Piece.png"; sourceTree = "<group>"; };
+		B06F7D1819EC537C00BB43C3 /* Last Piece_Correct.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Last Piece_Correct.png"; sourceTree = "<group>"; };
+		B06F7D1919EC537C00BB43C3 /* Last Piece_Incorrect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Last Piece_Incorrect.png"; sourceTree = "<group>"; };
+		B06F7D1A19EC537C00BB43C3 /* Last Piece.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Last Piece.png"; sourceTree = "<group>"; };
+		B06F7D1B19EC537C00BB43C3 /* Mid Piece_Correct.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mid Piece_Correct.png"; sourceTree = "<group>"; };
+		B06F7D1C19EC537C00BB43C3 /* Mid Piece_Incorrect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mid Piece_Incorrect.png"; sourceTree = "<group>"; };
+		B06F7D1D19EC537C00BB43C3 /* Mid Piece.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mid Piece.png"; sourceTree = "<group>"; };
+		B06F7D2719EC58AE00BB43C3 /* Mid Piece Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mid Piece Selected.png"; sourceTree = "<group>"; };
 		B094960919DA4A0E000BEB9F /* DownloadWords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadWords.h; sourceTree = "<group>"; };
 		B094960A19DA4A0E000BEB9F /* DownloadWords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadWords.m; sourceTree = "<group>"; };
 		B096CC7919DDEE0B00168EEE /* back-pattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-pattern.png"; sourceTree = "<group>"; };
@@ -3317,6 +3353,24 @@
 		B0F8142919C4EC5200D34B17 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B06F7D1519EC537B00BB43C3 /* First Piece_Correct.png */,
+				B06F7D1619EC537B00BB43C3 /* First Piece_Incorrect.png */,
+				B06F7D1719EC537C00BB43C3 /* First Piece.png */,
+				B06F7D1819EC537C00BB43C3 /* Last Piece_Correct.png */,
+				B06F7D1919EC537C00BB43C3 /* Last Piece_Incorrect.png */,
+				B06F7D1A19EC537C00BB43C3 /* Last Piece.png */,
+				B06F7D1B19EC537C00BB43C3 /* Mid Piece_Correct.png */,
+				B06F7D1C19EC537C00BB43C3 /* Mid Piece_Incorrect.png */,
+				B06F7D1D19EC537C00BB43C3 /* Mid Piece.png */,
+				B06F7D2719EC58AE00BB43C3 /* Mid Piece Selected.png */,
+				B06F7D0719EC3F9700BB43C3 /* Delicious-Roman.otf */,
+				B06F7D0519EC3F5F00BB43C3 /* ContainerThemesJig.png */,
+				B06F7D1119EC4FCD00BB43C3 /* Listen_Pressed.png */,
+				B06F7D1219EC4FCD00BB43C3 /* Listen.png */,
+				B06F7D0D19EC4F8500BB43C3 /* Ok_Pressed.png */,
+				B06F7D0E19EC4F8500BB43C3 /* Ok.png */,
+				B06F7D0919EC489800BB43C3 /* tecla.png */,
+				B06F7D0B19EC493300BB43C3 /* teclaPressed.png */,
 				B096CC8119DE094400168EEE /* Theme0.png */,
 				B096CC7F19DE070500168EEE /* symbol.png */,
 				B096CC7919DDEE0B00168EEE /* back-pattern.png */,
@@ -3453,6 +3507,7 @@
 				B02227DD19DB997000CC15A5 /* yaris.mp3 in Resources */,
 				B022249819DB997000CC15A5 /* canary.mp3 in Resources */,
 				B022257219DB997000CC15A5 /* gremio.mp3 in Resources */,
+				B06F7D1E19EC537C00BB43C3 /* First Piece_Correct.png in Resources */,
 				B022266219DB997000CC15A5 /* nacional.mp3 in Resources */,
 				B022243419DB996F00CC15A5 /* avon.mp3 in Resources */,
 				B02225A319DB997000CC15A5 /* hyena.mp3 in Resources */,
@@ -3464,6 +3519,7 @@
 				B02227B019DB997000CC15A5 /* utrecht.mp3 in Resources */,
 				B022244D19DB997000CC15A5 /* beethoven.mp3 in Resources */,
 				B02224F019DB997000CC15A5 /* dio.mp3 in Resources */,
+				B06F7D2019EC537C00BB43C3 /* First Piece.png in Resources */,
 				B02227B819DB997000CC15A5 /* venezuela.mp3 in Resources */,
 				B022244219DB996F00CC15A5 /* barclays.mp3 in Resources */,
 				B022266919DB997000CC15A5 /* navy.mp3 in Resources */,
@@ -3502,6 +3558,7 @@
 				B02226CF19DB997000CC15A5 /* pomelo.mp3 in Resources */,
 				B022266119DB997000CC15A5 /* nabisco.mp3 in Resources */,
 				B022251719DB997000CC15A5 /* eritrea.mp3 in Resources */,
+				B06F7D0619EC3F5F00BB43C3 /* ContainerThemesJig.png in Resources */,
 				B02225DC19DB997000CC15A5 /* kinkajou.mp3 in Resources */,
 				B02227C319DB997000CC15A5 /* vitoria.mp3 in Resources */,
 				B022261A19DB997000CC15A5 /* malaga.mp3 in Resources */,
@@ -3692,6 +3749,7 @@
 				B022248519DB997000CC15A5 /* buffalo.mp3 in Resources */,
 				B022274919DB997000CC15A5 /* sonic.mp3 in Resources */,
 				B022278119DB997000CC15A5 /* thunder.mp3 in Resources */,
+				B06F7D0C19EC493300BB43C3 /* teclaPressed.png in Resources */,
 				B0CFBC5619C61BFA0053F02F /* a7.png in Resources */,
 				B02224F219DB997000CC15A5 /* disney.mp3 in Resources */,
 				B022252819DB997000CC15A5 /* facebook.mp3 in Resources */,
@@ -3700,6 +3758,7 @@
 				B02227A319DB997000CC15A5 /* tuvalu.mp3 in Resources */,
 				B022254619DB997000CC15A5 /* fuchsia.mp3 in Resources */,
 				B02227CF19DB997000CC15A5 /* weasel.mp3 in Resources */,
+				B06F7D1019EC4F8500BB43C3 /* Ok.png in Resources */,
 				B096CC7E19DDF18200168EEE /* back72.png in Resources */,
 				B022276119DB997000CC15A5 /* sudan.mp3 in Resources */,
 				B022277E19DB997000CC15A5 /* thorax.mp3 in Resources */,
@@ -3770,6 +3829,7 @@
 				B022243719DB996F00CC15A5 /* babel.mp3 in Resources */,
 				B022249B19DB997000CC15A5 /* carpus.mp3 in Resources */,
 				B022252A19DB997000CC15A5 /* fargo.mp3 in Resources */,
+				B06F7D2119EC537C00BB43C3 /* Last Piece_Correct.png in Resources */,
 				B022258219DB997000CC15A5 /* hamster.mp3 in Resources */,
 				B022252319DB997000CC15A5 /* exxonmobil.mp3 in Resources */,
 				B022265D19DB997000CC15A5 /* munich.mp3 in Resources */,
@@ -3804,6 +3864,7 @@
 				B02226BC19DB997000CC15A5 /* pfizer.mp3 in Resources */,
 				B02226DD19DB997000CC15A5 /* puma.mp3 in Resources */,
 				B02227C119DB997000CC15A5 /* visor.mp3 in Resources */,
+				B06F7D1419EC4FCD00BB43C3 /* Listen.png in Resources */,
 				B022262F19DB997000CC15A5 /* mattel.mp3 in Resources */,
 				B022261C19DB997000CC15A5 /* malaysia.mp3 in Resources */,
 				B02227C819DB997000CC15A5 /* waist.mp3 in Resources */,
@@ -3921,6 +3982,7 @@
 				B022261019DB997000CC15A5 /* lufthansa.mp3 in Resources */,
 				B022273A19DB997000CC15A5 /* silverchair.mp3 in Resources */,
 				B022259B19DB997000CC15A5 /* honeywell.mp3 in Resources */,
+				B06F7D2319EC537C00BB43C3 /* Last Piece.png in Resources */,
 				B022267D19DB997000CC15A5 /* norway.mp3 in Resources */,
 				B02226D119DB997000CC15A5 /* porcupine.mp3 in Resources */,
 				B02224DE19DB997000CC15A5 /* crow.mp3 in Resources */,
@@ -3960,6 +4022,7 @@
 				B022262B19DB997000CC15A5 /* marten.mp3 in Resources */,
 				B02224AC19DB997000CC15A5 /* chartreuse.mp3 in Resources */,
 				B02226F619DB997000CC15A5 /* reggina.mp3 in Resources */,
+				B06F7D1319EC4FCD00BB43C3 /* Listen_Pressed.png in Resources */,
 				B022250F19DB997000CC15A5 /* elephant.mp3 in Resources */,
 				B022279A19DB997000CC15A5 /* toyota.mp3 in Resources */,
 				B02226C919DB997000CC15A5 /* pliers.mp3 in Resources */,
@@ -3996,6 +4059,7 @@
 				B022272119DB997000CC15A5 /* screwdriver.mp3 in Resources */,
 				B02223FA19DB996F00CC15A5 /* accent.mp3 in Resources */,
 				B022271719DB997000CC15A5 /* santander.mp3 in Resources */,
+				B06F7D0A19EC489900BB43C3 /* tecla.png in Resources */,
 				B02225C419DB997000CC15A5 /* jaguar.mp3 in Resources */,
 				B022276E19DB997000CC15A5 /* tajikistan.mp3 in Resources */,
 				B022264819DB997000CC15A5 /* mitsubishi.mp3 in Resources */,
@@ -4153,6 +4217,7 @@
 				B02225D519DB997000CC15A5 /* kazakhstan.mp3 in Resources */,
 				B022268819DB997000CC15A5 /* olimpia.mp3 in Resources */,
 				B02224CE19DB997000CC15A5 /* comoros.mp3 in Resources */,
+				B06F7D2219EC537C00BB43C3 /* Last Piece_Incorrect.png in Resources */,
 				B022278619DB997000CC15A5 /* tiffany.mp3 in Resources */,
 				B022269319DB997000CC15A5 /* organ.mp3 in Resources */,
 				B022248D19DB997000CC15A5 /* burundi.mp3 in Resources */,
@@ -4184,6 +4249,7 @@
 				B096CC7A19DDEE0B00168EEE /* back-pattern.png in Resources */,
 				B02226F419DB997000CC15A5 /* red.mp3 in Resources */,
 				B022250C19DB997000CC15A5 /* elbow.mp3 in Resources */,
+				B06F7D2819EC58AE00BB43C3 /* Mid Piece Selected.png in Resources */,
 				B022276D19DB997000CC15A5 /* taiwan.mp3 in Resources */,
 				B022257619DB997000CC15A5 /* groin.mp3 in Resources */,
 				B022245919DB997000CC15A5 /* bighorn.mp3 in Resources */,
@@ -4236,7 +4302,9 @@
 				B022240F19DB996F00CC15A5 /* alpaca.mp3 in Resources */,
 				B022258819DB997000CC15A5 /* head.mp3 in Resources */,
 				B022254419DB997000CC15A5 /* frida.mp3 in Resources */,
+				B06F7D1F19EC537C00BB43C3 /* First Piece_Incorrect.png in Resources */,
 				B02227E019DB997000CC15A5 /* zambia.mp3 in Resources */,
+				B06F7D2519EC537C00BB43C3 /* Mid Piece_Incorrect.png in Resources */,
 				B02224D919DB997000CC15A5 /* cranium.mp3 in Resources */,
 				B02224AF19DB997000CC15A5 /* chelsea.mp3 in Resources */,
 				B022269619DB997000CC15A5 /* ox.mp3 in Resources */,
@@ -4269,6 +4337,7 @@
 				B022246319DB997000CC15A5 /* blade.mp3 in Resources */,
 				B022252519DB997000CC15A5 /* eyebrow.mp3 in Resources */,
 				B02225AA19DB997000CC15A5 /* illy.mp3 in Resources */,
+				B06F7D0819EC3F9700BB43C3 /* Delicious-Roman.otf in Resources */,
 				B02226C719DB997000CC15A5 /* pixies.mp3 in Resources */,
 				B022248919DB997000CC15A5 /* bunny.mp3 in Resources */,
 				B02225AC19DB997000CC15A5 /* impala.mp3 in Resources */,
@@ -4323,6 +4392,7 @@
 				B096CC7C19DDF0FC00168EEE /* back-pattern50.png in Resources */,
 				B022254819DB997000CC15A5 /* fujitsu.mp3 in Resources */,
 				B02226D219DB997000CC15A5 /* porto.mp3 in Resources */,
+				B06F7D2619EC537C00BB43C3 /* Mid Piece.png in Resources */,
 				B02224CB19DB997000CC15A5 /* collateral.mp3 in Resources */,
 				B02225A119DB997000CC15A5 /* hulk.mp3 in Resources */,
 				B02224A919DB997000CC15A5 /* chad.mp3 in Resources */,
@@ -4335,6 +4405,7 @@
 				B022270919DB997000CC15A5 /* royals.mp3 in Resources */,
 				B02226F819DB997000CC15A5 /* renault.mp3 in Resources */,
 				B02226D919DB997000CC15A5 /* pronghorn.mp3 in Resources */,
+				B06F7D0F19EC4F8500BB43C3 /* Ok_Pressed.png in Resources */,
 				B02225A219DB997000CC15A5 /* hungary.mp3 in Resources */,
 				B022243519DB996F00CC15A5 /* azerbaijan.mp3 in Resources */,
 				B022241719DB996F00CC15A5 /* antelope.mp3 in Resources */,
@@ -4410,6 +4481,7 @@
 				B022256919DB997000CC15A5 /* gooseberry.mp3 in Resources */,
 				B02227AA19DB997000CC15A5 /* udinese.mp3 in Resources */,
 				B022246F19DB997000CC15A5 /* bologna.mp3 in Resources */,
+				B06F7D2419EC537C00BB43C3 /* Mid Piece_Correct.png in Resources */,
 				B022249519DB997000CC15A5 /* cameroon.mp3 in Resources */,
 				B022257C19DB997000CC15A5 /* guyana.mp3 in Resources */,
 				B02224D719DB997000CC15A5 /* cougar.mp3 in Resources */,

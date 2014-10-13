@@ -44,7 +44,7 @@
         
         float startingXPos = self.view.center.x - (numberOfLetters/2.0f * newSize);
         
-        [tButton setFrame:CGRectMake(startingXPos+u*newSize, self.view.center.y, newSize, newSize)];
+        [tButton setFrame:CGRectMake(startingXPos+u*newSize, self.view.center.y, newSize*1.3f, newSize)];
         
     }
 }

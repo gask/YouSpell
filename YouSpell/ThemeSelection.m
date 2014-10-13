@@ -23,6 +23,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"back72.png"]]];
+    
     wordsArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"words" ofType:@"plist"]];
     selectedTheme = -1;
     themeNames = [NSMutableArray arrayWithObjects:
@@ -147,6 +149,10 @@
     
     NSInteger row = indexPath.row+1;
     cell.themeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"a%i.png", row]];
+    UIFont *customFont = [UIFont fontWithName:@"Delicious-Roman" size:15];
+    
+    cell.themeName.font = customFont;
+    cell.themeScore.font = customFont;
     cell.themeName.text = [themeNames objectAtIndex:row-1];
     cell.themeScore.text = [NSString stringWithFormat:@"%i/%i",[themeScores[row-1] intValue], [themeTotals[row-1] intValue] ];
     
