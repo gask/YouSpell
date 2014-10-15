@@ -99,11 +99,6 @@
     [alert show];
 }
 
-- (void)showHideView: (UIButton *)sender
-{
-    
-}
-
 
 - (IBAction)finishedWord:(id)sender
 {
@@ -117,11 +112,9 @@
         return;
     }
     
+    for(NSInteger c = 0 ; c < sceneButtons.count ; c++) [[sceneButtons objectAtIndex:c] setEnabled:NO];
+    
     const char *wordArray = [self.theWord UTF8String];
-    
-    
-    
-    
     
     //NSLog(@"GUESS SIZE: %i WORD SIZE: %lu", keysArray.count, strlen(wordArray));
     
@@ -160,15 +153,12 @@
         }
     }
     
-    
-    
     for (NSInteger k = 0; k < correctionArray.count ; k++)
     {
         //NSLog(@"Answer %i: %i", k, [correctionArray[k] boolValue]);
         if(![correctionArray[k] boolValue]) gameWon = NO;
     }
     
-    NSLog(@"champas meu, conseguiu aquele velho bloco!");
     
     CGFloat newSize = 0;
     NSInteger letras = 0;
@@ -190,10 +180,9 @@
     
     [lastKey setFrame:CGRectMake(lastKey.frame.origin.x, lastKey.frame.origin.y, lastKey.frame.size.width/1.3f, lastKey.frame.size.height)];
     
-    NSMutableArray *correctKeysArray = [NSMutableArray array];
+    //NSMutableArray *correctKeysArray = [NSMutableArray array];
     float startingXPos = self.view.center.x - (letras/2.0f * newSize);
     
-    NSLog(@"champas meu, conseguiu o segundo bloco!");
     for (NSInteger j = 0 ; j < self.theWord.length ; j++)
     {
         //LetterButton *key = [keysArray objectAtIndex:j];
@@ -219,51 +208,66 @@
             else [jButton setBackgroundImage:[UIImage imageNamed:@"Mid Piece_Incorrect"] forState:UIControlStateNormal];
         }
         
-        jButton.titleLabel.text = [NSString stringWithFormat:@"%c", wordArray[j]];
+        [jButton setTitle:[NSString stringWithFormat:@"%c", wordArray[j]] forState:UIControlStateNormal];
+        //jButton.titleLabel.text = [NSString stringWithFormat:@"%c", wordArray[j]];
         
         NSLog(@"%@", jButton.titleLabel.text);
         
         [jButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [jButton setAlpha:0.0];
+        jButton.titleLabel.adjustsFontSizeToFitWidth = YES;
+        [jButton.titleLabel setFont:[UIFont fontWithName:@"Delicious-Roman" size:15.0]];
         
         [self.view addSubview:jButton];
         
-        [correctKeysArray addObject:jButton];
+        [correctArrayKeys addObject:jButton];
     }
     
-    NSLog(@"champas meu, conseguiu o terceiro bloco!");
-    UIButton *firstCorrectKey = [correctKeysArray objectAtIndex:0];
+    UIButton *firstCorrectKey = [correctArrayKeys objectAtIndex:0];
     
-    // Fade out the view right away
-    [UIView animateWithDuration:1.0
+    // Call the first piece up right away
+    [UIView animateWithDuration:0.5
                           delay: 0.0
                         options: UIViewAnimationOptionCurveEaseIn
                      animations:^{
                          firstCorrectKey.frame = CGRectMake(firstCorrectKey.frame.origin.x, firstCorrectKey.frame.origin.y-firstCorrectKey.frame.size.height, firstCorrectKey.frame.size.width, firstCorrectKey.frame.size.height);
+                         firstCorrectKey.alpha = 1.0;
                      }
                      completion:^(BOOL finished){
-                         NSLog(@"champas meu, conseguiu o quarto bloco!");
-                         for(NSInteger b = 1 ; b < correctKeysArray.count ; b++)
-                         {
-                             UIButton *correctKey = [correctKeysArray objectAtIndex:b];
-                             
-                             // Wait one second and then fade in the view
-                             [UIView animateWithDuration:1.0
-                                                   delay: 0.5
-                                                 options:UIViewAnimationOptionCurveEaseOut
-                                              animations:^{
-                                                  correctKey.frame = CGRectMake(correctKey.frame.origin.x, correctKey.frame.origin.y-correctKey.frame.size.height, correctKey.frame.size.width, correctKey.frame.size.height);
-                                              }
-                                              completion:nil];
-                         }
-                         
-                         
+                             [self animateCorrectKey];
                      }];
-    
-    
-    
-    //[self performSegueWithIdentifier:@"CallWinLose" sender:self];
-   
-    
+}
+
+- (void) callNextViewController
+{
+    [self performSegueWithIdentifier:@"CallWinLose" sender:self];
+}
+
+
+- (void) animateCorrectKey
+{
+    if(correctKeyIndex == self.theWord.length)
+    {
+        [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(callNextViewController) userInfo:nil repeats:NO];
+    }
+    else
+    {
+        UIButton *key = [correctArrayKeys objectAtIndex:correctKeyIndex];
+        correctKeyIndex++;
+        
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:0.5];
+        [UIView setAnimationDelay:0.0];
+        [UIView setAnimationDelegate:self];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+        
+        key.frame = CGRectMake(key.frame.origin.x, key.frame.origin.y-key.frame.size.height, key.frame.size.width, key.frame.size.height);
+        
+        key.alpha = 1.0;
+        
+        [UIView setAnimationDidStopSelector:@selector(animateCorrectKey)];
+        [UIView commitAnimations];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -378,7 +382,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleFlush:) name:@"FlushButtons" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeLetter:) name:@"RemoveLetter" object:nil];
     
-    semanaquevem = 0;
     positionSelected = 0;
     keysArray = [NSMutableArray array];
     correctionArray = [NSMutableArray array];
@@ -392,51 +395,22 @@
     
     AudioServicesCreateSystemSoundID((__bridge CFURLRef) soundURL, &sound);
     
-    [self startLoop];
-}
-
-- (void) renderFrame
-{
-    semanaquevem++;
+    correctArrayKeys = [NSMutableArray array];
+    correctKeyIndex = 1;
     
-    /*if(semanaquevem == 5)
+    NSArray *subviews = [self.view subviews];
+    sceneButtons = [NSMutableArray array];
+    
+    for (NSInteger o = 0; o < subviews.count; o++)
     {
-        LetterButton *l = [[LetterButton alloc] initWithFrame: CGRectMake(self.view.center.x, self.view.center.y, 50, 50) andPosition:0];
-        
-        [self.view addSubview: l];
-    }*/
-}
-
-// speech API: http://tts-api.com/tts.mp3?q=tiara
-
-- (void) gameLoop
-{
-    
-    
-    while (running)
-    {
-        [self renderFrame];
+        UIView *object = [subviews objectAtIndex:o];
+        if([object isMemberOfClass:[UIButton class]])
+        {
+            [sceneButtons addObject:object];
+        }
     }
+    
 }
-
-- (void) startLoop
-{
-    running = YES;
-#ifdef THREADED_ANIMATION
-    [NSThread detachNewThreadSelector:@selector(gameLoop)
-                             toTarget:self withObject:nil];
-#else
-    timer = [NSTimer scheduledTimerWithTimeInterval:1.0f/60
-                                             target:self selector:@selector(renderFrame) userInfo:nil repeats:YES];
-#endif
-}
-
-- (void) stopLoop
-{
-    [timer invalidate];
-    running = NO;
-}
-
 
 - (void)didReceiveMemoryWarning
 {

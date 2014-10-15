@@ -34,17 +34,15 @@
 
 - (void) resizeLetters: (float)newSize andNumberOfLetters: (float) numberOfLetters
 {
-    //NSLog(@"newSize: %f",newSize);
-    //NSLog(@"Then newSize: %f",newSize);
-    
     for(NSInteger u = 0 ; u < strlen(self.word) ; u++)
     {
         LetterButton *tButton = (LetterButton *) [rightWordLetters objectAtIndex:u];
-        //        CGSize nSize = CGSizeMake(newSize, newSize);
         
         float startingXPos = self.view.center.x - (numberOfLetters/2.0f * newSize);
         
         [tButton setFrame:CGRectMake(startingXPos+u*newSize, self.view.center.y, newSize*1.3f, newSize)];
+        if(u == strlen(self.word)-1) [tButton setFrame:CGRectMake(startingXPos+u*newSize, self.view.center.y, newSize, newSize)];
+
         
     }
 }
@@ -134,6 +132,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"back72.png"]]];
+ 
+    self.progressPerc.font = [UIFont fontWithName:@"Delicious-Roman" size:10];
+    self.themeLabel.font = [UIFont fontWithName:@"Delicious-Roman" size:18];
+    
     wordsArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"words" ofType:@"plist"]];
     NSMutableArray *wordsToBeTried = [[[NSUserDefaults standardUserDefaults] objectForKey:@"wordsToBeTried"] mutableCopy];
     selectedTheme = [[[NSUserDefaults standardUserDefaults] objectForKey:@"selectedTheme"] integerValue];
@@ -143,27 +146,33 @@
     
     self.view.autoresizesSubviews = NO;
     
-    CGRect frame = CGRectMake(40, 54, 240, 10);
+    CGRect frame = CGRectMake(40, 66, 240, 8);
     
     if(self.didWon)
     {
+        self.feedback.text = @"YAY! You won! :)";
+        titleBack.image = [UIImage imageNamed:@"WLTitleGreen.png"];
+        
         percentage = (float)(themeWords-wordsToBeTried.count)/themeWords;
-        self.nextWordBtn.titleLabel.text = @"Next word";
+        [self.nextWordBtn setTitle:@"Next word" forState:UIControlStateNormal];
         self.progressPerc.text = [NSString stringWithFormat:@"%.0f%%", percentage*100];
         
         frame.size.width *= percentage;
     }
     else
     {
+        self.feedback.text = @"Sorry, better luck next time :(";
+        titleBack.image = [UIImage imageNamed:@"WLTitleRed.png"];
+        
         percentage = (float)(themeWords-wordsToBeTried.count-1)/themeWords;
-        self.nextWordBtn.titleLabel.text = @"Restart";
+        [self.nextWordBtn setTitle:@"Restart" forState:UIControlStateNormal];
         self.progressPerc.text = [NSString stringWithFormat:@"%.0f%%", percentage*100];
         
         frame.size.width *= percentage;
     }
     
     UIView *bar = [[UIView alloc] initWithFrame: frame];
-    bar.backgroundColor = [UIColor greenColor];
+    bar.backgroundColor = [UIColor colorWithRed:75.0/255.0 green:200.0/255.0 blue:135.0/255.0 alpha:1.0];
     [self.view addSubview:bar];
     
     self.stringWord = [NSString stringWithUTF8String:self.word];
@@ -171,15 +180,14 @@
     
     self.themeLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"selectedThemeName"];
     
+    ////// Criação da palavra certa //////
+    
     rightWordLetters = [NSMutableArray array];
-    //NSLog(@"pernambucano também: %s com tam: %lu", self.word, strlen(self.word));
     float lSize = INITIAL_LETTERSIZE;
     
     lSize = SPACE/(strlen(self.word));
     
-    
     if(lSize > INITIAL_LETTERSIZE) lSize = INITIAL_LETTERSIZE;
-    //
     
     for(NSInteger i = 0 ; i < strlen(self.word) ; i++)
     {
@@ -187,13 +195,14 @@
         LetterButton *l = [[LetterButton alloc] initWithFrame: CGRectMake(0,0,0,0) position:i andLetter: [NSString stringWithFormat:@"%c" , self.word[i]] andState:typeLabel];
         
         [rightWordLetters addObject:l];
+        
+        if(i == 0) [l setBackgroundImage:[UIImage imageNamed:@"First Piece"] forState:UIControlStateNormal];
+        else if(i == strlen(self.word)-1) [l setBackgroundImage:[UIImage imageNamed:@"Last Piece"] forState:UIControlStateNormal];
+        
         [self.view addSubview:l];
     }
-    [self resizeLetters:lSize andNumberOfLetters:(float)strlen(self.word)];
-
     
-    if(self.didWon) self.feedback.text = @"YAY! You won! :)";
-    else self.feedback.text = @"Sorry, better luck next time :(";
+    [self resizeLetters:lSize andNumberOfLetters:(float)strlen(self.word)];
     
 }
 

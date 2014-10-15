@@ -29,8 +29,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     //NSLog(@"4 5 6");
-    self.definitionLabel.text = self.definition;
+    self.textWindow.text = self.definition;
     self.wordLabel.text = self.word;
+    [self.textWindow setFont:[UIFont fontWithName:@"Delicious-Roman" size:12.0]];
+    [self.wordLabel setFont:[UIFont fontWithName:@"Delicious-Roman" size:18.0]];
     //[self setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
 }
 

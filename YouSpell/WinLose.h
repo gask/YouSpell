@@ -14,6 +14,7 @@
     NSMutableArray *rightWordLetters;
     NSArray *wordsArray;
     NSInteger selectedTheme;
+    IBOutlet UIImageView *titleBack;
 }
 
 @property (nonatomic) IBOutlet UILabel *feedback;

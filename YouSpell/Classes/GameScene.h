@@ -11,9 +11,7 @@
 
 @interface GameScene : UIViewController
 {
-    BOOL running;
     NSTimer *timer;
-    NSInteger semanaquevem;
     
     BOOL gameWon;
     
@@ -23,6 +21,10 @@
     NSMutableArray *correctionArray;
     
     SystemSoundID sound;
+    
+    NSInteger correctKeyIndex;
+    NSMutableArray *correctArrayKeys;
+    NSMutableArray *sceneButtons;
 }
 
 @property NSString *theWord;

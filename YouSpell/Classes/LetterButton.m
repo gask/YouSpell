@@ -34,6 +34,8 @@
         self.titleLabel.numberOfLines = 1;
         self.titleLabel.adjustsFontSizeToFitWidth = YES;
         self.titleLabel.lineBreakMode = NSLineBreakByClipping;
+        
+        [self.titleLabel setFont: [UIFont fontWithName:@"Delicious-Roman" size:15.0]];
 
         if(state == typeButton) [self addTarget:self action:@selector(doIt) forControlEvents:UIControlEventTouchUpInside];
     }

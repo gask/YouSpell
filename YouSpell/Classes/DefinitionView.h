@@ -12,7 +12,7 @@
 
 @property (strong, nonatomic) NSString *word;
 @property (strong, nonatomic) NSString *definition;
-@property (strong, nonatomic) IBOutlet UILabel *definitionLabel;
 @property (strong, nonatomic) IBOutlet UILabel *wordLabel;
+@property (strong, nonatomic) IBOutlet UITextView *textWindow;
 
 @end

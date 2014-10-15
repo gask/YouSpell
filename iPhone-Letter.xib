@@ -28,6 +28,6 @@
         </panGestureRecognizer>
     </objects>
     <resources>
-        <image name="Mid Piece.png" width="252" height="194"/>
+        <image name="Mid Piece.png" width="253" height="194"/>
     </resources>
 </document>
