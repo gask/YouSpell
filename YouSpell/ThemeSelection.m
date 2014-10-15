@@ -9,6 +9,7 @@
 #import "ThemeSelection.h"
 #import "GameScene.h"
 #import "ThemeCell.h"
+#import "AppConstants.h"
 
 #define WORDS_PER_THEME 3
 
@@ -23,36 +24,28 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    coinImages = [NSArray arrayWithObjects:
+                         [UIImage imageNamed:@"coin1.png"],
+                         [UIImage imageNamed:@"coin2.png"],
+                         [UIImage imageNamed:@"coin3.png"],
+                         [UIImage imageNamed:@"coin4.png"],
+                         nil];
+    
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"back72.png"]]];
+    [titleLabel setFont:[UIFont fontWithName:@"Delicious-Roman" size:25]];
+    [backBtn.titleLabel setFont:[UIFont fontWithName:@"Delicious-Roman" size:15]];
+    
     
     wordsArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"words" ofType:@"plist"]];
     selectedTheme = -1;
-    themeNames = [NSMutableArray arrayWithObjects:
-                  @"Body Parts",
-                  @"Animals",
-                  @"Countries",
-                  @"Colors",
-                  @"Objects",
-                  @"Fruits",
-                  @"Cars",
-                  @"Bands",
-                  @"Movies",
-                  @"Soccer Teams",
-                  @"Other Teams",
-                  @"Enterprises",
-                  @"Body Parts 2",
-                  @"Enterprises 2",
-                  @"Countries 2",
-                  @"Movies 2",
-                  @"Soccer Teams 2",
-                  @"Countries 3",
-                  @"Animals 2",
-                  nil];
+    themes = [NSArray arrayWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"themes" ofType:@"plist"]];
+    
     
     themeScores = [NSMutableArray array];
     themeTotals = [NSMutableArray array];
     userScore = [[[NSUserDefaults standardUserDefaults] objectForKey:@"Scores"] mutableCopy];
     
+    hasTheme = [[[NSUserDefaults standardUserDefaults] objectForKey:THEMESSTATUS] mutableCopy];
     
     for (NSInteger i = 0 ; i < userScore.count; i++)
     {
@@ -76,17 +69,59 @@
     return 1;
 }
 
-- (NSIndexPath *) tableView: (UITableView *) tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //NSLog(@"selecionei o %io botão!", indexPath.row+1);
-    selectedTheme = indexPath.row;
+    if([[hasTheme objectAtIndex:indexPath.row] boolValue])
+    {
+        selectedTheme = indexPath.row;
+        
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:selectedTheme] forKey:@"selectedTheme"];
+        [[NSUserDefaults standardUserDefaults] setObject: [[themes objectAtIndex:selectedTheme] objectForKey: @"name"] forKey:@"selectedThemeName"];
+        
+        [tableView deselectRowAtIndexPath:indexPath animated:NO];
+        [self performSegueWithIdentifier:@"CallGameScene" sender:self];
+    }
+    else
+    {
+        NSInteger coins = [[NSUserDefaults standardUserDefaults] integerForKey:COINS];
+        NSInteger price = [[[themes objectAtIndex:indexPath.row] objectForKey:@"price"] integerValue];
+        
+        if(coins >= price)
+        {
+            coins -= price;
+            [[NSUserDefaults standardUserDefaults] setInteger:coins forKey:COINS];
+            
+            [hasTheme replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:YES]];
+            [[NSUserDefaults standardUserDefaults] setObject:hasTheme forKey:THEMESSTATUS];
+            
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            selectedTheme = indexPath.row;
+            
+            [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:selectedTheme] forKey:@"selectedTheme"];
+            [[NSUserDefaults standardUserDefaults] setObject: [[[themes objectAtIndex:selectedTheme] objectForKey: @"name"] stringValue] forKey:@"selectedThemeName"];
+            
+            
+            [tableView deselectRowAtIndexPath:indexPath animated:NO];
+            [self performSegueWithIdentifier:@"CallGameScene" sender:self];
+            
+        }
+        else
+        {
+            [self presentMessage:@"You don't have enough coins!"];
+            [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            
+        }
+    }
     
-    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:selectedTheme] forKey:@"selectedTheme"];
-    [[NSUserDefaults standardUserDefaults] setObject: [themeNames objectAtIndex:selectedTheme] forKey:@"selectedThemeName"];
+    //return indexPath;
+}
+
+-(void) presentMessage:(NSString *)message {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You Spell" message: message delegate: nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
     
-    [self performSegueWithIdentifier:@"CallGameScene" sender:self];
-    
-    return indexPath;
+    [alert show];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -127,24 +162,9 @@
 {
     ThemeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MainCell"];
     
-    //UIImageView *image = nil;
-    
-    
-    
     if(cell == nil)
     {
         cell = [[ThemeCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:@"MainCell"];
-        
-        //NSInteger row = indexPath.row+1;
-        
-        //image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"a%i.png", row]]];
-        //cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"a%i.png", row]];
-        //[image setFrame:CGRectMake(0,0, 50, 50)];
-        //image.tag = 100;
-        
-        //[cell.contentView addSubview:image];
-        
-       // NSLog(@"%i",row);
     }
     
     NSInteger row = indexPath.row+1;
@@ -153,18 +173,28 @@
     
     cell.themeName.font = customFont;
     cell.themeScore.font = customFont;
-    cell.themeName.text = [themeNames objectAtIndex:row-1];
-    cell.themeScore.text = [NSString stringWithFormat:@"%i/%i",[themeScores[row-1] intValue], [themeTotals[row-1] intValue] ];
+    cell.themeName.text = [[themes objectAtIndex:row-1] objectForKey:@"name"];
+    cell.coinAnimationView = [[UIImageView alloc] initWithFrame:CGRectMake(264,10,20,20)];
+    //[cell.coinAnimationView setImage:[UIImage imageNamed:@"coin1.png"]];
+    [cell.coinAnimationView setAnimationImages: coinImages];
+    [cell.coinAnimationView setAnimationDuration: 0.5];
+    [cell.coinAnimationView setAnimationRepeatCount: 0];
+    [cell.coinAnimationView startAnimating];
+    [cell addSubview:cell.coinAnimationView];
+    [cell.themeScore setText:@""];
     
-//    cell.textLabel.text = 
-    /*else
+    if([[hasTheme objectAtIndex:indexPath.row] boolValue])
     {
-        image = [cell.contentView viewWithTag:100];
-        
-        NSLog(@"hehehe %i",indexPath.row+1);
-    }*/
-    
-    //cell.textLabel.text = [NSString stringWithFormat:@"meu bilau verde: %d", indexPath.row];
+        [cell.coinAnimationView setAlpha:0.0];
+        cell.themeScore.text = [NSString stringWithFormat:@"%i/%i",[themeScores[row-1] intValue], [themeTotals[row-1] intValue] ];
+        [cell.buyIt setAlpha:0.0];
+    }
+    else
+    {
+        [cell.buyIt setAlpha:1.0];
+        [cell.coinAnimationView setAlpha:1.0];
+        cell.themeScore.text = [[[themes objectAtIndex:indexPath.row] objectForKey:@"price"] stringValue];
+    }
 
     return cell;
 }

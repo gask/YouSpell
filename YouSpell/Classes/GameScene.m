@@ -191,7 +191,6 @@
         
         if(j == self.theWord.length-1) tRect = CGRectMake(startingXPos+j*newSize, self.view.center.y, newSize, newSize);
         
-        NSLog(@"%f / %f / %f / %f",tRect.origin.x,tRect.origin.y,tRect.size.width, tRect.size.height);
         
         UIButton *jButton = [[UIButton alloc] initWithFrame: tRect];
         
@@ -210,9 +209,7 @@
         
         [jButton setTitle:[NSString stringWithFormat:@"%c", wordArray[j]] forState:UIControlStateNormal];
         //jButton.titleLabel.text = [NSString stringWithFormat:@"%c", wordArray[j]];
-        
-        NSLog(@"%@", jButton.titleLabel.text);
-        
+                
         [jButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [jButton setAlpha:0.0];
         jButton.titleLabel.adjustsFontSizeToFitWidth = YES;

@@ -12,5 +12,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *themeImage;
 @property (strong, nonatomic) IBOutlet UILabel *themeName;
 @property (strong, nonatomic) IBOutlet UILabel *themeScore;
+@property (strong, nonatomic) UIImageView *coinAnimationView;
+@property (strong, nonatomic) IBOutlet UIImageView *buyIt;
 
 @end

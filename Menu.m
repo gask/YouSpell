@@ -7,6 +7,7 @@
 //
 
 #import "Menu.h"
+#import "AppConstants.h"
 
 @interface Menu ()
 
@@ -19,6 +20,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [coinsPocket setFont:[UIFont fontWithName:@"Delicious-Roman" size:18]];
+    [playBtn.titleLabel setFont:[UIFont fontWithName:@"Delicious-Roman" size:25]];
+    [storeBtn.titleLabel setFont:[UIFont fontWithName:@"Delicious-Roman" size:25]];
     
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"back72.png"]]];
     
@@ -43,7 +48,24 @@
         
         [[NSUserDefaults standardUserDefaults] setObject:[scoreArray mutableCopy] forKey:@"Scores"];
     }
+
+    if([[NSUserDefaults standardUserDefaults] objectForKey:THEMESSTATUS] == nil)
+    {
+        NSMutableArray *array = [NSMutableArray array];
+        for (int j = 0; j < 9 ; j++)
+        {
+            [array addObject:[NSNumber numberWithBool:YES]];
+        }
+        for (int n = 9; n < 20 ; n++)
+        {
+            [array addObject:[NSNumber numberWithBool:NO]];
+        }
+        
+        [[NSUserDefaults standardUserDefaults] setObject:array forKey:THEMESSTATUS];
+    }
     
+    [coinsPocket setText: [NSString stringWithFormat: @"%i", [[NSUserDefaults standardUserDefaults] integerForKey: COINS]]];
+
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

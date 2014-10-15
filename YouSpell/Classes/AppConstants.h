@@ -8,3 +8,5 @@
 
 #define SPACE 300.0f
 #define INITIAL_LETTERSIZE 50.0f
+#define COINS @"WGfQHQNUxC"
+#define THEMESSTATUS @"tzQYBOk2DX"

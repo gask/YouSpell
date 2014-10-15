@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>price</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>Body Parts</string>
+	</dict>
+	<dict>
+		<key>price</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>Animals</string>
+	</dict>
+	<dict>
+		<key>price</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>Countries</string>
+	</dict>
+	<dict>
+		<key>price</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>Colors</string>
+	</dict>
+	<dict>
+		<key>price</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>Objects</string>
+	</dict>
+	<dict>
+		<key>price</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>Fruits</string>
+	</dict>
+	<dict>
+		<key>price</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>Cars</string>
+	</dict>
+	<dict>
+		<key>price</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>Bands</string>
+	</dict>
+	<dict>
+		<key>price</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>Movies</string>
+	</dict>
+	<dict>
+		<key>price</key>
+		<integer>800</integer>
+		<key>name</key>
+		<string>Soccer Teams</string>
+	</dict>
+	<dict>
+		<key>price</key>
+		<integer>800</integer>
+		<key>name</key>
+		<string>Other Teams</string>
+	</dict>
+	<dict>
+		<key>price</key>
+		<integer>800</integer>
+		<key>name</key>
+		<string>Enterprises</string>
+	</dict>
+	<dict>
+		<key>price</key>
+		<integer>800</integer>
+		<key>name</key>
+		<string>Body Parts 2</string>
+	</dict>
+	<dict>
+		<key>price</key>
+		<integer>800</integer>
+		<key>name</key>
+		<string>Enterprises 2</string>
+	</dict>
+	<dict>
+		<key>price</key>
+		<integer>800</integer>
+		<key>name</key>
+		<string>Countries 2</string>
+	</dict>
+	<dict>
+		<key>price</key>
+		<integer>800</integer>
+		<key>name</key>
+		<string>Movies 2</string>
+	</dict>
+	<dict>
+		<key>price</key>
+		<integer>800</integer>
+		<key>name</key>
+		<string>Soccer Teams 2</string>
+	</dict>
+	<dict>
+		<key>price</key>
+		<integer>800</integer>
+		<key>name</key>
+		<string>Countries 3</string>
+	</dict>
+	<dict>
+		<key>price</key>
+		<integer>800</integer>
+		<key>name</key>
+		<string>Animals 2</string>
+	</dict>
+</array>
+</plist>

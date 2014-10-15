@@ -10,6 +10,8 @@
 
 @interface Menu : UIViewController
 {
-    
+    IBOutlet UILabel *coinsPocket;
+    IBOutlet UIButton *storeBtn;
+    IBOutlet UIButton *playBtn;
 }
 @end

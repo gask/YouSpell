@@ -1046,6 +1046,13 @@
 		B06F7D2519EC537C00BB43C3 /* Mid Piece_Incorrect.png in Resources */ = {isa = PBXBuildFile; fileRef = B06F7D1C19EC537C00BB43C3 /* Mid Piece_Incorrect.png */; };
 		B06F7D2619EC537C00BB43C3 /* Mid Piece.png in Resources */ = {isa = PBXBuildFile; fileRef = B06F7D1D19EC537C00BB43C3 /* Mid Piece.png */; };
 		B06F7D2819EC58AE00BB43C3 /* Mid Piece Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = B06F7D2719EC58AE00BB43C3 /* Mid Piece Selected.png */; };
+		B092596719EEC8D4004F0F3A /* Coin Counter.png in Resources */ = {isa = PBXBuildFile; fileRef = B092596619EEC8D4004F0F3A /* Coin Counter.png */; };
+		B092596919EEF93A004F0F3A /* themes.plist in Resources */ = {isa = PBXBuildFile; fileRef = B092596819EEF93A004F0F3A /* themes.plist */; };
+		B092596E19EF0451004F0F3A /* coin1.png in Resources */ = {isa = PBXBuildFile; fileRef = B092596A19EF0451004F0F3A /* coin1.png */; };
+		B092596F19EF0451004F0F3A /* coin2.png in Resources */ = {isa = PBXBuildFile; fileRef = B092596B19EF0451004F0F3A /* coin2.png */; };
+		B092597019EF0451004F0F3A /* coin3.png in Resources */ = {isa = PBXBuildFile; fileRef = B092596C19EF0451004F0F3A /* coin3.png */; };
+		B092597119EF0451004F0F3A /* coin4.png in Resources */ = {isa = PBXBuildFile; fileRef = B092596D19EF0451004F0F3A /* coin4.png */; };
+		B092597519EF0E35004F0F3A /* buyit2.png in Resources */ = {isa = PBXBuildFile; fileRef = B092597419EF0E35004F0F3A /* buyit2.png */; };
 		B093BDA419ED72F1002BD14E /* Definition_Pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = B093BDA219ED72F1002BD14E /* Definition_Pressed.png */; };
 		B093BDA519ED72F1002BD14E /* Definition.png in Resources */ = {isa = PBXBuildFile; fileRef = B093BDA319ED72F1002BD14E /* Definition.png */; };
 		B094960B19DA4A0E000BEB9F /* DownloadWords.m in Sources */ = {isa = PBXBuildFile; fileRef = B094960A19DA4A0E000BEB9F /* DownloadWords.m */; };
@@ -2149,6 +2156,13 @@
 		B06F7D1C19EC537C00BB43C3 /* Mid Piece_Incorrect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mid Piece_Incorrect.png"; sourceTree = "<group>"; };
 		B06F7D1D19EC537C00BB43C3 /* Mid Piece.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mid Piece.png"; sourceTree = "<group>"; };
 		B06F7D2719EC58AE00BB43C3 /* Mid Piece Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mid Piece Selected.png"; sourceTree = "<group>"; };
+		B092596619EEC8D4004F0F3A /* Coin Counter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Coin Counter.png"; sourceTree = "<group>"; };
+		B092596819EEF93A004F0F3A /* themes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = themes.plist; sourceTree = "<group>"; };
+		B092596A19EF0451004F0F3A /* coin1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin1.png; sourceTree = "<group>"; };
+		B092596B19EF0451004F0F3A /* coin2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin2.png; sourceTree = "<group>"; };
+		B092596C19EF0451004F0F3A /* coin3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin3.png; sourceTree = "<group>"; };
+		B092596D19EF0451004F0F3A /* coin4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin4.png; sourceTree = "<group>"; };
+		B092597419EF0E35004F0F3A /* buyit2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buyit2.png; sourceTree = "<group>"; };
 		B093BDA219ED72F1002BD14E /* Definition_Pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Definition_Pressed.png; sourceTree = "<group>"; };
 		B093BDA319ED72F1002BD14E /* Definition.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Definition.png; sourceTree = "<group>"; };
 		B094960919DA4A0E000BEB9F /* DownloadWords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadWords.h; sourceTree = "<group>"; };
@@ -3375,6 +3389,12 @@
 		B0F8142919C4EC5200D34B17 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B092596A19EF0451004F0F3A /* coin1.png */,
+				B092596B19EF0451004F0F3A /* coin2.png */,
+				B092596C19EF0451004F0F3A /* coin3.png */,
+				B092596D19EF0451004F0F3A /* coin4.png */,
+				B092597419EF0E35004F0F3A /* buyit2.png */,
+				B092596619EEC8D4004F0F3A /* Coin Counter.png */,
 				B0C330B819EDF5D60077E74D /* Popup_Word Place Full.png */,
 				B0C330B419EDF5970077E74D /* Close_Pressed.png */,
 				B0C330B519EDF5970077E74D /* Close.png */,
@@ -3420,6 +3440,7 @@
 			isa = PBXGroup;
 			children = (
 				B022200719DB890000CC15A5 /* words.plist */,
+				B092596819EEF93A004F0F3A /* themes.plist */,
 				B0CFBC4519C61BFA0053F02F /* a1.png */,
 				B0CFBC4319C61BFA0053F02F /* a2.png */,
 				B0CFBC4819C61BFA0053F02F /* a3.png */,
@@ -3558,6 +3579,7 @@
 				B022266919DB997000CC15A5 /* navy.mp3 in Resources */,
 				B02227D619DB997000CC15A5 /* wizards.mp3 in Resources */,
 				B022250219DB997000CC15A5 /* dynamo.mp3 in Resources */,
+				B092596F19EF0451004F0F3A /* coin2.png in Resources */,
 				B02227D519DB997000CC15A5 /* wings.mp3 in Resources */,
 				B02227C619DB997000CC15A5 /* volkswagen.mp3 in Resources */,
 				B022247D19DB997000CC15A5 /* brewers.mp3 in Resources */,
@@ -3637,6 +3659,7 @@
 				B022274119DB997000CC15A5 /* slayer.mp3 in Resources */,
 				B02225F419DB997000CC15A5 /* leg.mp3 in Resources */,
 				B022265819DB997000CC15A5 /* mouse.mp3 in Resources */,
+				B092597519EF0E35004F0F3A /* buyit2.png in Resources */,
 				B02227CE19DB997000CC15A5 /* watermelon.mp3 in Resources */,
 				B02225BC19DB997000CC15A5 /* islanders.mp3 in Resources */,
 				B022262219DB997000CC15A5 /* mandarine.mp3 in Resources */,
@@ -3845,6 +3868,7 @@
 				B022253A19DB997000CC15A5 /* fist.mp3 in Resources */,
 				B022275B19DB997000CC15A5 /* steelblue.mp3 in Resources */,
 				B022244819DB996F00CC15A5 /* battery.mp3 in Resources */,
+				B092597119EF0451004F0F3A /* coin4.png in Resources */,
 				B0C330B719EDF5970077E74D /* Close.png in Resources */,
 				B022247319DB997000CC15A5 /* bosch.mp3 in Resources */,
 				B022245219DB997000CC15A5 /* belly.mp3 in Resources */,
@@ -4059,6 +4083,7 @@
 				B022275819DB997000CC15A5 /* starbucks.mp3 in Resources */,
 				B022277B19DB997000CC15A5 /* thigh.mp3 in Resources */,
 				B022262B19DB997000CC15A5 /* marten.mp3 in Resources */,
+				B092597019EF0451004F0F3A /* coin3.png in Resources */,
 				B02224AC19DB997000CC15A5 /* chartreuse.mp3 in Resources */,
 				B02226F619DB997000CC15A5 /* reggina.mp3 in Resources */,
 				B06F7D1319EC4FCD00BB43C3 /* Listen_Pressed.png in Resources */,
@@ -4248,6 +4273,7 @@
 				B022274619DB997000CC15A5 /* snatch.mp3 in Resources */,
 				B02225CD19DB997000CC15A5 /* jeep.mp3 in Resources */,
 				B022263119DB997000CC15A5 /* mauritius.mp3 in Resources */,
+				B092596E19EF0451004F0F3A /* coin1.png in Resources */,
 				B022261F19DB997000CC15A5 /* malibu.mp3 in Resources */,
 				B022262719DB997000CC15A5 /* maritimo.mp3 in Resources */,
 				B022242F19DB996F00CC15A5 /* austria.mp3 in Resources */,
@@ -4308,6 +4334,7 @@
 				B02224B019DB997000CC15A5 /* cherimoya.mp3 in Resources */,
 				B022273019DB997000CC15A5 /* sheep.mp3 in Resources */,
 				B02224E919DB997000CC15A5 /* darkgreen.mp3 in Resources */,
+				B092596919EEF93A004F0F3A /* themes.plist in Resources */,
 				B022276519DB997000CC15A5 /* suriname.mp3 in Resources */,
 				B02225E019DB997000CC15A5 /* knee.mp3 in Resources */,
 				B022262919DB997000CC15A5 /* maroon.mp3 in Resources */,
@@ -4384,6 +4411,7 @@
 				B02226C719DB997000CC15A5 /* pixies.mp3 in Resources */,
 				B022248919DB997000CC15A5 /* bunny.mp3 in Resources */,
 				B02225AC19DB997000CC15A5 /* impala.mp3 in Resources */,
+				B092596719EEC8D4004F0F3A /* Coin Counter.png in Resources */,
 				B022248E19DB997000CC15A5 /* buttocks.mp3 in Resources */,
 				B02227D719DB997000CC15A5 /* wolfmother.mp3 in Resources */,
 				B022269719DB997000CC15A5 /* pacers.mp3 in Resources */,

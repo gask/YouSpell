@@ -136,6 +136,7 @@
  
     self.progressPerc.font = [UIFont fontWithName:@"Delicious-Roman" size:10];
     self.themeLabel.font = [UIFont fontWithName:@"Delicious-Roman" size:18];
+    gainedCoins.font = [UIFont fontWithName:@"Delicious-Roman" size:25];
     
     wordsArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"words" ofType:@"plist"]];
     NSMutableArray *wordsToBeTried = [[[NSUserDefaults standardUserDefaults] objectForKey:@"wordsToBeTried"] mutableCopy];
@@ -150,7 +151,7 @@
     
     if(self.didWon)
     {
-        self.feedback.text = @"YAY! You won! :)";
+        self.feedback.text = @"You WON!! Let's break that record!";
         titleBack.image = [UIImage imageNamed:@"WLTitleGreen.png"];
         
         percentage = (float)(themeWords-wordsToBeTried.count)/themeWords;
@@ -158,10 +159,15 @@
         self.progressPerc.text = [NSString stringWithFormat:@"%.0f%%", percentage*100];
         
         frame.size.width *= percentage;
+        
+        NSInteger coins = [[NSUserDefaults standardUserDefaults] integerForKey:COINS];
+        coins += 5;
+        [[NSUserDefaults standardUserDefaults] setInteger:coins forKey:COINS];
+        [gainedCoins setText:@"+5 coins"];
     }
     else
     {
-        self.feedback.text = @"Sorry, better luck next time :(";
+        self.feedback.text = @"Sorry, better luck next time!";
         titleBack.image = [UIImage imageNamed:@"WLTitleRed.png"];
         
         percentage = (float)(themeWords-wordsToBeTried.count-1)/themeWords;
@@ -169,6 +175,11 @@
         self.progressPerc.text = [NSString stringWithFormat:@"%.0f%%", percentage*100];
         
         frame.size.width *= percentage;
+        
+        NSInteger coins = [[NSUserDefaults standardUserDefaults] integerForKey:COINS];
+        coins += 1;
+        [[NSUserDefaults standardUserDefaults] setInteger:coins forKey:COINS];
+        [gainedCoins setText:@"+1 coin"];
     }
     
     UIView *bar = [[UIView alloc] initWithFrame: frame];

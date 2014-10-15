@@ -12,14 +12,18 @@
 @interface ThemeSelection : UIViewController <UITableViewDelegate>
 {
     IBOutlet UITableView *mainTable;
+    IBOutlet UILabel *titleLabel;
+    IBOutlet UIButton *backBtn;
     
     NSInteger selectedTheme;
     
-    NSMutableArray *themeNames;
+    NSArray *themes;
+    NSArray *coinImages;
     NSArray *wordsArray;
     NSMutableArray *userScore;
     NSMutableArray *themeScores;
     NSMutableArray *themeTotals;
+    NSMutableArray *hasTheme;
 }
 
 

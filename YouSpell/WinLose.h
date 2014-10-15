@@ -15,6 +15,7 @@
     NSArray *wordsArray;
     NSInteger selectedTheme;
     IBOutlet UIImageView *titleBack;
+    IBOutlet UILabel *gainedCoins;
 }
 
 @property (nonatomic) IBOutlet UILabel *feedback;
