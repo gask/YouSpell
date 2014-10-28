@@ -7,12 +7,16 @@
 //
 
 #import "AppDelegate.h"
+#import "SpellIAP.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    [SpellIAP sharedInstance];
+    
     return YES;
 }
 							

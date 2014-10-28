@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		852665C31A0020B400652695 /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 852665C21A0020B400652695 /* IAPHelper.m */; };
+		852665C61A00236300652695 /* SpellIAP.m in Sources */ = {isa = PBXBuildFile; fileRef = 852665C51A00236300652695 /* SpellIAP.m */; };
+		852665C91A002A5600652695 /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = 852665C81A002A5600652695 /* Store.m */; };
 		855FA5B019FEC2B4009A63B2 /* StoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 855FA5AF19FEC2B4009A63B2 /* StoreManager.m */; };
 		858C0EF719D5038D00BA2549 /* DefinitionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 858C0EF619D5038D00BA2549 /* DefinitionView.m */; };
 		85AB6C8419D78E3C00D018D1 /* TransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85AB6C8319D78E3C00D018D1 /* TransitionDelegate.m */; };
@@ -1115,6 +1118,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		852665C11A0020B300652695 /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAPHelper.h; path = Classes/IAPHelper.h; sourceTree = "<group>"; };
+		852665C21A0020B400652695 /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAPHelper.m; path = Classes/IAPHelper.m; sourceTree = "<group>"; };
+		852665C41A00236300652695 /* SpellIAP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpellIAP.h; path = Classes/SpellIAP.h; sourceTree = "<group>"; };
+		852665C51A00236300652695 /* SpellIAP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpellIAP.m; path = Classes/SpellIAP.m; sourceTree = "<group>"; };
+		852665C71A002A5600652695 /* Store.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Store.h; path = Classes/Store.h; sourceTree = "<group>"; };
+		852665C81A002A5600652695 /* Store.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Store.m; path = Classes/Store.m; sourceTree = "<group>"; };
 		8551C3B019D3B94F00BA7402 /* AppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppConstants.h; path = Classes/AppConstants.h; sourceTree = "<group>"; };
 		855FA5AE19FEC2B4009A63B2 /* StoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreManager.h; sourceTree = "<group>"; };
 		855FA5AF19FEC2B4009A63B2 /* StoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreManager.m; sourceTree = "<group>"; };
@@ -3375,6 +3384,8 @@
 			isa = PBXGroup;
 			children = (
 				8551C3B019D3B94F00BA7402 /* AppConstants.h */,
+				852665C71A002A5600652695 /* Store.h */,
+				852665C81A002A5600652695 /* Store.m */,
 				B0FFF7B019CBBA1700B1A50F /* Menu.h */,
 				B0FFF7B119CBBA1700B1A50F /* Menu.m */,
 				B0AA7A0F19A560E700C9C554 /* GameScene.h */,
@@ -3387,6 +3398,10 @@
 				855FA5AF19FEC2B4009A63B2 /* StoreManager.m */,
 				B0CFBC3C19C600140053F02F /* ThemeSelection.h */,
 				B0CFBC3D19C600140053F02F /* ThemeSelection.m */,
+				852665C11A0020B300652695 /* IAPHelper.h */,
+				852665C21A0020B400652695 /* IAPHelper.m */,
+				852665C41A00236300652695 /* SpellIAP.h */,
+				852665C51A00236300652695 /* SpellIAP.m */,
 				B0FFF7B319CBD0E500B1A50F /* ThemeCell.h */,
 				B0FFF7B419CBD0E500B1A50F /* ThemeCell.m */,
 				858C0EF519D5038D00BA2549 /* DefinitionView.h */,
@@ -4652,7 +4667,9 @@
 				B094960B19DA4A0E000BEB9F /* DownloadWords.m in Sources */,
 				B0CFBC3E19C600140053F02F /* ThemeSelection.m in Sources */,
 				858C0EF719D5038D00BA2549 /* DefinitionView.m in Sources */,
+				852665C61A00236300652695 /* SpellIAP.m in Sources */,
 				85AB6C8419D78E3C00D018D1 /* TransitionDelegate.m in Sources */,
+				852665C31A0020B400652695 /* IAPHelper.m in Sources */,
 				B0AA79E819A55FD300C9C554 /* AppDelegate.m in Sources */,
 				B018E78819CA7C1B000F1DDD /* WinLose.m in Sources */,
 				B0AA7A1819A5657F00C9C554 /* LetterButton.m in Sources */,
@@ -4660,6 +4677,7 @@
 				B0FFF7B219CBBA1700B1A50F /* Menu.m in Sources */,
 				85AB6C8719D78ECE00D018D1 /* AnimatedTransitioning.m in Sources */,
 				B0AA79E419A55FD300C9C554 /* main.m in Sources */,
+				852665C91A002A5600652695 /* Store.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
