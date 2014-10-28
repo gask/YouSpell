@@ -64,8 +64,11 @@
         [[NSUserDefaults standardUserDefaults] setObject:array forKey:THEMESSTATUS];
     }
     
-    [coinsPocket setText: [NSString stringWithFormat: @"%i", [[NSUserDefaults standardUserDefaults] integerForKey: COINS]]];
+    NSInteger superCoins = [[NSUserDefaults standardUserDefaults] integerForKey: COINS];
+    
+    [coinsPocket setText: [NSString stringWithFormat: @"%i", superCoins]];
 
+    NSLog(@"coins: %i", superCoins);
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
