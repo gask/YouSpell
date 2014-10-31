@@ -9,13 +9,15 @@
 #import <UIKit/UIKit.h>
 #import <StoreKit/StoreKit.h>
 #include <stdlib.h>
-#import "StoreManager.h"
+//#import "StoreManager.h"
+#import "SpellIAP.h"
 
 @interface ThemeSelection : UIViewController <UITableViewDelegate, UIAlertViewDelegate>
 {
     IBOutlet UITableView *mainTable;
     IBOutlet UILabel *titleLabel;
     IBOutlet UIButton *backBtn;
+    IBOutlet UILabel *coinLabel;
     
     NSIndexPath *selectedTheme;
     
@@ -29,6 +31,6 @@
     NSMutableArray *hasTheme;
 }
 
-@property (strong, nonatomic) StoreManager *storeManager;
+//@property (strong, nonatomic) StoreManager *storeManager;
 
 @end

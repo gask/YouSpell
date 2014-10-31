@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>1000 Coins Pack</string>
+		<key>price</key>
+		<real>0.99</real>
+		<key>productID</key>
+		<string>com.giovannibf.youspell.1000coinspack</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>2500 Coins Pack</string>
+		<key>price</key>
+		<real>1.99</real>
+		<key>productID</key>
+		<string>com.giovannibf.youspell.2500coinspack</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>4000 Coins Pack</string>
+		<key>price</key>
+		<real>2.99</real>
+		<key>productID</key>
+		<string>com.giovannibf.youspell.4000coinspack</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>10000 Coins Pack</string>
+		<key>price</key>
+		<real>3.99</real>
+		<key>productID</key>
+		<string>com.giovannibf.youspell.10000coinspack</string>
+	</dict>
+</array>
+</plist>

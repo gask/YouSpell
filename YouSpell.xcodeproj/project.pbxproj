@@ -10,6 +10,7 @@
 		852665C31A0020B400652695 /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 852665C21A0020B400652695 /* IAPHelper.m */; };
 		852665C61A00236300652695 /* SpellIAP.m in Sources */ = {isa = PBXBuildFile; fileRef = 852665C51A00236300652695 /* SpellIAP.m */; };
 		852665C91A002A5600652695 /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = 852665C81A002A5600652695 /* Store.m */; };
+		852665CB1A028C1500652695 /* products.plist in Resources */ = {isa = PBXBuildFile; fileRef = 852665CA1A028C1500652695 /* products.plist */; };
 		855FA5B019FEC2B4009A63B2 /* StoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 855FA5AF19FEC2B4009A63B2 /* StoreManager.m */; };
 		858C0EF719D5038D00BA2549 /* DefinitionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 858C0EF619D5038D00BA2549 /* DefinitionView.m */; };
 		85AB6C8419D78E3C00D018D1 /* TransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85AB6C8319D78E3C00D018D1 /* TransitionDelegate.m */; };
@@ -1124,6 +1125,7 @@
 		852665C51A00236300652695 /* SpellIAP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpellIAP.m; path = Classes/SpellIAP.m; sourceTree = "<group>"; };
 		852665C71A002A5600652695 /* Store.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Store.h; path = Classes/Store.h; sourceTree = "<group>"; };
 		852665C81A002A5600652695 /* Store.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Store.m; path = Classes/Store.m; sourceTree = "<group>"; };
+		852665CA1A028C1500652695 /* products.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = products.plist; sourceTree = "<group>"; };
 		8551C3B019D3B94F00BA7402 /* AppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppConstants.h; path = Classes/AppConstants.h; sourceTree = "<group>"; };
 		855FA5AE19FEC2B4009A63B2 /* StoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreManager.h; sourceTree = "<group>"; };
 		855FA5AF19FEC2B4009A63B2 /* StoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreManager.m; sourceTree = "<group>"; };
@@ -3464,6 +3466,7 @@
 			isa = PBXGroup;
 			children = (
 				B022200719DB890000CC15A5 /* words.plist */,
+				852665CA1A028C1500652695 /* products.plist */,
 				B092596819EEF93A004F0F3A /* themes.plist */,
 				B0CFBC4519C61BFA0053F02F /* a1.png */,
 				B0CFBC4319C61BFA0053F02F /* a2.png */,
@@ -4062,6 +4065,7 @@
 				B02224C319DB997000CC15A5 /* clementine.mp3 in Resources */,
 				B02227AF19DB997000CC15A5 /* usa.mp3 in Resources */,
 				B022263C19DB997000CC15A5 /* mercedes.mp3 in Resources */,
+				852665CB1A028C1500652695 /* products.plist in Resources */,
 				B022277A19DB997000CC15A5 /* thailand.mp3 in Resources */,
 				B022246C19DB997000CC15A5 /* boca.mp3 in Resources */,
 				B022277F19DB997000CC15A5 /* throat.mp3 in Resources */,

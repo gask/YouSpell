@@ -13,8 +13,12 @@
     IBOutlet UITableView *mainTable;
     IBOutlet UILabel *titleLabel;
     IBOutlet UIButton *backBtn;
+    NSArray *displayProducts;
+    IBOutlet UILabel *coinLabel;
 }
 
 @property(nonatomic, retain) UIRefreshControl *refreshControl;
+
+- (IBAction)restoreTapped:(id)sender;
 
 @end
