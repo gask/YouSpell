@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		851D11AE1A04346D0058D026 /* Coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 851D11AA1A04346D0058D026 /* Coin.png */; };
+		851D11AF1A04346D0058D026 /* Coins_Stack.png in Resources */ = {isa = PBXBuildFile; fileRef = 851D11AB1A04346D0058D026 /* Coins_Stack.png */; };
+		851D11B01A04346D0058D026 /* Coins_TripleStack.png in Resources */ = {isa = PBXBuildFile; fileRef = 851D11AC1A04346D0058D026 /* Coins_TripleStack.png */; };
+		851D11B11A04346D0058D026 /* Container Coins.png in Resources */ = {isa = PBXBuildFile; fileRef = 851D11AD1A04346D0058D026 /* Container Coins.png */; };
+		851D11B41A043DAC0058D026 /* StoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 851D11B31A043DAC0058D026 /* StoreCell.m */; };
 		852665C31A0020B400652695 /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 852665C21A0020B400652695 /* IAPHelper.m */; };
 		852665C61A00236300652695 /* SpellIAP.m in Sources */ = {isa = PBXBuildFile; fileRef = 852665C51A00236300652695 /* SpellIAP.m */; };
 		852665C91A002A5600652695 /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = 852665C81A002A5600652695 /* Store.m */; };
@@ -1119,6 +1124,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		851D11AA1A04346D0058D026 /* Coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Coin.png; sourceTree = "<group>"; };
+		851D11AB1A04346D0058D026 /* Coins_Stack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Coins_Stack.png; sourceTree = "<group>"; };
+		851D11AC1A04346D0058D026 /* Coins_TripleStack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Coins_TripleStack.png; sourceTree = "<group>"; };
+		851D11AD1A04346D0058D026 /* Container Coins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Container Coins.png"; sourceTree = "<group>"; };
+		851D11B21A043DAC0058D026 /* StoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreCell.h; path = Classes/StoreCell.h; sourceTree = "<group>"; };
+		851D11B31A043DAC0058D026 /* StoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreCell.m; path = Classes/StoreCell.m; sourceTree = "<group>"; };
 		852665C11A0020B300652695 /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAPHelper.h; path = Classes/IAPHelper.h; sourceTree = "<group>"; };
 		852665C21A0020B400652695 /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAPHelper.m; path = Classes/IAPHelper.m; sourceTree = "<group>"; };
 		852665C41A00236300652695 /* SpellIAP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpellIAP.h; path = Classes/SpellIAP.h; sourceTree = "<group>"; };
@@ -3408,6 +3419,8 @@
 				B0FFF7B419CBD0E500B1A50F /* ThemeCell.m */,
 				858C0EF519D5038D00BA2549 /* DefinitionView.h */,
 				858C0EF619D5038D00BA2549 /* DefinitionView.m */,
+				851D11B21A043DAC0058D026 /* StoreCell.h */,
+				851D11B31A043DAC0058D026 /* StoreCell.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -3415,6 +3428,10 @@
 		B0F8142919C4EC5200D34B17 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				851D11AA1A04346D0058D026 /* Coin.png */,
+				851D11AB1A04346D0058D026 /* Coins_Stack.png */,
+				851D11AC1A04346D0058D026 /* Coins_TripleStack.png */,
+				851D11AD1A04346D0058D026 /* Container Coins.png */,
 				B092596A19EF0451004F0F3A /* coin1.png */,
 				B092596B19EF0451004F0F3A /* coin2.png */,
 				B092596C19EF0451004F0F3A /* coin3.png */,
@@ -3948,6 +3965,7 @@
 				B022250719DB997000CC15A5 /* ecuador.mp3 in Resources */,
 				B02225FB19DB997000CC15A5 /* liberia.mp3 in Resources */,
 				B022266B19DB997000CC15A5 /* nectarine.mp3 in Resources */,
+				851D11B01A04346D0058D026 /* Coins_TripleStack.png in Resources */,
 				B022244E19DB997000CC15A5 /* beige.mp3 in Resources */,
 				B022270D19DB997000CC15A5 /* rwanda.mp3 in Resources */,
 				B022254C19DB997000CC15A5 /* galatasaray.mp3 in Resources */,
@@ -3983,6 +4001,7 @@
 				B02224C419DB997000CC15A5 /* cleopatra.mp3 in Resources */,
 				B022268019DB997000CC15A5 /* notebook.mp3 in Resources */,
 				B02227AD19DB997000CC15A5 /* urethra.mp3 in Resources */,
+				851D11AF1A04346D0058D026 /* Coins_Stack.png in Resources */,
 				B02226F519DB997000CC15A5 /* redcurrant.mp3 in Resources */,
 				B022261B19DB997000CC15A5 /* malawi.mp3 in Resources */,
 				B022263819DB997000CC15A5 /* melancholia.mp3 in Resources */,
@@ -4133,6 +4152,7 @@
 				B022270119DB997000CC15A5 /* rockies.mp3 in Resources */,
 				B0AA79F319A55FD300C9C554 /* Images.xcassets in Resources */,
 				B02225DF19DB997000CC15A5 /* kiwi.mp3 in Resources */,
+				851D11AE1A04346D0058D026 /* Coin.png in Resources */,
 				B022266519DB997000CC15A5 /* napoli.mp3 in Resources */,
 				B022261719DB997000CC15A5 /* magenta.mp3 in Resources */,
 				B022277019DB997000CC15A5 /* tangerine.mp3 in Resources */,
@@ -4278,6 +4298,7 @@
 				B02227BB19DB997000CC15A5 /* vicuna.mp3 in Resources */,
 				B022241119DB996F00CC15A5 /* amazon.mp3 in Resources */,
 				B022269A19DB997000CC15A5 /* pakistan.mp3 in Resources */,
+				851D11B11A04346D0058D026 /* Container Coins.png in Resources */,
 				B022244F19DB997000CC15A5 /* belarus.mp3 in Resources */,
 				B022252019DB997000CC15A5 /* ewe.mp3 in Resources */,
 				B022252119DB997000CC15A5 /* excalibur.mp3 in Resources */,
@@ -4675,6 +4696,7 @@
 				85AB6C8419D78E3C00D018D1 /* TransitionDelegate.m in Sources */,
 				852665C31A0020B400652695 /* IAPHelper.m in Sources */,
 				B0AA79E819A55FD300C9C554 /* AppDelegate.m in Sources */,
+				851D11B41A043DAC0058D026 /* StoreCell.m in Sources */,
 				B018E78819CA7C1B000F1DDD /* WinLose.m in Sources */,
 				B0AA7A1819A5657F00C9C554 /* LetterButton.m in Sources */,
 				B0FFF7B519CBD0E500B1A50F /* ThemeCell.m in Sources */,

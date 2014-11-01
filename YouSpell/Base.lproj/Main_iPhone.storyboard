@@ -495,6 +495,12 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gyd-Ol-aoA" id="rua-rW-bUe">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Container Coins.png" translatesAutoresizingMaskIntoConstraints="NO" id="cUo-1B-2mx">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -867,6 +873,7 @@
         <image name="Close.png" width="223" height="89"/>
         <image name="Close_Pressed.png" width="223" height="89"/>
         <image name="Coin Counter.png" width="640" height="226"/>
+        <image name="Container Coins.png" width="1536" height="200"/>
         <image name="ContainerThemesJig.png" width="640" height="83"/>
         <image name="Definition.png" width="439" height="83"/>
         <image name="Definition_Pressed.png" width="439" height="83"/>
@@ -890,7 +897,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="M0j-Qj-W79"/>
         <segue reference="DWX-Vk-Ni3"/>
-        <segue reference="BWB-OZ-e8m"/>
     </inferredMetricsTieBreakers>
 </document>

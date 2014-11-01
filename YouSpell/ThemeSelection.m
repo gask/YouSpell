@@ -108,7 +108,6 @@
                            title:@"You Spell"
               confirmButtonLabel:@"Do It!"
                   andCancelLabel:@"No, thanks."];
-            
         }
         else
         {
@@ -117,10 +116,9 @@
                            title:@"You Spell"
               confirmButtonLabel:@"Buy It!"
                   andCancelLabel:@"No, thanks."];
-            
-            [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-            
         }
+        
+        [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
     
     //return indexPath;
@@ -196,10 +194,10 @@
             [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:selectedTheme.row] forKey:@"selectedTheme"];
             
             [[NSUserDefaults standardUserDefaults] setObject: [[themes objectAtIndex:selectedTheme.row] objectForKey: @"name"]  forKey:@"selectedThemeName"];
-            
-            [mainTable deselectRowAtIndexPath:selectedTheme animated:NO];
+    
             [self performSegueWithIdentifier:@"CallGameScene" sender:self];
         }
+        [mainTable deselectRowAtIndexPath:selectedTheme animated:NO];
     }
 
 }

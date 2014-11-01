@@ -31,14 +31,10 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(purchasedProduct:) name:IAPHelperProductPurchasedNotification object:nil];
     
     [coinLabel setFont:[UIFont fontWithName:@"Delicious-Roman" size:18.0]];
-    [titleLabel setFont:[UIFont fontWithName:@"Delicious-Roman" size:20.0]];
+    [titleLabel setFont:[UIFont fontWithName:@"Delicious-Roman" size:22.0]];
     [coinLabel setText:[NSString stringWithFormat:@"%i", [[NSUserDefaults standardUserDefaults] integerForKey: COINS]]];
     
-    /*self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.refreshControl addTarget:self action:@selector(reload) forControlEvents:UIControlEventValueChanged];
-    [mainTable addSubview:self.refreshControl];
-    [self reload];
-    [self.refreshControl beginRefreshing];*/
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"back72.png"]]];
     
     [self reload];
     
@@ -109,6 +105,7 @@
     
     NSDictionary *product = displayProducts[indexPath.row];
     cell.textLabel.text = [product objectForKey:@"name"];
+    [cell.textLabel setFont:[UIFont fontWithName:@"Delicious-Roman" size:18.0]];
     
     //[_priceFormatter setLocale:product.priceLocale];
     //cell.detailTextLabel.text = [_priceFormatter stringFromNumber:product.price];
