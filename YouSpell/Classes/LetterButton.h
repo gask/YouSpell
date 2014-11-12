@@ -19,6 +19,7 @@ enum LetterButtonType {typeButton, typeLabel};
 
 @property (nonatomic) NSInteger position;
 @property (nonatomic) BOOL selected;
+@property (nonatomic) BOOL typeChanged;
 @property (nonatomic) enum LetterButtonType isButton;
 
 @end

@@ -56,13 +56,14 @@
     themeScores = [NSMutableArray array];
     themeTotals = [NSMutableArray array];
     userScore = [[[NSUserDefaults standardUserDefaults] objectForKey:@"Scores"] mutableCopy];
-    
+    NSInteger selectedLevel = [[[NSUserDefaults standardUserDefaults] objectForKey:@"LevelSelected"] intValue];
+    levelUserScore = userScore[selectedLevel];
     hasTheme = [[[NSUserDefaults standardUserDefaults] objectForKey:THEMESSTATUS] mutableCopy];
     
-    for (NSInteger i = 0 ; i < userScore.count; i++)
+    for (NSInteger i = 0 ; i < levelUserScore.count; i++)
     {
         //NSLog(@"tema %i: %@", i+1, themeNames[i]);
-        NSMutableArray *themeWords = [[userScore objectAtIndex:i] mutableCopy];
+        NSMutableArray *themeWords = [[levelUserScore objectAtIndex:i] mutableCopy];
         [themeTotals addObject:[NSNumber numberWithInt:themeWords.count]];
         
         NSInteger themeScore = 0;

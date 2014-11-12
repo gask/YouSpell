@@ -42,23 +42,32 @@
     {
 //        NSLog(@"adicionar!");
         
-        float lSize = INITIAL_LETTERSIZE;
-        //float keysSize = INITIAL_LETTERSIZE*(float)(keysArray.count+1);
+        if(levelSelected == 0 || levelSelected == 1)
+        {
+            [self presentMessage:@"Select a space for your letter!"];
+        }
+        else
+        {
+            float lSize = INITIAL_LETTERSIZE;
+            //float keysSize = INITIAL_LETTERSIZE*(float)(keysArray.count+1);
+            
+            //NSLog(@"tenta ser um pouco inteligente: %f", keysSize);
+            
+            lSize = SPACE/(keysArray.count+1);
+            
+            if(lSize > INITIAL_LETTERSIZE) lSize = INITIAL_LETTERSIZE;
+            [self resizeLetters:lSize andNumberOfLetters:(float)keysArray.count+1 resizeLast:NO];
+            
+            LetterButton *l = [[LetterButton alloc] initWithFrame: [self calculateLetterPositionWithNumberOfLetters:(float)keysArray.count+1 andActualSize:lSize] position:keysArray.count+1 andLetter: buttonPressed.titleLabel.text andState:typeButton];
+            
+            [keysArray addObject: l];
+            
+            [self.view addSubview:l];
+            
+            [self handleFlushWithPos:keysArray.count+1];
+        }
         
-        //NSLog(@"tenta ser um pouco inteligente: %f", keysSize);
         
-        lSize = SPACE/(keysArray.count+1);
-        
-        if(lSize > INITIAL_LETTERSIZE) lSize = INITIAL_LETTERSIZE;
-        [self resizeLetters:lSize andNumberOfLetters:(float)keysArray.count+1 resizeLast:NO];
-        
-        LetterButton *l = [[LetterButton alloc] initWithFrame: [self calculateLetterPositionWithNumberOfLetters:(float)keysArray.count+1 andActualSize:lSize] position:keysArray.count+1 andLetter: buttonPressed.titleLabel.text andState:typeButton];
-        
-        [keysArray addObject: l];
-        
-        [self.view addSubview:l];
-        
-        [self handleFlushWithPos:keysArray.count+1];
     }
     
 }
@@ -269,11 +278,11 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    //NSLog(@"won: %i", gameWon);
+    NSLog(@"won: %i", gameWon);
     
     if ([[segue identifier] isEqualToString:@"CallWinLose"])
     {
-        //NSLog(@"é a segue");
+        NSLog(@"é a segue");
         
         // Get destination view
         WinLose *vc = [segue destinationViewController];
@@ -285,18 +294,24 @@
             vc.didWon = YES;
             
             NSInteger selectedTheme = [[[NSUserDefaults standardUserDefaults] objectForKey:@"selectedTheme"] intValue];
+            NSInteger selectedLevel = [[[NSUserDefaults standardUserDefaults] objectForKey:@"LevelSelected"] intValue];
             NSInteger selectedWord = [[[NSUserDefaults standardUserDefaults] objectForKey:@"selectedWord"] intValue];
-            NSMutableArray *scoreArray = [[[NSUserDefaults standardUserDefaults] objectForKey:@"Scores"] mutableCopy];
             
-            NSMutableArray *subScoreArray = [[scoreArray objectAtIndex: selectedTheme] mutableCopy];
+            NSMutableArray *scoreArray = [[[NSUserDefaults standardUserDefaults] objectForKey:@"Scores"] mutableCopy];
+            NSMutableArray *levelArray = [[scoreArray objectAtIndex: selectedLevel] mutableCopy];
+            NSMutableArray *themeScoreArray = [[levelArray objectAtIndex: selectedTheme] mutableCopy];
             
             //NSLog(@"1");
             
-            [subScoreArray setObject:[NSNumber numberWithBool:YES] atIndexedSubscript:selectedWord];
+            //[themeScoreArray replaceObjectAtIndex:selectedWord withObject:[NSNumber numberWithBool:YES]];
+            [themeScoreArray setObject:[NSNumber numberWithBool:YES] atIndexedSubscript:selectedWord];
 //            subScoreArray[selectedWord] = [NSNumber numberWithBool:YES];
             //NSLog(@"2");
-            scoreArray[selectedTheme] = subScoreArray;
             
+            [levelArray setObject:themeScoreArray atIndexedSubscript:selectedTheme];
+            [scoreArray setObject:levelArray atIndexedSubscript:selectedLevel];
+            
+            //NSLog(@"3");
             [[NSUserDefaults standardUserDefaults] setObject:scoreArray forKey:@"Scores"];
             [[NSUserDefaults standardUserDefaults] synchronize];
             
@@ -324,8 +339,20 @@
         //[tButton setBackgroundColor:[UIColor blackColor]];
         if(tButton.isButton == typeButton)
         {
-            [tButton setBackgroundImage:[UIImage imageNamed:@"Mid Piece"] forState:UIControlStateNormal];
+            if(levelSelected == 0 || levelSelected == 1)
+            {
+                if(tButton.position == 1)[tButton setBackgroundImage:[UIImage imageNamed:@"First Piece"] forState:UIControlStateNormal];
+                else if(tButton.position == self.theWord.length) [tButton setBackgroundImage:[UIImage imageNamed:@"Last Piece"] forState:UIControlStateNormal];
+                else [tButton setBackgroundImage:[UIImage imageNamed:@"Mid Piece"] forState:UIControlStateNormal];
+            }
+            else
+            {
+                [tButton setBackgroundImage:[UIImage imageNamed:@"Mid Piece"] forState:UIControlStateNormal];
+                
+            }
+            
             tButton.selected = NO;
+            
         }
         
     }
@@ -337,7 +364,17 @@
         //[rButton setBackgroundColor:[UIColor redColor]];
         if(rButton.isButton == typeButton)
         {
-            [rButton setBackgroundImage:[UIImage imageNamed:@"Mid Piece Selected"] forState:UIControlStateNormal];
+            if(levelSelected == 0 || levelSelected == 1)
+            {
+                if(rButton.position == 1)[rButton setBackgroundImage:[UIImage imageNamed:@"First Piece Selected"] forState:UIControlStateNormal];
+                else if(rButton.position == self.theWord.length) [rButton setBackgroundImage:[UIImage imageNamed:@"Last Piece Selected"] forState:UIControlStateNormal];
+                else [rButton setBackgroundImage:[UIImage imageNamed:@"Mid Piece Selected"] forState:UIControlStateNormal];
+            }
+            else
+            {
+                [rButton setBackgroundImage:[UIImage imageNamed:@"Mid Piece Selected"] forState:UIControlStateNormal];
+            }
+            
             rButton.selected = YES;
         }
         
@@ -449,12 +486,28 @@
             LetterButton *thaLetta = [keysArray objectAtIndex:letterToBeGuessed];
             
             [thaLetta setSelectable];
-            NSLog(@"THA LETTA pos: %i",thaLetta.position);
+            NSLog(@"THA LETTA pos: %li",(long)thaLetta.position);
             [thaLetta setTitle:@"" forState:UIControlStateNormal];
         }
         else
         {
             // fazer o medium remover 50% das letras.
+            NSInteger numberOfLettersToBeRemoved = self.theWord.length/2;
+            NSMutableArray *letters = [NSMutableArray array];
+            
+            for(int w = 0 ; w < self.theWord.length ; w++) [letters addObject:[NSNumber numberWithInt:w]];
+            
+            for (int y = 0; y < numberOfLettersToBeRemoved; y++)
+            {
+                NSInteger letterToBeGuessed = arc4random_uniform(letters.count);
+                
+                LetterButton *thaLetta = [keysArray objectAtIndex:[[letters objectAtIndex:letterToBeGuessed] intValue]];
+                
+                [thaLetta setSelectable];
+                NSLog(@"THA LETTA pos: %li",(long)thaLetta.position);
+                [thaLetta setTitle:@"" forState:UIControlStateNormal];
+                [letters removeObjectAtIndex:letterToBeGuessed];
+            }
         }
         
     }

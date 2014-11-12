@@ -33,16 +33,23 @@
     {
         NSMutableArray *scoreArray = [NSMutableArray array];
         
-        
-        for(NSInteger i = 0 ; i < themesArray.count ; i++)
+        for (NSInteger j = 0; j < 3; j++)
         {
-            [scoreArray addObject: [NSMutableArray array]];
+            //NSLog(@"level: %i",j);
+            [scoreArray addObject:[NSMutableArray array]];
             
-            NSMutableArray *wordsArray = themesArray[i];
-            
-            for (NSInteger k = 0; k < wordsArray.count; k++)
+            for(NSInteger i = 0 ; i < themesArray.count ; i++)
             {
-                [scoreArray[i] addObject:[NSNumber numberWithBool:NO]];
+                //NSLog(@"tema: %i",i);
+                [scoreArray[j] addObject: [NSMutableArray array]];
+                
+                NSMutableArray *wordsArray = themesArray[i];
+                
+                for (NSInteger k = 0; k < wordsArray.count; k++)
+                {
+                    //NSLog(@"palavra: %i",k);
+                    [scoreArray[j][i] addObject:[NSNumber numberWithBool:NO]];
+                }
             }
         }
         

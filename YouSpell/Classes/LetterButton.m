@@ -38,6 +38,7 @@
         [self.titleLabel setFont: [UIFont fontWithName:@"Delicious-Roman" size:15.0]];
 
         if(state == typeButton) [self addTarget:self action:@selector(doIt) forControlEvents:UIControlEventTouchUpInside];
+        self.typeChanged = NO;
     }
     return self;
 }
@@ -46,11 +47,13 @@
 {
     self.isButton = typeButton;
     [self addTarget:self action:@selector(doIt) forControlEvents:UIControlEventTouchUpInside];
+    self.typeChanged = YES;
 }
 
 - (IBAction)handlePan:(UIPanGestureRecognizer *)recognizer
 {
     if(self.isButton == typeLabel) return;
+    if(self.typeChanged) return;
     
     CGPoint translation = [recognizer translationInView:self];
     

@@ -26,6 +26,7 @@
     NSArray *coinImages;
     NSArray *wordsArray;
     NSMutableArray *userScore;
+    NSMutableArray *levelUserScore;
     NSMutableArray *themeScores;
     NSMutableArray *themeTotals;
     NSMutableArray *hasTheme;
