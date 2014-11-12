@@ -78,15 +78,30 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if([segue.identifier isEqualToString:@"EasyClicked"])
+    {
+        NSLog(@"easy");
+        [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"LevelSelected"];
+    }
+    else if([segue.identifier isEqualToString:@"MediumClicked"])
+    {
+        NSLog(@"medium");
+        [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:@"LevelSelected"];
+    }
+    else if([segue.identifier isEqualToString:@"HardClicked"])
+    {
+        NSLog(@"hard");
+        [[NSUserDefaults standardUserDefaults] setInteger:2 forKey:@"LevelSelected"];
+    }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end

@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface StoreCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UILabel *packName;
+@property (strong, nonatomic) IBOutlet UIButton *buyButton;
+@property (strong, nonatomic) IBOutlet UIImageView *coinImage;
 
 @end

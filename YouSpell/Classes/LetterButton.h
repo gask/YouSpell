@@ -15,6 +15,7 @@ enum LetterButtonType {typeButton, typeLabel};
 - (id)initWithFrame:(CGRect)frame position: (NSInteger) pos andLetter: (NSString *) letter andState: (enum LetterButtonType) state;
 
 - (IBAction)handlePan:(id)recognizer;
+- (void) setSelectable;
 
 @property (nonatomic) NSInteger position;
 @property (nonatomic) BOOL selected;

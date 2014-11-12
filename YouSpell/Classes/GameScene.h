@@ -16,6 +16,7 @@
     BOOL gameWon;
     
     NSInteger positionSelected;
+    NSInteger levelSelected;
     
     NSMutableArray *keysArray;
     NSMutableArray *correctionArray;

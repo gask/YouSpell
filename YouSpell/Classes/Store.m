@@ -10,6 +10,7 @@
 #import <StoreKit/StoreKit.h>
 #import "SpellIAP.h"
 #import "AppConstants.h"
+#import "StoreCell.h"
 
 @interface Store () {
     NSArray *_products;
@@ -101,11 +102,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StoreCell" forIndexPath:indexPath];
+    StoreCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StoreCell" forIndexPath:indexPath];
     
     NSDictionary *product = displayProducts[indexPath.row];
-    cell.textLabel.text = [product objectForKey:@"name"];
-    [cell.textLabel setFont:[UIFont fontWithName:@"Delicious-Roman" size:18.0]];
+    [cell.packName setText: [product objectForKey:@"name"]];
+    [cell.packName setFont:[UIFont fontWithName:@"Delicious-Roman" size:18.0]];
     
     //[_priceFormatter setLocale:product.priceLocale];
     //cell.detailTextLabel.text = [_priceFormatter stringFromNumber:product.price];
@@ -114,14 +115,27 @@
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
         cell.accessoryView = nil;
     } else {
-        UIButton *buyButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        buyButton.frame = CGRectMake(0, 0, 72, 37);
-        [buyButton setTitle:@"Buy" forState:UIControlStateNormal];
-        buyButton.tag = indexPath.row;
-        [buyButton addTarget:self action:@selector(buyButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-        cell.accessoryType = UITableViewCellAccessoryNone;
-        cell.accessoryView = buyButton;
+        cell.buyButton.tag = indexPath.row;
+        [cell.buyButton addTarget:self action:@selector(buyButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     }
+    
+    if([[product objectForKey:@"name"] isEqualToString:@"1000 Coins"])
+    {
+        [cell.coinImage setImage:[UIImage imageNamed:@"Coin.png"]];
+    }
+    else if([[product objectForKey:@"name"] isEqualToString:@"2500 Coins"])
+    {
+        [cell.coinImage setImage:[UIImage imageNamed:@"Coins_Stack.png"]];
+    }
+    else if([[product objectForKey:@"name"] isEqualToString:@"4000 Coins"])
+    {
+        [cell.coinImage setImage:[UIImage imageNamed:@"Coins_Stack.png"]];
+    }
+    else if([[product objectForKey:@"name"] isEqualToString:@"10000 Coins"])
+    {
+        [cell.coinImage setImage:[UIImage imageNamed:@"Coins_TripleStack.png"]];
+    }
+    
     
     return cell;
 }

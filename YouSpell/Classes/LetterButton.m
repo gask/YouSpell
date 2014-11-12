@@ -42,6 +42,12 @@
     return self;
 }
 
+- (void) setSelectable
+{
+    self.isButton = typeButton;
+    [self addTarget:self action:@selector(doIt) forControlEvents:UIControlEventTouchUpInside];
+}
+
 - (IBAction)handlePan:(UIPanGestureRecognizer *)recognizer
 {
     if(self.isButton == typeLabel) return;

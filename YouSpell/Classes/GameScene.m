@@ -50,7 +50,7 @@
         lSize = SPACE/(keysArray.count+1);
         
         if(lSize > INITIAL_LETTERSIZE) lSize = INITIAL_LETTERSIZE;
-        [self resizeLetters:lSize andNumberOfLetters:(float)keysArray.count+1];
+        [self resizeLetters:lSize andNumberOfLetters:(float)keysArray.count+1 resizeLast:NO];
         
         LetterButton *l = [[LetterButton alloc] initWithFrame: [self calculateLetterPositionWithNumberOfLetters:(float)keysArray.count+1 andActualSize:lSize] position:keysArray.count+1 andLetter: buttonPressed.titleLabel.text andState:typeButton];
         
@@ -70,7 +70,7 @@
     return CGRectMake(xPosition,self.view.center.y,size*1.3f,size);
 }
 
-- (void) resizeLetters: (float)newSize andNumberOfLetters: (float) numberOfLetters
+- (void) resizeLetters: (float)newSize andNumberOfLetters: (float) numberOfLetters resizeLast: (BOOL)doLast
 {
     //NSLog(@"newSize: %f",newSize);
     //NSLog(@"Then newSize: %f",newSize);
@@ -83,7 +83,7 @@
         float startingXPos = self.view.center.x - (numberOfLetters/2.0f * newSize);
         
         [tButton setFrame:CGRectMake(startingXPos+u*newSize, self.view.center.y, newSize*1.3f, newSize)];
-        
+        if(doLast && u == self.theWord.length-1) [tButton setFrame:CGRectMake(startingXPos+u*newSize, self.view.center.y, newSize, newSize)];
     }
 }
 
@@ -170,7 +170,7 @@
     
     if(newSize > INITIAL_LETTERSIZE) newSize = INITIAL_LETTERSIZE;
     
-    [self resizeLetters:newSize andNumberOfLetters:letras];
+    [self resizeLetters:newSize andNumberOfLetters:letras resizeLast:NO];
     
     LetterButton *firstKey = [keysArray objectAtIndex:0];
     LetterButton *lastKey = [keysArray objectAtIndex:keysArray.count-1];
@@ -315,15 +315,19 @@
 
 - (void)handleFlushWithPos: (NSInteger) pos
 {
-//    NSLog(@"Posicao selecionada: %i", pos);
+    //NSLog(@"Posicao selecionada: %i", pos);
     
     for (NSInteger y = 0; y < keysArray.count; y++)
     {
         LetterButton *tButton = (LetterButton *)[keysArray objectAtIndex:y];
         
         //[tButton setBackgroundColor:[UIColor blackColor]];
-        [tButton setBackgroundImage:[UIImage imageNamed:@"Mid Piece"] forState:UIControlStateNormal];
-        tButton.selected = NO;
+        if(tButton.isButton == typeButton)
+        {
+            [tButton setBackgroundImage:[UIImage imageNamed:@"Mid Piece"] forState:UIControlStateNormal];
+            tButton.selected = NO;
+        }
+        
     }
     
     if(pos <= (NSInteger)keysArray.count)
@@ -331,8 +335,12 @@
         LetterButton *rButton = (LetterButton *)[keysArray objectAtIndex:pos-1];
         
         //[rButton setBackgroundColor:[UIColor redColor]];
-        [rButton setBackgroundImage:[UIImage imageNamed:@"Mid Piece Selected"] forState:UIControlStateNormal];
-        rButton.selected = YES;
+        if(rButton.isButton == typeButton)
+        {
+            [rButton setBackgroundImage:[UIImage imageNamed:@"Mid Piece Selected"] forState:UIControlStateNormal];
+            rButton.selected = YES;
+        }
+        
     }
     
     positionSelected = pos;
@@ -359,7 +367,7 @@
     lSize = SPACE/(keysArray.count);
     
     if(lSize > INITIAL_LETTERSIZE) lSize = INITIAL_LETTERSIZE;
-    [self resizeLetters:lSize andNumberOfLetters:(float)keysArray.count];
+    [self resizeLetters:lSize andNumberOfLetters:(float)keysArray.count resizeLast:NO];
     
     /*for (NSInteger y = 0; y < keysArray.count; y++)
     {
@@ -405,6 +413,50 @@
         {
             [sceneButtons addObject:object];
         }
+    }
+    
+    levelSelected = [[NSUserDefaults standardUserDefaults] integerForKey:@"LevelSelected"];
+    
+    if(levelSelected == 0 || levelSelected == 1)
+    {
+        float lSize = INITIAL_LETTERSIZE;
+        
+        lSize = SPACE/(self.theWord.length);
+        
+        if(lSize > INITIAL_LETTERSIZE) lSize = INITIAL_LETTERSIZE;
+        
+        const char *wordChars = [self.theWord cStringUsingEncoding:NSASCIIStringEncoding];
+        
+        for(NSInteger i = 0 ; i < [self.theWord length] ; i++)
+        {
+            //NSLog(@"%d",i);
+            LetterButton *l = [[LetterButton alloc] initWithFrame: CGRectMake(0,0,0,0) position:i+1 andLetter: [NSString stringWithFormat:@"%c" , wordChars[i]] andState:typeLabel];
+            
+            [keysArray addObject:l];
+            
+            if(i == 0) [l setBackgroundImage:[UIImage imageNamed:@"First Piece"] forState:UIControlStateNormal];
+            else if(i == [self.theWord length]-1) [l setBackgroundImage:[UIImage imageNamed:@"Last Piece"] forState:UIControlStateNormal];
+            
+            [self.view addSubview:l];
+        }
+        
+        [self resizeLetters:lSize andNumberOfLetters:(float)[self.theWord length] resizeLast:YES];
+        
+        if(levelSelected == 0)
+        {
+            NSInteger letterToBeGuessed = arc4random_uniform(self.theWord.length);
+            
+            LetterButton *thaLetta = [keysArray objectAtIndex:letterToBeGuessed];
+            
+            [thaLetta setSelectable];
+            NSLog(@"THA LETTA pos: %i",thaLetta.position);
+            [thaLetta setTitle:@"" forState:UIControlStateNormal];
+        }
+        else
+        {
+            // fazer o medium remover 50% das letras.
+        }
+        
     }
     
 }

@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>name</key>
-		<string>1000 Coins Pack</string>
+		<string>1000 Coins</string>
 		<key>price</key>
 		<real>0.99</real>
 		<key>productID</key>
@@ -12,7 +12,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>2500 Coins Pack</string>
+		<string>2500 Coins</string>
 		<key>price</key>
 		<real>1.99</real>
 		<key>productID</key>
@@ -20,7 +20,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>4000 Coins Pack</string>
+		<string>4000 Coins</string>
 		<key>price</key>
 		<real>2.99</real>
 		<key>productID</key>
@@ -28,7 +28,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>10000 Coins Pack</string>
+		<string>10000 Coins</string>
 		<key>price</key>
 		<real>3.99</real>
 		<key>productID</key>
