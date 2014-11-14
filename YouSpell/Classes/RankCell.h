@@ -9,14 +9,17 @@
 #import <UIKit/UIKit.h>
 
 @interface RankCell : UITableViewCell
-{
-    IBOutlet UILabel *themeTitle;
-    IBOutlet UIImageView *themeImage;
-    IBOutlet UILabel *easyPercentage;
-    IBOutlet UILabel *mediumPercentage;
-    IBOutlet UILabel *hardPercentage;
-    IBOutlet UIImageView *easyStar;
-    IBOutlet UIImageView *mediumStar;
-    IBOutlet UIImageView *hardStar;
-}
+
+@property IBOutlet UILabel *themeTitle;
+@property IBOutlet UIImageView *themeImage;
+@property IBOutlet UILabel *easyPercentage;
+@property IBOutlet UILabel *mediumPercentage;
+@property IBOutlet UILabel *hardPercentage;
+@property IBOutlet UIImageView *easyStar;
+@property IBOutlet UIImageView *mediumStar;
+@property IBOutlet UIImageView *hardStar;
+@property IBOutlet UILabel *easyStreak;
+@property IBOutlet UILabel *mediumStreak;
+@property IBOutlet UILabel *hardStreak;
+
 @end

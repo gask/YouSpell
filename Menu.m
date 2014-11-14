@@ -29,6 +29,24 @@
     
     NSMutableArray *themesArray = [[NSMutableArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"words" ofType:@"plist"]] mutableCopy];
     
+    
+    if([[NSUserDefaults standardUserDefaults] objectForKey:@"Streaks"] == nil)
+    {
+        NSMutableArray *streakArray = [NSMutableArray array];
+        
+        for(int y = 0 ; y < 3 ; y++)
+        {
+            [streakArray addObject:[NSMutableArray array]];
+            
+            for(int u = 0 ; u < themesArray.count; u++)
+            {
+                [streakArray[y] addObject:[NSNumber numberWithInt: 0]];
+            }
+        }
+        
+        [[NSUserDefaults standardUserDefaults] setObject:[streakArray mutableCopy] forKey:@"Streaks"];
+    }
+    
     if([[NSUserDefaults standardUserDefaults] objectForKey:@"Scores"] == nil)
     {
         NSMutableArray *scoreArray = [NSMutableArray array];
@@ -43,9 +61,7 @@
                 //NSLog(@"tema: %i",i);
                 [scoreArray[j] addObject: [NSMutableArray array]];
                 
-                NSMutableArray *wordsArray = themesArray[i];
-                
-                for (NSInteger k = 0; k < wordsArray.count; k++)
+                for (NSInteger k = 0; k < [themesArray[i] count]; k++)
                 {
                     //NSLog(@"palavra: %i",k);
                     [scoreArray[j][i] addObject:[NSNumber numberWithBool:NO]];
@@ -73,9 +89,9 @@
     
     NSInteger superCoins = [[NSUserDefaults standardUserDefaults] integerForKey: COINS];
     
-    [coinsPocket setText: [NSString stringWithFormat: @"%i", superCoins]];
+    [coinsPocket setText: [NSString stringWithFormat: @"%i", (int)superCoins]];
 
-    NSLog(@"coins: %i", superCoins);
+    NSLog(@"coins: %i", (int)superCoins);
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

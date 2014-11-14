@@ -292,6 +292,11 @@
         if(gameWon)
         {
             vc.didWon = YES;
+            NSInteger currentStreak = [[NSUserDefaults standardUserDefaults] integerForKey:@"currentStreak"];
+            currentStreak++;
+            
+            [[NSUserDefaults standardUserDefaults] setInteger:currentStreak forKey:@"currentStreak"];
+            NSLog(@"won, setting currentStreak: %i",(int)currentStreak);
             
             NSInteger selectedTheme = [[[NSUserDefaults standardUserDefaults] objectForKey:@"selectedTheme"] intValue];
             NSInteger selectedLevel = [[[NSUserDefaults standardUserDefaults] objectForKey:@"LevelSelected"] intValue];
@@ -313,12 +318,30 @@
             
             //NSLog(@"3");
             [[NSUserDefaults standardUserDefaults] setObject:scoreArray forKey:@"Scores"];
+            
+            
+            NSMutableArray *streakArray = [[[NSUserDefaults standardUserDefaults] objectForKey:@"Streaks"] mutableCopy];
+            NSMutableArray *levelStreakArray = [[streakArray objectAtIndex:selectedLevel] mutableCopy];
+            
+            NSInteger themeStreak = [levelStreakArray[selectedTheme] integerValue];
+            NSLog(@"old streak: %i", (int)themeStreak);
+            if(currentStreak > themeStreak)
+            {
+                NSLog(@"streak changed!");
+                [levelStreakArray replaceObjectAtIndex:selectedTheme withObject: [NSNumber numberWithInt:(int)currentStreak]];
+                [streakArray replaceObjectAtIndex:selectedLevel withObject:levelStreakArray];   
+                [[NSUserDefaults standardUserDefaults] setObject:streakArray forKey:@"Streaks"];
+            }
+            
+            
             [[NSUserDefaults standardUserDefaults] synchronize];
             
         }
         else
         {
             vc.didWon = NO;
+            [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"currentStreak"];
+            NSLog(@"lost, ressetting currentStreak");
         }
     }
 }
@@ -481,7 +504,7 @@
         
         if(levelSelected == 0)
         {
-            NSInteger letterToBeGuessed = arc4random_uniform(self.theWord.length);
+            NSInteger letterToBeGuessed = arc4random_uniform((int)self.theWord.length);
             
             LetterButton *thaLetta = [keysArray objectAtIndex:letterToBeGuessed];
             
@@ -499,14 +522,21 @@
             
             for (int y = 0; y < numberOfLettersToBeRemoved; y++)
             {
-                NSInteger letterToBeGuessed = arc4random_uniform(letters.count);
+                NSInteger letterToBeGuessed = arc4random_uniform((int)letters.count);
                 
                 LetterButton *thaLetta = [keysArray objectAtIndex:[[letters objectAtIndex:letterToBeGuessed] intValue]];
                 
                 [thaLetta setSelectable];
-                NSLog(@"THA LETTA pos: %li",(long)thaLetta.position);
+                //NSLog(@"THA LETTA pos: %li",(long)thaLetta.position);
                 [thaLetta setTitle:@"" forState:UIControlStateNormal];
                 [letters removeObjectAtIndex:letterToBeGuessed];
+                
+                ////////////
+                // Consertar:
+                //  - Colocar as barrinhas auto-criaveis para trás dos números de porcentagem (tanto na WinLose quanto na Rankings)
+                //  - Verificar o rolê dos "Received memory warning." que apareceram aos montes no último teste.
+                //  - Arrumar o botão de "Next word" em WinLose, ao chegar no final do tema (última palavra) o app está quebrando.
+                //
             }
         }
         

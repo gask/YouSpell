@@ -70,14 +70,14 @@
             wordsToBeTried = [NSMutableArray array];
             for (NSInteger x = 0; x < [[wordsArray objectAtIndex:selectedTheme] count] ; x++)
             {
-                [wordsToBeTried addObject:[NSNumber numberWithInt:x]];
+                [wordsToBeTried addObject:[NSNumber numberWithInt:(int)x]];
             }
 
         }
         
         //NSLog(@"wtbt: %@", wordsToBeTried);
         
-        int r = arc4random_uniform([wordsToBeTried count]);
+        int r = arc4random_uniform((int)[wordsToBeTried count]);
         
         [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:r] forKey:@"selectedWord"];
         
@@ -94,6 +94,12 @@
         //NSLog(@"%@", wordsToBeTried);
         [[NSUserDefaults standardUserDefaults] setObject:wordsToBeTried forKey: @"wordsToBeTried"];
     }
+    else if([[segue identifier] isEqualToString:@"BackToMenu"])
+    {
+        NSLog(@"Back to menu... reseting current streak");
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:0] forKey:@"currentStreak"];
+    }
+    
     
     //isReseting = YES;
 }
@@ -156,9 +162,7 @@
         
         percentage = (float)(themeWords-wordsToBeTried.count)/themeWords;
         [self.nextWordBtn setTitle:@"Next word" forState:UIControlStateNormal];
-        self.progressPerc.text = [NSString stringWithFormat:@"%.0f%%", percentage*100];
         
-        frame.size.width *= percentage;
         
         NSInteger coins = [[NSUserDefaults standardUserDefaults] integerForKey:COINS];
         coins += 5;
@@ -172,15 +176,15 @@
         
         percentage = (float)(themeWords-wordsToBeTried.count-1)/themeWords;
         [self.nextWordBtn setTitle:@"Restart" forState:UIControlStateNormal];
-        self.progressPerc.text = [NSString stringWithFormat:@"%.0f%%", percentage*100];
-        
-        frame.size.width *= percentage;
         
         NSInteger coins = [[NSUserDefaults standardUserDefaults] integerForKey:COINS];
         coins += 1;
         [[NSUserDefaults standardUserDefaults] setInteger:coins forKey:COINS];
         [gainedCoins setText:@"+1 coin"];
     }
+    
+    self.progressPerc.text = [NSString stringWithFormat:@"%.0f%%", percentage*100];
+    frame.size.width *= percentage;
     
     UIView *bar = [[UIView alloc] initWithFrame: frame];
     bar.backgroundColor = [UIColor colorWithRed:75.0/255.0 green:200.0/255.0 blue:135.0/255.0 alpha:1.0];

@@ -12,7 +12,6 @@
 @interface Rankings : UIViewController <UITableViewDelegate>
 {
     IBOutlet UITableView *mainTable;
-    NSArray *scoresArray;
     NSMutableArray *themeData;
 }
 @end

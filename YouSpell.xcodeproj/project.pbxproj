@@ -25,6 +25,11 @@
 		85AB6C8419D78E3C00D018D1 /* TransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85AB6C8319D78E3C00D018D1 /* TransitionDelegate.m */; };
 		85AB6C8719D78ECE00D018D1 /* AnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 85AB6C8619D78ECE00D018D1 /* AnimatedTransitioning.m */; };
 		85D13C7519FEDFC400ED0F6D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D13C7419FEDFC400ED0F6D /* StoreKit.framework */; };
+		85FDB20A1A155F7800D742BF /* bronzeStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 85FDB2061A155F7800D742BF /* bronzeStar.png */; };
+		85FDB20B1A155F7800D742BF /* goldStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 85FDB2071A155F7800D742BF /* goldStar.png */; };
+		85FDB20C1A155F7800D742BF /* silverStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 85FDB2081A155F7800D742BF /* silverStar.png */; };
+		85FDB20D1A155F7800D742BF /* starPlaceholderold.png in Resources */ = {isa = PBXBuildFile; fileRef = 85FDB2091A155F7800D742BF /* starPlaceholderold.png */; };
+		85FDB20F1A15756900D742BF /* starPlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 85FDB20E1A15756900D742BF /* starPlaceholder.png */; };
 		B018E78419CA7A52000F1DDD /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0AA79E919A55FD300C9C554 /* Main_iPhone.storyboard */; };
 		B018E78519CA7A58000F1DDD /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0AA79EC19A55FD300C9C554 /* Main_iPad.storyboard */; };
 		B018E78819CA7C1B000F1DDD /* WinLose.m in Sources */ = {isa = PBXBuildFile; fileRef = B018E78719CA7C1B000F1DDD /* WinLose.m */; };
@@ -1157,6 +1162,11 @@
 		85AB6C8519D78ECE00D018D1 /* AnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnimatedTransitioning.h; path = Classes/AnimatedTransitioning.h; sourceTree = "<group>"; };
 		85AB6C8619D78ECE00D018D1 /* AnimatedTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnimatedTransitioning.m; path = Classes/AnimatedTransitioning.m; sourceTree = "<group>"; };
 		85D13C7419FEDFC400ED0F6D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		85FDB2061A155F7800D742BF /* bronzeStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bronzeStar.png; sourceTree = "<group>"; };
+		85FDB2071A155F7800D742BF /* goldStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goldStar.png; sourceTree = "<group>"; };
+		85FDB2081A155F7800D742BF /* silverStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = silverStar.png; sourceTree = "<group>"; };
+		85FDB2091A155F7800D742BF /* starPlaceholderold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starPlaceholderold.png; sourceTree = "<group>"; };
+		85FDB20E1A15756900D742BF /* starPlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starPlaceholder.png; sourceTree = "<group>"; };
 		B018E64F19CA6584000F1DDD /* DownloadMP3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadMP3.h; sourceTree = "<group>"; };
 		B018E65019CA6584000F1DDD /* DownloadMP3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadMP3.m; sourceTree = "<group>"; };
 		B018E78619CA7C1B000F1DDD /* WinLose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinLose.h; sourceTree = "<group>"; };
@@ -2291,6 +2301,11 @@
 		859797591A12C77800FCC06D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				85FDB20E1A15756900D742BF /* starPlaceholder.png */,
+				85FDB2091A155F7800D742BF /* starPlaceholderold.png */,
+				85FDB2061A155F7800D742BF /* bronzeStar.png */,
+				85FDB2071A155F7800D742BF /* goldStar.png */,
+				85FDB2081A155F7800D742BF /* silverStar.png */,
 				B0CFBC4519C61BFA0053F02F /* a1.png */,
 				B0CFBC4319C61BFA0053F02F /* a2.png */,
 				B0CFBC4819C61BFA0053F02F /* a3.png */,
@@ -3918,6 +3933,7 @@
 				B02226BB19DB997000CC15A5 /* peugeot.mp3 in Resources */,
 				B022255F19DB997000CC15A5 /* goat.mp3 in Resources */,
 				B022257719DB997000CC15A5 /* guadalajara.mp3 in Resources */,
+				85FDB20B1A155F7800D742BF /* goldStar.png in Resources */,
 				B02225FF19DB997000CC15A5 /* lightgreen.mp3 in Resources */,
 				B02226AB19DB997000CC15A5 /* parma.mp3 in Resources */,
 				B02226FE19DB997000CC15A5 /* ribs.mp3 in Resources */,
@@ -3930,6 +3946,7 @@
 				B02224EF19DB997000CC15A5 /* diary.mp3 in Resources */,
 				B0CFBC6119C61BFA0053F02F /* a10.png in Resources */,
 				B022273E19DB997000CC15A5 /* skunk.mp3 in Resources */,
+				85FDB20F1A15756900D742BF /* starPlaceholder.png in Resources */,
 				B022267719DB997000CC15A5 /* nike.mp3 in Resources */,
 				B022257B19DB997000CC15A5 /* guinea.mp3 in Resources */,
 				B096CC8219DE094400168EEE /* Theme0.png in Resources */,
@@ -3978,6 +3995,7 @@
 				B022268319DB997000CC15A5 /* nut.mp3 in Resources */,
 				B022244A19DB996F00CC15A5 /* bayer.mp3 in Resources */,
 				B022265019DB997000CC15A5 /* monsanto.mp3 in Resources */,
+				85FDB20D1A155F7800D742BF /* starPlaceholderold.png in Resources */,
 				B02225AD19DB997000CC15A5 /* inception.mp3 in Resources */,
 				B02225FD19DB997000CC15A5 /* ligament.mp3 in Resources */,
 				B022277119DB997000CC15A5 /* tanzania.mp3 in Resources */,
@@ -4433,6 +4451,7 @@
 				B022245C19DB997000CC15A5 /* bisque.mp3 in Resources */,
 				B02224FD19DB997000CC15A5 /* ducks.mp3 in Resources */,
 				B02226B119DB997000CC15A5 /* peach.mp3 in Resources */,
+				85FDB20C1A155F7800D742BF /* silverStar.png in Resources */,
 				B022268C19DB997000CC15A5 /* oman.mp3 in Resources */,
 				B022265919DB997000CC15A5 /* mouth.mp3 in Resources */,
 				B022241C19DB996F00CC15A5 /* aoudad.mp3 in Resources */,
@@ -4643,6 +4662,7 @@
 				B022242719DB996F00CC15A5 /* armagedon.mp3 in Resources */,
 				B022271819DB997000CC15A5 /* santos.mp3 in Resources */,
 				B02224B819DB997000CC15A5 /* chin.mp3 in Resources */,
+				85FDB20A1A155F7800D742BF /* bronzeStar.png in Resources */,
 				B022270819DB997000CC15A5 /* royalblue.mp3 in Resources */,
 				B02227DB19DB997000CC15A5 /* xmen.mp3 in Resources */,
 				B02225CB19DB997000CC15A5 /* jays.mp3 in Resources */,

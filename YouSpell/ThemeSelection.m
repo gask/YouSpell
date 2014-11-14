@@ -34,7 +34,7 @@
     //[[SKPaymentQueue defaultQueue] addTransactionObserver:_storeManager];
     
     [coinLabel setFont:[UIFont fontWithName:@"Delicious-Roman" size:18.0]];
-    [coinLabel setText:[NSString stringWithFormat:@"%i", [[NSUserDefaults standardUserDefaults] integerForKey: COINS]]];
+    [coinLabel setText:[NSString stringWithFormat:@"%i", (int)[[NSUserDefaults standardUserDefaults] integerForKey: COINS]]];
     
     coinImages = [NSArray arrayWithObjects:
                          [UIImage imageNamed:@"coin1.png"],
@@ -64,7 +64,7 @@
     {
         //NSLog(@"tema %i: %@", i+1, themeNames[i]);
         NSMutableArray *themeWords = [[levelUserScore objectAtIndex:i] mutableCopy];
-        [themeTotals addObject:[NSNumber numberWithInt:themeWords.count]];
+        [themeTotals addObject:[NSNumber numberWithInt:(int)themeWords.count]];
         
         NSInteger themeScore = 0;
         for (NSInteger k = 0; k < themeWords.count; k++)
@@ -73,7 +73,7 @@
             //NSLog(@"%i",scoreValue);
             if(scoreValue) themeScore++;
         }
-        [themeScores addObject: [NSNumber numberWithInt:themeScore]];
+        [themeScores addObject: [NSNumber numberWithInt:(int)themeScore]];
     }
 }
 
@@ -90,7 +90,7 @@
     if([[hasTheme objectAtIndex:indexPath.row] boolValue])
     {
         
-        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:selectedTheme.row] forKey:@"selectedTheme"];
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:(int)selectedTheme.row] forKey:@"selectedTheme"];
         [[NSUserDefaults standardUserDefaults] setObject: [[themes objectAtIndex:selectedTheme.row] objectForKey: @"name"] forKey:@"selectedThemeName"];
         
         [tableView deselectRowAtIndexPath:indexPath animated:NO];
@@ -104,7 +104,7 @@
         
         if(coins >= price)
         {
-            [self presentMessage:[NSString stringWithFormat:@"Spend %i coins in %@ theme?", price, tName]
+            [self presentMessage:[NSString stringWithFormat:@"Spend %i coins in %@ theme?", (int)price, tName]
                          withTag:2
                            title:@"You Spell"
               confirmButtonLabel:@"Do It!"
@@ -192,7 +192,7 @@
             
             [[NSUserDefaults standardUserDefaults] synchronize];
             
-            [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:selectedTheme.row] forKey:@"selectedTheme"];
+            [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:(int)selectedTheme.row] forKey:@"selectedTheme"];
             
             [[NSUserDefaults standardUserDefaults] setObject: [[themes objectAtIndex:selectedTheme.row] objectForKey: @"name"]  forKey:@"selectedThemeName"];
     
@@ -225,13 +225,13 @@
         // Get destination view
         GameScene *vc = [segue destinationViewController];
         
-        int r = arc4random_uniform([[wordsArray objectAtIndex:selectedTheme.row] count]);
+        int r = arc4random_uniform((int)[[wordsArray objectAtIndex:selectedTheme.row] count]);
         NSLog(@"selected Word: %i", r);
         
         NSMutableArray *wordsToBeTried = [NSMutableArray array];
         for (NSInteger x = 0; x < [[wordsArray objectAtIndex:selectedTheme.row] count] ; x++)
         {
-            [wordsToBeTried addObject:[NSNumber numberWithInt:x]];
+            [wordsToBeTried addObject:[NSNumber numberWithInt:(int)x]];
         }
         
         [wordsToBeTried removeObjectAtIndex:r];
@@ -262,7 +262,7 @@
     }
     
     NSInteger row = indexPath.row+1;
-    cell.themeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"a%i.png", row]];
+    cell.themeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"a%i.png", (int)row]];
     UIFont *customFont = [UIFont fontWithName:@"Delicious-Roman" size:15];
     
     cell.themeName.font = customFont;
@@ -307,7 +307,7 @@
     else if ([productIdentifier isEqualToString:TENPACK]) coins+=10000;
     
     [[NSUserDefaults standardUserDefaults] setInteger:coins forKey:COINS];
-    [coinLabel setText:[NSString stringWithFormat:@"%i", coins]];
+    [coinLabel setText:[NSString stringWithFormat:@"%i", (int)coins]];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     /*ThemeCell *cell = (ThemeCell *)[mainTable cellForRowAtIndexPath:selectedTheme];

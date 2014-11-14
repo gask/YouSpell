@@ -33,7 +33,7 @@
     
     [coinLabel setFont:[UIFont fontWithName:@"Delicious-Roman" size:18.0]];
     [titleLabel setFont:[UIFont fontWithName:@"Delicious-Roman" size:22.0]];
-    [coinLabel setText:[NSString stringWithFormat:@"%i", [[NSUserDefaults standardUserDefaults] integerForKey: COINS]]];
+    [coinLabel setText:[NSString stringWithFormat:@"%i", (int)[[NSUserDefaults standardUserDefaults] integerForKey: COINS]]];
     
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"back72.png"]]];
     
@@ -67,7 +67,7 @@
     else if ([productIdentifier isEqualToString:TENPACK]) coins+=10000;
     
     [[NSUserDefaults standardUserDefaults] setInteger:coins forKey:COINS];
-    [coinLabel setText:[NSString stringWithFormat:@"%i", coins]];
+    [coinLabel setText:[NSString stringWithFormat:@"%i", (int)coins]];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
