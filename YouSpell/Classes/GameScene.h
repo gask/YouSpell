@@ -29,6 +29,7 @@
 }
 
 @property NSString *theWord;
+@property int selectedThemeWordCount;
 
 - (IBAction)playWord:(id)sender;
 - (IBAction)finishedWord:(id)sender;

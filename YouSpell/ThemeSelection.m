@@ -52,13 +52,17 @@
     //selectedTheme = nil;
     themes = [NSArray arrayWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"themes" ofType:@"plist"]];
     
+    hasTheme = [[[NSUserDefaults standardUserDefaults] objectForKey:THEMESSTATUS] mutableCopy];
     
     themeScores = [NSMutableArray array];
     themeTotals = [NSMutableArray array];
     userScore = [[[NSUserDefaults standardUserDefaults] objectForKey:@"Scores"] mutableCopy];
     NSInteger selectedLevel = [[[NSUserDefaults standardUserDefaults] objectForKey:@"LevelSelected"] intValue];
+    
+    NSLog(@"sel Level: %i", (int)selectedLevel);
     levelUserScore = userScore[selectedLevel];
-    hasTheme = [[[NSUserDefaults standardUserDefaults] objectForKey:THEMESSTATUS] mutableCopy];
+    
+    //NSLog(@"levelU: %@", levelUserScore);
     
     for (NSInteger i = 0 ; i < levelUserScore.count; i++)
     {
@@ -241,6 +245,7 @@
         [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:r] forKey:@"selectedWord"];
         
         vc.theWord = [[[[wordsArray objectAtIndex:selectedTheme.row] objectAtIndex:r] objectForKey:@"word"] uppercaseString];
+        vc.selectedThemeWordCount = (int)[[wordsArray objectAtIndex:selectedTheme.row] count];
     }
 }
 
@@ -319,7 +324,7 @@
 
 - (void) viewWillDisappear:(BOOL)animated
 {
-    NSLog(@"chega de listenar Tema Selectiones!!");
+    //NSLog(@"chega de listenar Tema Selectiones!!");
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 

@@ -21,5 +21,8 @@
 @property IBOutlet UILabel *easyStreak;
 @property IBOutlet UILabel *mediumStreak;
 @property IBOutlet UILabel *hardStreak;
+@property (strong, nonatomic) IBOutlet UIView *easyBlue;
+@property (strong, nonatomic) IBOutlet UIView *mediumBlue;
+@property (strong, nonatomic) IBOutlet UIView *hardBlue;
 
 @end

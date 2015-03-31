@@ -14,6 +14,10 @@
 
 
 @interface WinLose ()
+{
+    NSMutableArray *wordsToBeTried;
+    float lettersSize;
+}
 
 @end
 
@@ -49,7 +53,18 @@
 
 - (IBAction)nextWord:(id)sender
 {
-    [self performSegueWithIdentifier:@"CallNextWord" sender:self];
+    if(wordsToBeTried.count != 0)
+    {
+        // call next word
+        [self performSegueWithIdentifier:@"CallNextWord" sender:self];
+    }
+    else
+    {
+        // call theme selection
+        NSLog(@"Theme ended. Going to theme selection... reseting current streak");
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:0] forKey:@"currentStreak"];
+        [self performSegueWithIdentifier:@"ThemeEnded" sender:self];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -61,7 +76,7 @@
         // Get destination view
         GameScene *vc = [segue destinationViewController];
         
-        NSMutableArray *wordsToBeTried = [[[NSUserDefaults standardUserDefaults] objectForKey:@"wordsToBeTried"] mutableCopy];
+        //wordsToBeTried = [[[NSUserDefaults standardUserDefaults] objectForKey:@"wordsToBeTried"] mutableCopy];
         
         if(!self.didWon)
         {
@@ -79,15 +94,14 @@
         
         int r = arc4random_uniform((int)[wordsToBeTried count]);
         
-        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:r] forKey:@"selectedWord"];
+        
         
         NSInteger index = [[wordsToBeTried objectAtIndex:r] integerValue];
-        //NSLog(@"selected Word: %i", index);
-        
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:index] forKey:@"selectedWord"];
+        NSLog(@"winlose selected Word: %i", (int)index);
         
         vc.theWord = [[[[wordsArray objectAtIndex:selectedTheme] objectAtIndex:index] objectForKey:@"word"] uppercaseString];
-        
-        //vc.theWord = [[[[wordsArray objectAtIndex:selectedTheme] objectAtIndex:r] objectForKey:@"word"] uppercaseString];
+        vc.selectedThemeWordCount = (int)[[wordsArray objectAtIndex:selectedTheme] count];
         
         [wordsToBeTried removeObjectAtIndex:r];
         
@@ -133,6 +147,16 @@
     [self presentViewController:vc animated:YES completion:nil];
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    NSLog(@"wtbt count: %i", (int)wordsToBeTried.count);
+    if(wordsToBeTried.count == 0) [self.nextWordBtn setTitle:@"New theme" forState:UIControlStateNormal];
+    else [self.nextWordBtn setTitle:@"Next word" forState:UIControlStateNormal];
+    
+    CGRect oldPlace = self.definitionBtn.frame;
+    [self.definitionBtn setFrame:CGRectMake(0, self.view.center.y+lettersSize, oldPlace.size.width, oldPlace.size.height)];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -145,7 +169,8 @@
     gainedCoins.font = [UIFont fontWithName:@"Delicious-Roman" size:25];
     
     wordsArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"words" ofType:@"plist"]];
-    NSMutableArray *wordsToBeTried = [[[NSUserDefaults standardUserDefaults] objectForKey:@"wordsToBeTried"] mutableCopy];
+    wordsToBeTried = [[[NSUserDefaults standardUserDefaults] objectForKey:@"wordsToBeTried"] mutableCopy];
+    
     selectedTheme = [[[NSUserDefaults standardUserDefaults] objectForKey:@"selectedTheme"] integerValue];
     NSInteger themeWords = [[wordsArray objectAtIndex:selectedTheme] count];
     
@@ -188,7 +213,9 @@
     
     UIView *bar = [[UIView alloc] initWithFrame: frame];
     bar.backgroundColor = [UIColor colorWithRed:75.0/255.0 green:200.0/255.0 blue:135.0/255.0 alpha:1.0];
-    [self.view addSubview:bar];
+    //[self.view addSubview:bar];
+    
+    [self.view insertSubview:bar aboveSubview:self.blueBar];
     
     self.stringWord = [NSString stringWithUTF8String:self.word];
     self.transitionController = [[TransitionDelegate alloc] init];
@@ -198,11 +225,11 @@
     ////// Criação da palavra certa //////
     
     rightWordLetters = [NSMutableArray array];
-    float lSize = INITIAL_LETTERSIZE;
+    lettersSize = INITIAL_LETTERSIZE;
     
-    lSize = SPACE/(strlen(self.word));
+    lettersSize = SPACE/(strlen(self.word));
     
-    if(lSize > INITIAL_LETTERSIZE) lSize = INITIAL_LETTERSIZE;
+    if(lettersSize > INITIAL_LETTERSIZE) lettersSize = INITIAL_LETTERSIZE;
     
     for(NSInteger i = 0 ; i < strlen(self.word) ; i++)
     {
@@ -217,7 +244,8 @@
         [self.view addSubview:l];
     }
     
-    [self resizeLetters:lSize andNumberOfLetters:(float)strlen(self.word)];
+    [self resizeLetters:lettersSize andNumberOfLetters:(float)strlen(self.word)];
+    
     
 }
 

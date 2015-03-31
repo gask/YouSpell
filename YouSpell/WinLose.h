@@ -23,8 +23,9 @@
 @property (nonatomic) const char *word;
 @property (nonatomic) NSString *stringWord;
 @property (nonatomic) IBOutlet UILabel *themeLabel;
-//@property (strong, nonatomic) IBOutlet UIView *progressBar;
 @property (strong, nonatomic) IBOutlet UILabel *progressPerc;
+@property (strong, nonatomic) IBOutlet UIView *blueBar;
+@property (strong, nonatomic) IBOutlet UIButton *definitionBtn;
 
 @property (nonatomic, strong) TransitionDelegate *transitionController;
 @property (strong, nonatomic) IBOutlet UIButton *nextWordBtn;

@@ -87,7 +87,7 @@
     for(NSInteger u = 0 ; u < keysArray.count ; u++)
     {
         LetterButton *tButton = (LetterButton *) [keysArray objectAtIndex:u];
-//        CGSize nSize = CGSizeMake(newSize, newSize);
+        //CGSize nSize = CGSizeMake(newSize, newSize);
         
         float startingXPos = self.view.center.x - (numberOfLetters/2.0f * newSize);
         
@@ -138,10 +138,12 @@
             LetterButton *tGuessedLetter = (LetterButton *) [keysArray objectAtIndex:i];
             NSString* tCorrectLetter = [NSString stringWithFormat:@"%c" , wordArray[i]];
             
-            //NSLog(@"Guess %i: %@ and Letter %i: %@",i, tGuessedLetter.titleLabel.text, i, tCorrectLetter);
+            NSLog(@"Guess %i: %@ and Letter %i: %@",(int)i, tGuessedLetter.titleLabel.text, (int)i, tCorrectLetter);
             
-            if([tCorrectLetter isEqualToString: tGuessedLetter.titleLabel.text]) correctionArray[i] = [NSNumber numberWithBool:YES];
-            
+            if([tCorrectLetter isEqualToString: tGuessedLetter.titleLabel.text])
+            {
+                correctionArray[i] = [NSNumber numberWithBool:YES];
+            }
             
         }
     }
@@ -278,11 +280,11 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSLog(@"won: %i", gameWon);
+    //NSLog(@"won: %i", gameWon);
     
     if ([[segue identifier] isEqualToString:@"CallWinLose"])
     {
-        NSLog(@"é a segue");
+        //NSLog(@"é a segue");
         
         // Get destination view
         WinLose *vc = [segue destinationViewController];
@@ -293,10 +295,16 @@
         {
             vc.didWon = YES;
             NSInteger currentStreak = [[NSUserDefaults standardUserDefaults] integerForKey:@"currentStreak"];
-            currentStreak++;
+            //NSLog(@"selectedThemeCount: %i", (int) self.selectedThemeWordCount);
+            if(currentStreak < self.selectedThemeWordCount)
+            {
+                // o máximo do streak é o número de palavras que o tema tem.
+                currentStreak++;
+            }
+            else currentStreak = self.selectedThemeWordCount;
             
             [[NSUserDefaults standardUserDefaults] setInteger:currentStreak forKey:@"currentStreak"];
-            NSLog(@"won, setting currentStreak: %i",(int)currentStreak);
+            //NSLog(@"won, setting currentStreak: %i",(int)currentStreak);
             
             NSInteger selectedTheme = [[[NSUserDefaults standardUserDefaults] objectForKey:@"selectedTheme"] intValue];
             NSInteger selectedLevel = [[[NSUserDefaults standardUserDefaults] objectForKey:@"LevelSelected"] intValue];
@@ -306,12 +314,13 @@
             NSMutableArray *levelArray = [[scoreArray objectAtIndex: selectedLevel] mutableCopy];
             NSMutableArray *themeScoreArray = [[levelArray objectAtIndex: selectedTheme] mutableCopy];
             
-            //NSLog(@"1");
+            NSLog(@"setting YES to word: %i", (int)selectedWord);
             
             //[themeScoreArray replaceObjectAtIndex:selectedWord withObject:[NSNumber numberWithBool:YES]];
             [themeScoreArray setObject:[NSNumber numberWithBool:YES] atIndexedSubscript:selectedWord];
 //            subScoreArray[selectedWord] = [NSNumber numberWithBool:YES];
-            //NSLog(@"2");
+            
+            NSLog(@"level: %i theme score: %@", (int)selectedLevel, themeScoreArray);
             
             [levelArray setObject:themeScoreArray atIndexedSubscript:selectedTheme];
             [scoreArray setObject:levelArray atIndexedSubscript:selectedLevel];
@@ -324,10 +333,11 @@
             NSMutableArray *levelStreakArray = [[streakArray objectAtIndex:selectedLevel] mutableCopy];
             
             NSInteger themeStreak = [levelStreakArray[selectedTheme] integerValue];
-            NSLog(@"old streak: %i", (int)themeStreak);
+            //NSLog(@"old streak: %i", (int)themeStreak);
+            
             if(currentStreak > themeStreak)
             {
-                NSLog(@"streak changed!");
+                //NSLog(@"streak changed!");
                 [levelStreakArray replaceObjectAtIndex:selectedTheme withObject: [NSNumber numberWithInt:(int)currentStreak]];
                 [streakArray replaceObjectAtIndex:selectedLevel withObject:levelStreakArray];   
                 [[NSUserDefaults standardUserDefaults] setObject:streakArray forKey:@"Streaks"];
@@ -341,7 +351,7 @@
         {
             vc.didWon = NO;
             [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"currentStreak"];
-            NSLog(@"lost, ressetting currentStreak");
+            //NSLog(@"lost, resetting currentStreak");
         }
     }
 }
@@ -454,7 +464,7 @@
     
     gameWon = YES;
     
-    //NSLog(@"the Word: %@", self.theWord);
+    NSLog(@"the Word: %@", self.theWord);
     
     NSURL *soundURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:[self.theWord lowercaseString] ofType:@"mp3"]];
     
@@ -509,8 +519,12 @@
             LetterButton *thaLetta = [keysArray objectAtIndex:letterToBeGuessed];
             
             [thaLetta setSelectable];
-            NSLog(@"THA LETTA pos: %li",(long)thaLetta.position);
+            //NSLog(@"THA LETTA pos: %li",(long)thaLetta.position);
             [thaLetta setTitle:@"" forState:UIControlStateNormal];
+            
+            thaLetta.titleLabel.text = @"";
+            //NSLog(@"thaLetta title: %@", thaLetta.titleLabel.text);
+            [keysArray replaceObjectAtIndex:letterToBeGuessed withObject: thaLetta];
         }
         else
         {
@@ -529,14 +543,16 @@
                 [thaLetta setSelectable];
                 //NSLog(@"THA LETTA pos: %li",(long)thaLetta.position);
                 [thaLetta setTitle:@"" forState:UIControlStateNormal];
+                thaLetta.titleLabel.text = @"";
+                
+                [keysArray replaceObjectAtIndex: [[letters objectAtIndex:letterToBeGuessed] intValue] withObject:thaLetta];
                 [letters removeObjectAtIndex:letterToBeGuessed];
                 
                 ////////////
                 // Consertar:
-                //  - Colocar as barrinhas auto-criaveis para trás dos números de porcentagem (tanto na WinLose quanto na Rankings)
                 //  - Verificar o rolê dos "Received memory warning." que apareceram aos montes no último teste.
-                //  - Arrumar o botão de "Next word" em WinLose, ao chegar no final do tema (última palavra) o app está quebrando.
-                //
+                //  - Layout p/ landscape e iPad e outros devices
+
             }
         }
         
