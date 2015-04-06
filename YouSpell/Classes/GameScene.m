@@ -91,8 +91,8 @@
         
         float startingXPos = self.view.center.x - (numberOfLetters/2.0f * newSize);
         
-        [tButton setFrame:CGRectMake(startingXPos+u*newSize, self.view.center.y, newSize*1.3f, newSize)];
-        if(doLast && u == self.theWord.length-1) [tButton setFrame:CGRectMake(startingXPos+u*newSize, self.view.center.y, newSize, newSize)];
+        [tButton setFrame:CGRectMake(startingXPos+u*newSize, self.view.center.y - newSize, newSize*1.3f, newSize)];
+        if(doLast && u == self.theWord.length-1) [tButton setFrame:CGRectMake(startingXPos+u*newSize, self.view.center.y - newSize, newSize, newSize)];
     }
 }
 
@@ -198,9 +198,9 @@
     {
         //LetterButton *key = [keysArray objectAtIndex:j];
         
-        CGRect tRect = CGRectMake(startingXPos+j*newSize, self.view.center.y, newSize*1.3f, newSize);
+        CGRect tRect = CGRectMake(startingXPos+j*newSize, self.view.center.y - newSize, newSize*1.3f, newSize);
         
-        if(j == self.theWord.length-1) tRect = CGRectMake(startingXPos+j*newSize, self.view.center.y, newSize, newSize);
+        if(j == self.theWord.length-1) tRect = CGRectMake(startingXPos+j*newSize, self.view.center.y-newSize, newSize, newSize);
         
         
         UIButton *jButton = [[UIButton alloc] initWithFrame: tRect];

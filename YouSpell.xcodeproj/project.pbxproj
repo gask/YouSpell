@@ -24,7 +24,7 @@
 		858C0EF719D5038D00BA2549 /* DefinitionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 858C0EF619D5038D00BA2549 /* DefinitionView.m */; };
 		85AB6C8419D78E3C00D018D1 /* TransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85AB6C8319D78E3C00D018D1 /* TransitionDelegate.m */; };
 		85AB6C8719D78ECE00D018D1 /* AnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 85AB6C8619D78ECE00D018D1 /* AnimatedTransitioning.m */; };
-		85D13C7519FEDFC400ED0F6D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D13C7419FEDFC400ED0F6D /* StoreKit.framework */; };
+		85D13C7519FEDFC400ED0F6D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D13C7419FEDFC400ED0F6D /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		85FDB20A1A155F7800D742BF /* bronzeStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 85FDB2061A155F7800D742BF /* bronzeStar.png */; };
 		85FDB20B1A155F7800D742BF /* goldStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 85FDB2071A155F7800D742BF /* goldStar.png */; };
 		85FDB20C1A155F7800D742BF /* silverStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 85FDB2081A155F7800D742BF /* silverStar.png */; };
@@ -1120,6 +1120,21 @@
 		B0F8142819C4E59200D34B17 /* iPhone-Letter.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0F8142719C4E59200D34B17 /* iPhone-Letter.xib */; };
 		B0FFF7B219CBBA1700B1A50F /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FFF7B119CBBA1700B1A50F /* Menu.m */; };
 		B0FFF7B519CBD0E500B1A50F /* ThemeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FFF7B419CBD0E500B1A50F /* ThemeCell.m */; };
+		DEE635E21AD09B390012E3C3 /* libInMobi-4.5.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE635E11AD09B390012E3C3 /* libInMobi-4.5.1.a */; };
+		DEE635E51AD09B850012E3C3 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE635E41AD09B850012E3C3 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		DEE635E71AD09B9C0012E3C3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE635E61AD09B9C0012E3C3 /* AVFoundation.framework */; };
+		DEE635E91AD09ED50012E3C3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE635E81AD09ED50012E3C3 /* CoreLocation.framework */; };
+		DEE635EB1AD09EE10012E3C3 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE635EA1AD09EE10012E3C3 /* CoreTelephony.framework */; };
+		DEE635EE1AD09EED0012E3C3 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE635EC1AD09EED0012E3C3 /* EventKit.framework */; };
+		DEE635EF1AD09EED0012E3C3 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE635ED1AD09EED0012E3C3 /* EventKitUI.framework */; };
+		DEE635F11AD09EF80012E3C3 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE635F01AD09EF80012E3C3 /* MediaPlayer.framework */; };
+		DEE635F31AD09F020012E3C3 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE635F21AD09F020012E3C3 /* MessageUI.framework */; };
+		DEE635F51AD09F0A0012E3C3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE635F41AD09F0A0012E3C3 /* Security.framework */; };
+		DEE635F71AD09F110012E3C3 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE635F61AD09F110012E3C3 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		DEE635F91AD09F280012E3C3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE635F81AD09F280012E3C3 /* SystemConfiguration.framework */; };
+		DEE635FB1AD09F410012E3C3 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE635FA1AD09F410012E3C3 /* libsqlite3.0.dylib */; };
+		DEE635FD1AD09F4B0012E3C3 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE635FC1AD09F4B0012E3C3 /* libz.dylib */; };
+		DEE635FF1AD198870012E3C3 /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE635FE1AD198860012E3C3 /* Chartboost.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -2270,6 +2285,32 @@
 		B0FFF7B119CBBA1700B1A50F /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Menu.m; path = ../Menu.m; sourceTree = "<group>"; };
 		B0FFF7B319CBD0E500B1A50F /* ThemeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeCell.h; sourceTree = "<group>"; };
 		B0FFF7B419CBD0E500B1A50F /* ThemeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeCell.m; sourceTree = "<group>"; };
+		DEE635D61AD09B390012E3C3 /* IMBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMBanner.h; sourceTree = "<group>"; };
+		DEE635D71AD09B390012E3C3 /* IMBannerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMBannerDelegate.h; sourceTree = "<group>"; };
+		DEE635D81AD09B390012E3C3 /* IMConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMConstants.h; sourceTree = "<group>"; };
+		DEE635D91AD09B390012E3C3 /* IMError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMError.h; sourceTree = "<group>"; };
+		DEE635DA1AD09B390012E3C3 /* IMIncentivisedDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMIncentivisedDelegate.h; sourceTree = "<group>"; };
+		DEE635DB1AD09B390012E3C3 /* IMInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMInterstitial.h; sourceTree = "<group>"; };
+		DEE635DC1AD09B390012E3C3 /* IMInterstitialDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMInterstitialDelegate.h; sourceTree = "<group>"; };
+		DEE635DD1AD09B390012E3C3 /* IMNative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMNative.h; sourceTree = "<group>"; };
+		DEE635DE1AD09B390012E3C3 /* IMNativeDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMNativeDelegate.h; sourceTree = "<group>"; };
+		DEE635DF1AD09B390012E3C3 /* InMobi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InMobi.h; sourceTree = "<group>"; };
+		DEE635E01AD09B390012E3C3 /* InMobiAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InMobiAnalytics.h; sourceTree = "<group>"; };
+		DEE635E11AD09B390012E3C3 /* libInMobi-4.5.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libInMobi-4.5.1.a"; sourceTree = "<group>"; };
+		DEE635E41AD09B850012E3C3 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		DEE635E61AD09B9C0012E3C3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		DEE635E81AD09ED50012E3C3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DEE635EA1AD09EE10012E3C3 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		DEE635EC1AD09EED0012E3C3 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		DEE635ED1AD09EED0012E3C3 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		DEE635F01AD09EF80012E3C3 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		DEE635F21AD09F020012E3C3 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		DEE635F41AD09F0A0012E3C3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		DEE635F61AD09F110012E3C3 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		DEE635F81AD09F280012E3C3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		DEE635FA1AD09F410012E3C3 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		DEE635FC1AD09F4B0012E3C3 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		DEE635FE1AD198860012E3C3 /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Chartboost.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2277,7 +2318,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEE635FD1AD09F4B0012E3C3 /* libz.dylib in Frameworks */,
+				DEE635FB1AD09F410012E3C3 /* libsqlite3.0.dylib in Frameworks */,
+				DEE635F91AD09F280012E3C3 /* SystemConfiguration.framework in Frameworks */,
+				DEE635F71AD09F110012E3C3 /* Social.framework in Frameworks */,
+				DEE635F51AD09F0A0012E3C3 /* Security.framework in Frameworks */,
+				DEE635FF1AD198870012E3C3 /* Chartboost.framework in Frameworks */,
+				DEE635F31AD09F020012E3C3 /* MessageUI.framework in Frameworks */,
+				DEE635F11AD09EF80012E3C3 /* MediaPlayer.framework in Frameworks */,
+				DEE635EE1AD09EED0012E3C3 /* EventKit.framework in Frameworks */,
+				DEE635EF1AD09EED0012E3C3 /* EventKitUI.framework in Frameworks */,
+				DEE635EB1AD09EE10012E3C3 /* CoreTelephony.framework in Frameworks */,
+				DEE635E91AD09ED50012E3C3 /* CoreLocation.framework in Frameworks */,
+				DEE635E71AD09B9C0012E3C3 /* AVFoundation.framework in Frameworks */,
 				B0F8142419C4E1A200D34B17 /* AudioToolbox.framework in Frameworks */,
+				DEE635E51AD09B850012E3C3 /* AdSupport.framework in Frameworks */,
+				DEE635E21AD09B390012E3C3 /* libInMobi-4.5.1.a in Frameworks */,
 				B0AA79DA19A55FD300C9C554 /* CoreGraphics.framework in Frameworks */,
 				85D13C7519FEDFC400ED0F6D /* StoreKit.framework in Frameworks */,
 				B0AA79DC19A55FD300C9C554 /* UIKit.framework in Frameworks */,
@@ -3436,6 +3492,20 @@
 		B0AA79D619A55FD300C9C554 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DEE635FE1AD198860012E3C3 /* Chartboost.framework */,
+				DEE635FC1AD09F4B0012E3C3 /* libz.dylib */,
+				DEE635FA1AD09F410012E3C3 /* libsqlite3.0.dylib */,
+				DEE635F81AD09F280012E3C3 /* SystemConfiguration.framework */,
+				DEE635F61AD09F110012E3C3 /* Social.framework */,
+				DEE635F41AD09F0A0012E3C3 /* Security.framework */,
+				DEE635F21AD09F020012E3C3 /* MessageUI.framework */,
+				DEE635F01AD09EF80012E3C3 /* MediaPlayer.framework */,
+				DEE635EC1AD09EED0012E3C3 /* EventKit.framework */,
+				DEE635ED1AD09EED0012E3C3 /* EventKitUI.framework */,
+				DEE635EA1AD09EE10012E3C3 /* CoreTelephony.framework */,
+				DEE635E81AD09ED50012E3C3 /* CoreLocation.framework */,
+				DEE635E61AD09B9C0012E3C3 /* AVFoundation.framework */,
+				DEE635E41AD09B850012E3C3 /* AdSupport.framework */,
 				85D13C7419FEDFC400ED0F6D /* StoreKit.framework */,
 				B0F8142319C4E1A200D34B17 /* AudioToolbox.framework */,
 				B0AA79D719A55FD300C9C554 /* Foundation.framework */,
@@ -3493,6 +3563,7 @@
 		B0AA7A1219A560EB00C9C554 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				DEE635E31AD09B430012E3C3 /* Inmobi */,
 				8551C3B019D3B94F00BA7402 /* AppConstants.h */,
 				8540F3D61A13C24200908094 /* RankCell.h */,
 				8540F3D71A13C24200908094 /* RankCell.m */,
@@ -3545,6 +3616,25 @@
 				B092596819EEF93A004F0F3A /* themes.plist */,
 			);
 			name = Stuff;
+			sourceTree = "<group>";
+		};
+		DEE635E31AD09B430012E3C3 /* Inmobi */ = {
+			isa = PBXGroup;
+			children = (
+				DEE635D61AD09B390012E3C3 /* IMBanner.h */,
+				DEE635D71AD09B390012E3C3 /* IMBannerDelegate.h */,
+				DEE635D81AD09B390012E3C3 /* IMConstants.h */,
+				DEE635D91AD09B390012E3C3 /* IMError.h */,
+				DEE635DA1AD09B390012E3C3 /* IMIncentivisedDelegate.h */,
+				DEE635DB1AD09B390012E3C3 /* IMInterstitial.h */,
+				DEE635DC1AD09B390012E3C3 /* IMInterstitialDelegate.h */,
+				DEE635DD1AD09B390012E3C3 /* IMNative.h */,
+				DEE635DE1AD09B390012E3C3 /* IMNativeDelegate.h */,
+				DEE635DF1AD09B390012E3C3 /* InMobi.h */,
+				DEE635E01AD09B390012E3C3 /* InMobiAnalytics.h */,
+				DEE635E11AD09B390012E3C3 /* libInMobi-4.5.1.a */,
+			);
+			name = Inmobi;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -4888,9 +4978,18 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YouSpell/YouSpell-Prefix.pch";
 				INFOPLIST_FILE = "YouSpell/YouSpell-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/YouSpell",
+				);
+				OTHER_LDFLAGS = "-objC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -4904,9 +5003,18 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YouSpell/YouSpell-Prefix.pch";
 				INFOPLIST_FILE = "YouSpell/YouSpell-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/YouSpell",
+				);
+				OTHER_LDFLAGS = "-objC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

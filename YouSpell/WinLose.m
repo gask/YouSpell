@@ -11,7 +11,11 @@
 #import "AppConstants.h"
 #import "DefinitionView.h"
 #import "GameScene.h"
+#import <Chartboost/Chartboost.h>
+#import <Chartboost/CBNewsfeed.h>
+#import "AppDelegate.h"
 
+static int timesPlayed;
 
 @interface WinLose ()
 {
@@ -157,10 +161,21 @@
     [self.definitionBtn setFrame:CGRectMake(0, self.view.center.y+lettersSize, oldPlace.size.width, oldPlace.size.height)];
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
+    NSLog(@"winLose");
     // Do any additional setup after loading the view.
+    timesPlayed++;
+    NSLog(@"timesPlayed: %d", timesPlayed);
+    int timesPlayedRest = timesPlayed%4;
+    NSLog(@"timesPlayedRest: %d", timesPlayedRest);
+    if(timesPlayed%4 == 0){
+        NSLog(@"showChartboost");
+        [Chartboost showInterstitial:CBLocationGameScreen];
+    }
+
+    alreadyRated = [[NSUserDefaults standardUserDefaults] boolForKey:@"alreadyRated"];
+    NSLog(@"alreadyRated: %d", alreadyRated);
     
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"back72.png"]]];
  
@@ -245,8 +260,32 @@
     }
     
     [self resizeLetters:lettersSize andNumberOfLetters:(float)strlen(self.word)];
-    
-    
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    NSLog(@"viewDidAppear");
+    int timesOpenedApp = [AppDelegate returnTimesOpened];
+    NSLog(@"timesOpenedApp: %d", timesOpenedApp);
+    if(!alreadyRated && self.isViewLoaded && timesOpenedApp>=4 && timesPlayed==2){
+        NSLog(@"showRatePopUp");
+        UIAlertController *ratePopUp = [UIAlertController alertControllerWithTitle:@"Rate us!" message:@"Rate us and spread the spell word!" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *yesRate = [UIAlertAction actionWithTitle:@"Yes!" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            NSLog(@"YesRate!");
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@", @"605379719"]]];
+            //[[NSUserDefaults standardUserDefaults] boolForKey:@"alreadyRated"];
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"alreadyRated"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }];
+        
+        UIAlertAction *noRate = [UIAlertAction actionWithTitle:@"no" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+            NSLog(@"noRate");
+        }];
+        
+        [ratePopUp addAction:yesRate];
+        [ratePopUp addAction:noRate];
+        
+        [self presentViewController:ratePopUp animated:YES completion:nil];
+    }
 }
 
 - (CGRect) calculateLetterPositionWithNumberOfLetters: (float) numberOfLetters andActualSize: (float)size

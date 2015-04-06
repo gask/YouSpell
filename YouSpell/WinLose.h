@@ -8,14 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "TransitionDelegate.h"
+#import <Chartboost/Chartboost.h>
 
-@interface WinLose : UIViewController
-{
+@interface WinLose : UIViewController <ChartboostDelegate>{
     NSMutableArray *rightWordLetters;
     NSArray *wordsArray;
     NSInteger selectedTheme;
     IBOutlet UIImageView *titleBack;
     IBOutlet UILabel *gainedCoins;
+    BOOL alreadyRated;
 }
 
 @property (nonatomic) IBOutlet UILabel *feedback;

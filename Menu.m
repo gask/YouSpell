@@ -8,6 +8,8 @@
 
 #import "Menu.h"
 #import "AppConstants.h"
+#import <Chartboost/Chartboost.h>
+#import <Chartboost/CBNewsfeed.h>
 
 @interface Menu ()
 
@@ -20,6 +22,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [Chartboost showInterstitial:CBLocationMainMenu];
     
     [coinsPocket setFont:[UIFont fontWithName:@"Delicious-Roman" size:18]];
     [playBtn.titleLabel setFont:[UIFont fontWithName:@"Delicious-Roman" size:25]];
@@ -96,6 +100,16 @@
 
     NSLog(@"coins: %i", (int)superCoins);
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    
+    [self showInMobiBanner];
+}
+
+-(void)showInMobiBanner{
+    self.banner = [[IMBanner alloc] initWithFrame:CGRectMake(0, 0, 320, 50) appId:@"6708b781839d47c29dadd2a3bc934e57" adSize:IM_UNIT_320x50];
+    self.banner.delegate = self;
+    [self.view addSubview:self.banner];
+    [self.banner loadBanner];
 }
 
 - (void)didReceiveMemoryWarning
@@ -127,6 +141,15 @@
     }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+}
+
+-(void)bannerDidReceiveAd:(IMBanner *)banner{
+    NSLog(@"finishedLoadingBanner");
+}
+
+- (void)banner:(IMBanner *)banner didFailToReceiveAdWithError:(IMError *)error {
+    NSString *errorMessage = [NSString stringWithFormat:@"Loading banner ad failed. Error code: %d, message: %@", [error code], [error localizedDescription]];
+    NSLog(@"%@", errorMessage);
 }
 
 

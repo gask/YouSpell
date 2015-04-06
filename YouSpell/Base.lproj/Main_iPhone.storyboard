@@ -357,16 +357,6 @@
                                     <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="OwN-e5-rXf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8l-5t-mUH">
-                                <rect key="frame" x="282" y="302" width="36" height="30"/>
-                                <state key="normal" backgroundImage="Ok.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="Ok_Pressed.png"/>
-                                <connections>
-                                    <action selector="finishedWord:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7nC-zV-yeA"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IdU-K7-vbJ">
                                 <rect key="frame" x="77" y="28" width="166" height="40"/>
                                 <state key="normal" backgroundImage="Listen.png">
@@ -375,6 +365,16 @@
                                 <state key="selected" backgroundImage="Listen_Pressed.png"/>
                                 <connections>
                                     <action selector="playWord:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="il3-Bo-2jz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8l-5t-mUH">
+                                <rect key="frame" x="282" y="308" width="36" height="30"/>
+                                <state key="normal" backgroundImage="Ok.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" backgroundImage="Ok_Pressed.png"/>
+                                <connections>
+                                    <action selector="finishedWord:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7nC-zV-yeA"/>
                                 </connections>
                             </button>
                         </subviews>
