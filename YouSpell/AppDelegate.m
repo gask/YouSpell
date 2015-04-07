@@ -75,4 +75,34 @@ static timesOpened;
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+// Called before requesting an interstitial via the Chartboost API server.
+- (BOOL)shouldRequestInterstitial:(CBLocation)location{
+    NSLog(@"1a");
+    return true;
+}
+
+// Called before an interstitial will be displayed on the screen.
+- (BOOL)shouldDisplayInterstitial:(CBLocation)location{
+    NSLog(@"2a");
+    return true;
+}
+
+// Called after an interstitial has been displayed on the screen.
+- (void)didDisplayInterstitial:(CBLocation)location{
+    NSLog(@"3a");
+}
+
+// Called after an interstitial has been loaded from the Chartboost API
+// servers and cached locally.
+- (void)didCacheInterstitial:(CBLocation)location{
+    NSLog(@"4a");
+}
+
+// Called after an interstitial has attempted to load from the Chartboost API
+// servers but failed.
+- (void)didFailToLoadInterstitial:(CBLocation)location withError:(CBLoadError)error{
+    NSLog(@"chartBoostFailedsfafsdf: %u", error);
+    // TODO: chamar InMobi em caso de falha
+}
+
 @end

@@ -102,7 +102,7 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     
-    [self showInMobiBanner];
+    //[self showInMobiBanner];
 }
 
 -(void)showInMobiBanner{
@@ -110,6 +110,11 @@
     self.banner.delegate = self;
     [self.view addSubview:self.banner];
     [self.banner loadBanner];
+    self.banner.refreshInterval = 90;
+}
+
+-(void)dealloc {
+    self.banner.delegate = nil;
 }
 
 - (void)didReceiveMemoryWarning
@@ -151,6 +156,5 @@
     NSString *errorMessage = [NSString stringWithFormat:@"Loading banner ad failed. Error code: %d, message: %@", [error code], [error localizedDescription]];
     NSLog(@"%@", errorMessage);
 }
-
 
 @end

@@ -4989,7 +4989,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/YouSpell",
 				);
-				OTHER_LDFLAGS = "-objC";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -5014,7 +5014,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/YouSpell",
 				);
-				OTHER_LDFLAGS = "-objC";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
