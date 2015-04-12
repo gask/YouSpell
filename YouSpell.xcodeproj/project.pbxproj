@@ -30,8 +30,7 @@
 		85FDB20C1A155F7800D742BF /* silverStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 85FDB2081A155F7800D742BF /* silverStar.png */; };
 		85FDB20D1A155F7800D742BF /* starPlaceholderold.png in Resources */ = {isa = PBXBuildFile; fileRef = 85FDB2091A155F7800D742BF /* starPlaceholderold.png */; };
 		85FDB20F1A15756900D742BF /* starPlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 85FDB20E1A15756900D742BF /* starPlaceholder.png */; };
-		B018E78419CA7A52000F1DDD /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0AA79E919A55FD300C9C554 /* Main_iPhone.storyboard */; };
-		B018E78519CA7A58000F1DDD /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0AA79EC19A55FD300C9C554 /* Main_iPad.storyboard */; };
+		B018E78419CA7A52000F1DDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0AA79E919A55FD300C9C554 /* Main.storyboard */; };
 		B018E78819CA7C1B000F1DDD /* WinLose.m in Sources */ = {isa = PBXBuildFile; fileRef = B018E78719CA7C1B000F1DDD /* WinLose.m */; };
 		B022200819DB890000CC15A5 /* words.plist in Resources */ = {isa = PBXBuildFile; fileRef = B022200719DB890000CC15A5 /* words.plist */; };
 		B02223F919DB996F00CC15A5 /* abdomen.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B022200B19DB996500CC15A5 /* abdomen.mp3 */; };
@@ -2244,8 +2243,7 @@
 		B0AA79E519A55FD300C9C554 /* YouSpell-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YouSpell-Prefix.pch"; sourceTree = "<group>"; };
 		B0AA79E619A55FD300C9C554 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B0AA79E719A55FD300C9C554 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B0AA79EA19A55FD300C9C554 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		B0AA79ED19A55FD300C9C554 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		B0AA79EA19A55FD300C9C554 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0AA79F219A55FD300C9C554 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B0AA79F819A55FD300C9C554 /* YouSpellTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YouSpellTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0AA79F919A55FD300C9C554 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -3522,8 +3520,7 @@
 				B0AA7A1219A560EB00C9C554 /* Classes */,
 				B0AA79E619A55FD300C9C554 /* AppDelegate.h */,
 				B0AA79E719A55FD300C9C554 /* AppDelegate.m */,
-				B0AA79E919A55FD300C9C554 /* Main_iPhone.storyboard */,
-				B0AA79EC19A55FD300C9C554 /* Main_iPad.storyboard */,
+				B0AA79E919A55FD300C9C554 /* Main.storyboard */,
 				B0AA79F219A55FD300C9C554 /* Images.xcassets */,
 				B0AA79DE19A55FD300C9C554 /* Supporting Files */,
 			);
@@ -3764,7 +3761,6 @@
 				B02225BE19DB997000CC15A5 /* italy.mp3 in Resources */,
 				B02226D619DB997000CC15A5 /* prada.mp3 in Resources */,
 				B022277219DB997000CC15A5 /* target.mp3 in Resources */,
-				B018E78519CA7A58000F1DDD /* Main_iPad.storyboard in Resources */,
 				B02224A219DB997000CC15A5 /* catania.mp3 in Resources */,
 				B022255219DB997000CC15A5 /* genesis.mp3 in Resources */,
 				B022254A19DB997000CC15A5 /* gabon.mp3 in Resources */,
@@ -3825,7 +3821,7 @@
 				B022254119DB997000CC15A5 /* forehead.mp3 in Resources */,
 				B022272719DB997000CC15A5 /* senegal.mp3 in Resources */,
 				B02224FC19DB997000CC15A5 /* dracula.mp3 in Resources */,
-				B018E78419CA7A52000F1DDD /* Main_iPhone.storyboard in Resources */,
+				B018E78419CA7A52000F1DDD /* Main.storyboard in Resources */,
 				B02227BC19DB997000CC15A5 /* vietnam.mp3 in Resources */,
 				B022268919DB997000CC15A5 /* olive.mp3 in Resources */,
 				B022240319DB996F00CC15A5 /* airbus.mp3 in Resources */,
@@ -4872,20 +4868,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		B0AA79E919A55FD300C9C554 /* Main_iPhone.storyboard */ = {
+		B0AA79E919A55FD300C9C554 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B0AA79EA19A55FD300C9C554 /* Base */,
 			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		B0AA79EC19A55FD300C9C554 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B0AA79ED19A55FD300C9C554 /* Base */,
-			);
-			name = Main_iPad.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		B0AA7A0219A55FD300C9C554 /* InfoPlist.strings */ = {

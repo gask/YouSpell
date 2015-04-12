@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -379,6 +378,19 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="3sF-gG-tw8" secondAttribute="bottom" constant="354" id="cEL-PF-K9r"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="cEL-PF-K9r"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="cEL-PF-K9r"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <segue destination="JLt-Mk-BIj" kind="presentation" identifier="CallWinLose" id="DmI-z0-8mc"/>
@@ -562,8 +574,12 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwL-EP-TJh">
                                 <rect key="frame" x="205" y="471" width="100" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="cJ7-DC-bIh"/>
-                                    <constraint firstAttribute="width" constant="100" id="xqJ-E3-ZTj"/>
+                                    <constraint firstAttribute="height" constant="29" id="cJ7-DC-bIh">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="58"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="100" id="xqJ-E3-ZTj">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
                                 </constraints>
                                 <state key="normal" title="Rankings" backgroundImage="Theme0.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -575,8 +591,12 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hM1-O5-oa8">
                                 <rect key="frame" x="41" y="471" width="100" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="2dH-sH-Ls9"/>
-                                    <constraint firstAttribute="height" constant="29" id="JvL-B4-KsI"/>
+                                    <constraint firstAttribute="width" constant="100" id="2dH-sH-Ls9">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="29" id="JvL-B4-KsI">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="58"/>
+                                    </constraint>
                                 </constraints>
                                 <state key="normal" title="Store" backgroundImage="Theme0.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -588,9 +608,16 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="symbol.png" translatesAutoresizingMaskIntoConstraints="NO" id="ukb-me-uqQ">
                                 <rect key="frame" x="78" y="112" width="256" height="175"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="175" id="53M-ep-5Qg"/>
-                                    <constraint firstAttribute="width" constant="256" id="wdG-Lr-WD4"/>
+                                    <constraint firstAttribute="height" constant="175" id="53M-ep-5Qg">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="350"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="256" id="wdG-Lr-WD4">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="512"/>
+                                    </constraint>
                                 </constraints>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="29" y="212" width="342" height="175"/>
+                                </variation>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Coin Counter.png" translatesAutoresizingMaskIntoConstraints="NO" id="qn0-Oh-Tk1">
                                 <rect key="frame" x="16" y="10" width="160" height="56"/>
@@ -607,8 +634,12 @@
                             <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lz7-El-mv8">
                                 <rect key="frame" x="205" y="348" width="100" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="AiK-ud-KDy"/>
-                                    <constraint firstAttribute="width" constant="100" id="SKi-wd-ai5"/>
+                                    <constraint firstAttribute="height" constant="29" id="AiK-ud-KDy">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="58"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="100" id="SKi-wd-ai5">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
                                 </constraints>
                                 <state key="normal" title="Medium" backgroundImage="Theme0.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -621,8 +652,12 @@
                             <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wL-nO-5V8">
                                 <rect key="frame" x="117" y="410" width="100" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="KGl-Ch-qro"/>
-                                    <constraint firstAttribute="height" constant="29" id="gwu-RE-TkK"/>
+                                    <constraint firstAttribute="width" constant="100" id="KGl-Ch-qro">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="29" id="gwu-RE-TkK">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="58"/>
+                                    </constraint>
                                 </constraints>
                                 <state key="normal" title="Hard" backgroundImage="Theme0.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -633,10 +668,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bak-Rv-LMe">
-                                <rect key="frame" x="41" y="348" width="100" height="29"/>
+                                <rect key="frame" x="24" y="348" width="100" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="JO2-kH-lBu"/>
-                                    <constraint firstAttribute="height" constant="29" id="mEh-wU-Z2Y"/>
+                                    <constraint firstAttribute="width" constant="100" id="J7s-vQ-Arr">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="29" id="JCu-lx-vAJ">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="58"/>
+                                    </constraint>
                                 </constraints>
                                 <state key="normal" title="Easy" backgroundImage="Theme0.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -663,7 +702,6 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Lz7-El-mv8" secondAttribute="trailing" constant="10" id="jVF-nj-Bvc"/>
                             <constraint firstItem="Bak-Rv-LMe" firstAttribute="top" secondItem="ukb-me-uqQ" secondAttribute="bottom" multiplier="1.1" constant="61" id="qsy-hR-GVs"/>
                             <constraint firstItem="qn0-Oh-Tk1" firstAttribute="leading" secondItem="Lnn-cm-B3q" secondAttribute="leadingMargin" constant="10" id="rmd-R4-0kl"/>
-                            <constraint firstItem="ukb-me-uqQ" firstAttribute="width" secondItem="Lnn-cm-B3q" secondAttribute="height" multiplier="32:75" id="unl-RG-HBi"/>
                         </constraints>
                     </view>
                     <connections>
