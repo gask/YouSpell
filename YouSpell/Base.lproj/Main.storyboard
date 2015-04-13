@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="29M-58-mOO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="29M-58-mOO">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -19,17 +19,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view autoresizesSubviews="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3sF-gG-tw8">
-                                <rect key="frame" x="0.0" y="340" width="320" height="106"/>
+                            <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3sF-gG-tw8">
+                                <rect key="frame" x="140" y="294" width="320" height="106"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dL-KV-B5d">
-                                        <rect key="frame" x="6" y="346" width="30" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dL-KV-B5d">
+                                        <rect key="frame" x="6" y="7" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="USM-uM-oqV">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                                                <variation key="heightClass=regular-widthClass=regular" constant="30"/>
                                             </constraint>
                                             <constraint firstAttribute="height" constant="30" id="hyu-G8-FvQ">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                                                <variation key="heightClass=regular-widthClass=regular" constant="30"/>
                                             </constraint>
                                         </constraints>
                                         <state key="normal" title="Q" backgroundImage="tecla.png">
@@ -40,8 +40,12 @@
                                             <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="d8G-2c-hNT"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DkX-Aj-jtZ">
-                                        <rect key="frame" x="37" y="346" width="30" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DkX-Aj-jtZ">
+                                        <rect key="frame" x="37" y="7" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="0x5-BU-XO7"/>
+                                            <constraint firstAttribute="height" constant="30" id="A3B-vv-gGM"/>
+                                        </constraints>
                                         <state key="normal" title="W" backgroundImage="tecla.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -56,22 +60,12 @@
                                             <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jac-Ut-Vg1"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nhc-j9-4Jy">
-                                        <rect key="frame" x="68" y="346" width="30" height="30"/>
-                                        <state key="normal" title="E" backgroundImage="tecla.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="selected" backgroundImage="teclaPressed.png"/>
-                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                            <rect key="frame" x="70" y="7" width="30" height="30"/>
-                                        </variation>
-                                        <connections>
-                                            <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="drq-hY-NhQ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pev-Lv-Vv2">
-                                        <rect key="frame" x="99" y="346" width="30" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pev-Lv-Vv2">
+                                        <rect key="frame" x="99" y="7" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="Rl6-cr-i8d"/>
+                                            <constraint firstAttribute="height" constant="30" id="XhA-zV-bTL"/>
+                                        </constraints>
                                         <state key="normal" title="R" backgroundImage="tecla.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -86,8 +80,12 @@
                                             <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Tw8-Zf-9yK"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lla-KU-Dsl">
-                                        <rect key="frame" x="130" y="346" width="30" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lla-KU-Dsl">
+                                        <rect key="frame" x="130" y="7" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="IAw-CW-b9I"/>
+                                            <constraint firstAttribute="width" constant="30" id="M2Y-dT-GYc"/>
+                                        </constraints>
                                         <state key="normal" title="T" backgroundImage="tecla.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -102,8 +100,12 @@
                                             <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="X5d-ZY-QCB"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWa-AF-R6J">
-                                        <rect key="frame" x="161" y="346" width="30" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWa-AF-R6J">
+                                        <rect key="frame" x="161" y="7" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="RmU-qU-guw"/>
+                                            <constraint firstAttribute="height" constant="30" id="hB6-GW-Adn"/>
+                                        </constraints>
                                         <state key="normal" title="Y" backgroundImage="tecla.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -118,8 +120,12 @@
                                             <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="l4M-qL-bwO"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qsi-v8-wGu">
-                                        <rect key="frame" x="192" y="346" width="30" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qsi-v8-wGu">
+                                        <rect key="frame" x="192" y="7" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="Z5u-BT-PxH"/>
+                                            <constraint firstAttribute="height" constant="30" id="ZjX-2v-Vp5"/>
+                                        </constraints>
                                         <state key="normal" title="U" backgroundImage="tecla.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -134,8 +140,12 @@
                                             <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="KQ6-lK-Z6V"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sut-zp-DIQ">
-                                        <rect key="frame" x="223" y="346" width="30" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sut-zp-DIQ">
+                                        <rect key="frame" x="223" y="7" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="H4l-m9-M6E"/>
+                                            <constraint firstAttribute="width" constant="30" id="V22-Yn-lhF"/>
+                                        </constraints>
                                         <state key="normal" title="I" backgroundImage="tecla.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -150,8 +160,12 @@
                                             <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="URB-Qg-3Eb"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arp-qt-Qxv">
-                                        <rect key="frame" x="254" y="346" width="30" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arp-qt-Qxv">
+                                        <rect key="frame" x="254" y="7" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="UUT-mP-bLo"/>
+                                            <constraint firstAttribute="width" constant="30" id="o9B-t7-3Jk"/>
+                                        </constraints>
                                         <state key="normal" title="O" backgroundImage="tecla.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -166,8 +180,12 @@
                                             <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="TID-mJ-AMi"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5lD-0V-6iE">
-                                        <rect key="frame" x="285" y="346" width="30" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5lD-0V-6iE">
+                                        <rect key="frame" x="285" y="7" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="Jq5-8R-we2"/>
+                                            <constraint firstAttribute="height" constant="30" id="RYk-K5-siL"/>
+                                        </constraints>
                                         <state key="normal" title="P" backgroundImage="tecla.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -422,19 +440,6 @@
                                             <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="OwN-e5-rXf"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8l-5t-mUH">
-                                        <rect key="frame" x="282" y="308" width="36" height="30"/>
-                                        <state key="normal" backgroundImage="Ok.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="selected" backgroundImage="Ok_Pressed.png"/>
-                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                            <rect key="frame" x="284" y="-31" width="36" height="30"/>
-                                        </variation>
-                                        <connections>
-                                            <action selector="finishedWord:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7nC-zV-yeA"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="laU-dF-EeZ">
                                         <rect key="frame" x="52" y="410" width="30" height="30"/>
                                         <state key="normal" title="Z" backgroundImage="tecla.png">
@@ -445,55 +450,60 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                            <rect key="frame" x="52" y="71" width="30" height="30"/>
+                                            <rect key="frame" x="54" y="71" width="30" height="30"/>
                                         </variation>
                                         <connections>
                                             <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="rKS-8s-fJh"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nhc-j9-4Jy">
+                                        <rect key="frame" x="68" y="7" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="0Ts-ib-j8a"/>
+                                            <constraint firstAttribute="height" constant="30" id="jVW-hH-C94"/>
+                                        </constraints>
+                                        <state key="normal" title="E" backgroundImage="tecla.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="teclaPressed.png"/>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="70" y="7" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="drq-hY-NhQ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.53354519437961478" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="8dL-KV-B5d" firstAttribute="top" secondItem="3sF-gG-tw8" secondAttribute="top" constant="7" id="4Bs-Lb-I0f"/>
+                                    <constraint firstItem="sut-zp-DIQ" firstAttribute="baseline" secondItem="arp-qt-Qxv" secondAttribute="baseline" id="0h8-Cj-bNk"/>
+                                    <constraint firstItem="8dL-KV-B5d" firstAttribute="leading" secondItem="3sF-gG-tw8" secondAttribute="leading" constant="6" id="2Ee-1k-ywW"/>
+                                    <constraint firstItem="qsi-v8-wGu" firstAttribute="leading" secondItem="KWa-AF-R6J" secondAttribute="trailing" constant="1" id="4NK-WD-0iv"/>
                                     <constraint firstAttribute="height" constant="106" id="63M-lg-cfa">
                                         <variation key="heightClass=regular-widthClass=regular" constant="212"/>
                                     </constraint>
-                                    <constraint firstItem="8dL-KV-B5d" firstAttribute="leading" secondItem="3sF-gG-tw8" secondAttribute="leading" constant="8" id="6ML-dS-VxK"/>
-                                    <constraint firstAttribute="width" constant="250" id="Bm1-JY-1NH">
+                                    <constraint firstItem="KWa-AF-R6J" firstAttribute="leading" secondItem="Lla-KU-Dsl" secondAttribute="trailing" constant="1" id="AYv-qt-9Ka"/>
+                                    <constraint firstAttribute="width" constant="320" id="Bm1-JY-1NH">
                                         <variation key="heightClass=regular-widthClass=regular" constant="500"/>
                                     </constraint>
+                                    <constraint firstItem="DkX-Aj-jtZ" firstAttribute="baseline" secondItem="8dL-KV-B5d" secondAttribute="baseline" constant="-1" id="Gds-zX-UAi"/>
+                                    <constraint firstItem="pev-Lv-Vv2" firstAttribute="leading" secondItem="Nhc-j9-4Jy" secondAttribute="trailing" constant="1" id="GuY-v5-xes"/>
+                                    <constraint firstItem="5lD-0V-6iE" firstAttribute="leading" secondItem="arp-qt-Qxv" secondAttribute="trailing" constant="1" id="JK5-HZ-Bry"/>
+                                    <constraint firstItem="arp-qt-Qxv" firstAttribute="baseline" secondItem="5lD-0V-6iE" secondAttribute="baseline" id="Kl7-T3-g8Y"/>
+                                    <constraint firstItem="sut-zp-DIQ" firstAttribute="baseline" secondItem="qsi-v8-wGu" secondAttribute="baseline" id="MDq-Wj-iDQ"/>
+                                    <constraint firstItem="DkX-Aj-jtZ" firstAttribute="leading" secondItem="8dL-KV-B5d" secondAttribute="trailing" constant="1" id="NcA-cv-M8S"/>
+                                    <constraint firstItem="pev-Lv-Vv2" firstAttribute="baseline" secondItem="Nhc-j9-4Jy" secondAttribute="baseline" id="Zq4-v8-gLo"/>
+                                    <constraint firstItem="KWa-AF-R6J" firstAttribute="baseline" secondItem="Lla-KU-Dsl" secondAttribute="baseline" id="cuL-1M-gyy"/>
+                                    <constraint firstItem="Lla-KU-Dsl" firstAttribute="leading" secondItem="pev-Lv-Vv2" secondAttribute="trailing" constant="1" id="fmN-Ob-Eay"/>
+                                    <constraint firstItem="Nhc-j9-4Jy" firstAttribute="leading" secondItem="DkX-Aj-jtZ" secondAttribute="trailing" constant="1" id="gCS-XF-QbT"/>
+                                    <constraint firstItem="Lla-KU-Dsl" firstAttribute="baseline" secondItem="pev-Lv-Vv2" secondAttribute="baseline" id="hc5-gm-SmK"/>
+                                    <constraint firstItem="qsi-v8-wGu" firstAttribute="baseline" secondItem="KWa-AF-R6J" secondAttribute="baseline" id="lJB-0B-Nhm"/>
+                                    <constraint firstItem="arp-qt-Qxv" firstAttribute="leading" secondItem="sut-zp-DIQ" secondAttribute="trailing" constant="1" id="mQP-3j-dn3"/>
+                                    <constraint firstItem="8dL-KV-B5d" firstAttribute="top" secondItem="3sF-gG-tw8" secondAttribute="top" constant="7" id="nY6-96-MZ2"/>
+                                    <constraint firstItem="DkX-Aj-jtZ" firstAttribute="baseline" secondItem="Nhc-j9-4Jy" secondAttribute="baseline" id="pDN-qB-tOJ"/>
+                                    <constraint firstItem="sut-zp-DIQ" firstAttribute="leading" secondItem="qsi-v8-wGu" secondAttribute="trailing" constant="1" id="vn6-mB-6vW"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="8dL-KV-B5d"/>
-                                        <exclude reference="DkX-Aj-jtZ"/>
-                                        <exclude reference="Nhc-j9-4Jy"/>
-                                        <exclude reference="pev-Lv-Vv2"/>
-                                        <exclude reference="Lla-KU-Dsl"/>
-                                        <exclude reference="KWa-AF-R6J"/>
-                                        <exclude reference="qsi-v8-wGu"/>
-                                        <exclude reference="sut-zp-DIQ"/>
-                                        <exclude reference="arp-qt-Qxv"/>
-                                        <exclude reference="5lD-0V-6iE"/>
-                                        <exclude reference="58Z-CE-LKr"/>
-                                        <exclude reference="Cj5-L8-do3"/>
-                                        <exclude reference="e7x-hs-fHA"/>
-                                        <exclude reference="uGR-La-YKo"/>
-                                        <exclude reference="9HU-JU-tO3"/>
-                                        <exclude reference="G7d-yx-n6z"/>
-                                        <exclude reference="p3O-X1-JwN"/>
-                                        <exclude reference="kQd-Dv-EFO"/>
-                                        <exclude reference="DEd-QN-IOn"/>
-                                        <exclude reference="iFB-5P-5wO"/>
-                                        <exclude reference="Nhe-wX-u48"/>
-                                        <exclude reference="M7i-Ak-Jvg"/>
-                                        <exclude reference="eEr-Am-Woa"/>
-                                        <exclude reference="Ufy-gH-8cq"/>
-                                        <exclude reference="Ot1-LP-0S2"/>
-                                        <exclude reference="X8l-5t-mUH"/>
-                                        <exclude reference="laU-dF-EeZ"/>
-                                    </mask>
-                                </variation>
                                 <variation key="heightClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="140" y="494" width="320" height="106"/>
                                 </variation>
@@ -503,40 +513,9 @@
                                 <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="40" y="494" width="320" height="106"/>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <mask key="subviews">
-                                        <include reference="8dL-KV-B5d"/>
-                                        <include reference="DkX-Aj-jtZ"/>
-                                        <include reference="Nhc-j9-4Jy"/>
-                                        <include reference="pev-Lv-Vv2"/>
-                                        <include reference="Lla-KU-Dsl"/>
-                                        <include reference="KWa-AF-R6J"/>
-                                        <include reference="qsi-v8-wGu"/>
-                                        <include reference="sut-zp-DIQ"/>
-                                        <include reference="arp-qt-Qxv"/>
-                                        <include reference="5lD-0V-6iE"/>
-                                        <include reference="58Z-CE-LKr"/>
-                                        <include reference="Cj5-L8-do3"/>
-                                        <include reference="e7x-hs-fHA"/>
-                                        <include reference="uGR-La-YKo"/>
-                                        <include reference="9HU-JU-tO3"/>
-                                        <include reference="G7d-yx-n6z"/>
-                                        <include reference="p3O-X1-JwN"/>
-                                        <include reference="kQd-Dv-EFO"/>
-                                        <include reference="DEd-QN-IOn"/>
-                                        <include reference="iFB-5P-5wO"/>
-                                        <include reference="Nhe-wX-u48"/>
-                                        <include reference="M7i-Ak-Jvg"/>
-                                        <include reference="eEr-Am-Woa"/>
-                                        <include reference="Ufy-gH-8cq"/>
-                                        <include reference="Ot1-LP-0S2"/>
-                                        <include reference="X8l-5t-mUH"/>
-                                        <include reference="laU-dF-EeZ"/>
-                                    </mask>
-                                </variation>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IdU-K7-vbJ">
-                                <rect key="frame" x="77" y="28" width="166" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IdU-K7-vbJ">
+                                <rect key="frame" x="217" y="28" width="166" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="166" id="4gu-Ie-aXy">
                                         <variation key="heightClass=regular-widthClass=regular" constant="332"/>
@@ -553,6 +532,19 @@
                                     <action selector="playWord:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="il3-Bo-2jz"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8l-5t-mUH">
+                                <rect key="frame" x="282" y="308" width="36" height="30"/>
+                                <state key="normal" backgroundImage="Ok.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" backgroundImage="Ok_Pressed.png"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="497" y="299" width="36" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="finishedWord:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7nC-zV-yeA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -561,6 +553,16 @@
                             <constraint firstAttribute="centerX" secondItem="3sF-gG-tw8" secondAttribute="centerX" id="bCk-dn-7D8"/>
                             <constraint firstAttribute="centerX" secondItem="IdU-K7-vbJ" secondAttribute="centerX" id="pHg-1u-ARV"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="X8l-5t-mUH"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="X8l-5t-mUH"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <segue destination="JLt-Mk-BIj" kind="presentation" identifier="CallWinLose" id="DmI-z0-8mc"/>
@@ -568,7 +570,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="367.5" y="86.25"/>
+            <point key="canvasLocation" x="268" y="83"/>
         </scene>
         <!--Rankings-->
         <scene sceneID="nIt-wY-bt0">
