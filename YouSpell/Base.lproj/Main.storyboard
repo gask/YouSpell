@@ -21,343 +21,530 @@
                         <subviews>
                             <view autoresizesSubviews="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3sF-gG-tw8">
                                 <rect key="frame" x="0.0" y="340" width="320" height="106"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dL-KV-B5d">
+                                        <rect key="frame" x="6" y="346" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="USM-uM-oqV">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                                            </constraint>
+                                            <constraint firstAttribute="height" constant="30" id="hyu-G8-FvQ">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                                            </constraint>
+                                        </constraints>
+                                        <state key="normal" title="Q" backgroundImage="tecla.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="teclaPressed.png"/>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="d8G-2c-hNT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DkX-Aj-jtZ">
+                                        <rect key="frame" x="37" y="346" width="30" height="30"/>
+                                        <state key="normal" title="W" backgroundImage="tecla.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="teclaPressed.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="39" y="7" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jac-Ut-Vg1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nhc-j9-4Jy">
+                                        <rect key="frame" x="68" y="346" width="30" height="30"/>
+                                        <state key="normal" title="E" backgroundImage="tecla.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="teclaPressed.png"/>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="70" y="7" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="drq-hY-NhQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pev-Lv-Vv2">
+                                        <rect key="frame" x="99" y="346" width="30" height="30"/>
+                                        <state key="normal" title="R" backgroundImage="tecla.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="teclaPressed.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="101" y="7" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Tw8-Zf-9yK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lla-KU-Dsl">
+                                        <rect key="frame" x="130" y="346" width="30" height="30"/>
+                                        <state key="normal" title="T" backgroundImage="tecla.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="teclaPressed.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="132" y="7" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="X5d-ZY-QCB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWa-AF-R6J">
+                                        <rect key="frame" x="161" y="346" width="30" height="30"/>
+                                        <state key="normal" title="Y" backgroundImage="tecla.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="teclaPressed.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="163" y="7" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="l4M-qL-bwO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qsi-v8-wGu">
+                                        <rect key="frame" x="192" y="346" width="30" height="30"/>
+                                        <state key="normal" title="U" backgroundImage="tecla.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="teclaPressed.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="194" y="7" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="KQ6-lK-Z6V"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sut-zp-DIQ">
+                                        <rect key="frame" x="223" y="346" width="30" height="30"/>
+                                        <state key="normal" title="I" backgroundImage="tecla.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="teclaPressed.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="225" y="7" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="URB-Qg-3Eb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arp-qt-Qxv">
+                                        <rect key="frame" x="254" y="346" width="30" height="30"/>
+                                        <state key="normal" title="O" backgroundImage="tecla.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="teclaPressed.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="256" y="7" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="TID-mJ-AMi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5lD-0V-6iE">
+                                        <rect key="frame" x="285" y="346" width="30" height="30"/>
+                                        <state key="normal" title="P" backgroundImage="tecla.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="teclaPressed.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="287" y="7" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0Ks-se-6qa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58Z-CE-LKr">
+                                        <rect key="frame" x="21" y="378" width="30" height="30"/>
+                                        <state key="normal" title="A" backgroundImage="tecla.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="teclaPressed.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="23" y="39" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0Fv-Ub-012"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cj5-L8-do3">
+                                        <rect key="frame" x="52" y="378" width="30" height="30"/>
+                                        <state key="normal" title="S" backgroundImage="tecla.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="teclaPressed.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="54" y="39" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dqL-kk-92K"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7x-hs-fHA">
+                                        <rect key="frame" x="83" y="378" width="30" height="30"/>
+                                        <state key="normal" title="D" backgroundImage="tecla.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="teclaPressed.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="85" y="39" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="LZB-cw-Sce"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGR-La-YKo">
+                                        <rect key="frame" x="114" y="378" width="30" height="30"/>
+                                        <state key="normal" title="F" backgroundImage="tecla.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="teclaPressed.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="116" y="39" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="aC9-lq-Amb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9HU-JU-tO3">
+                                        <rect key="frame" x="145" y="378" width="30" height="30"/>
+                                        <state key="normal" title="G" backgroundImage="tecla.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="teclaPressed.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="147" y="39" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bU8-TA-vaM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G7d-yx-n6z">
+                                        <rect key="frame" x="176" y="378" width="30" height="30"/>
+                                        <state key="normal" title="H" backgroundImage="tecla.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="teclaPressed.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="178" y="39" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="SMJ-AH-2kr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3O-X1-JwN">
+                                        <rect key="frame" x="207" y="378" width="30" height="30"/>
+                                        <state key="normal" title="J" backgroundImage="tecla.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="teclaPressed.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="209" y="39" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ecB-oF-RY3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQd-Dv-EFO">
+                                        <rect key="frame" x="238" y="378" width="30" height="30"/>
+                                        <state key="normal" title="K" backgroundImage="tecla.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="teclaPressed.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="240" y="39" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="MAU-Ti-wyn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEd-QN-IOn">
+                                        <rect key="frame" x="269" y="378" width="30" height="30"/>
+                                        <state key="normal" title="L" backgroundImage="tecla.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="teclaPressed.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="271" y="39" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="nXE-GZ-oef"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFB-5P-5wO">
+                                        <rect key="frame" x="83" y="410" width="30" height="30"/>
+                                        <state key="normal" title="X" backgroundImage="tecla.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="teclaPressed.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="85" y="71" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="KXE-i1-cij"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nhe-wX-u48">
+                                        <rect key="frame" x="114" y="410" width="30" height="30"/>
+                                        <state key="normal" title="C" backgroundImage="tecla.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="teclaPressed.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="116" y="71" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qgy-A9-TAF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7i-Ak-Jvg">
+                                        <rect key="frame" x="145" y="410" width="30" height="30"/>
+                                        <state key="normal" title="V" backgroundImage="tecla.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="teclaPressed.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="147" y="71" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2nV-aO-RXJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEr-Am-Woa">
+                                        <rect key="frame" x="176" y="410" width="30" height="30"/>
+                                        <state key="normal" title="B" backgroundImage="tecla.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="teclaPressed.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="178" y="71" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="m6r-Ei-kTt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ufy-gH-8cq">
+                                        <rect key="frame" x="207" y="410" width="30" height="30"/>
+                                        <state key="normal" title="N" backgroundImage="tecla.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="teclaPressed.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="209" y="71" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="5ls-8O-Moc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ot1-LP-0S2">
+                                        <rect key="frame" x="238" y="410" width="30" height="30"/>
+                                        <state key="normal" title="M" backgroundImage="tecla.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="teclaPressed.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="240" y="71" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="OwN-e5-rXf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8l-5t-mUH">
+                                        <rect key="frame" x="282" y="308" width="36" height="30"/>
+                                        <state key="normal" backgroundImage="Ok.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="Ok_Pressed.png"/>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="284" y="-31" width="36" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="finishedWord:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7nC-zV-yeA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="laU-dF-EeZ">
+                                        <rect key="frame" x="52" y="410" width="30" height="30"/>
+                                        <state key="normal" title="Z" backgroundImage="tecla.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="teclaPressed.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="52" y="71" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="rKS-8s-fJh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.53354519437961478" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="8dL-KV-B5d" firstAttribute="top" secondItem="3sF-gG-tw8" secondAttribute="top" constant="7" id="4Bs-Lb-I0f"/>
+                                    <constraint firstAttribute="height" constant="106" id="63M-lg-cfa">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="212"/>
+                                    </constraint>
+                                    <constraint firstItem="8dL-KV-B5d" firstAttribute="leading" secondItem="3sF-gG-tw8" secondAttribute="leading" constant="8" id="6ML-dS-VxK"/>
+                                    <constraint firstAttribute="width" constant="250" id="Bm1-JY-1NH">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="500"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="8dL-KV-B5d"/>
+                                        <exclude reference="DkX-Aj-jtZ"/>
+                                        <exclude reference="Nhc-j9-4Jy"/>
+                                        <exclude reference="pev-Lv-Vv2"/>
+                                        <exclude reference="Lla-KU-Dsl"/>
+                                        <exclude reference="KWa-AF-R6J"/>
+                                        <exclude reference="qsi-v8-wGu"/>
+                                        <exclude reference="sut-zp-DIQ"/>
+                                        <exclude reference="arp-qt-Qxv"/>
+                                        <exclude reference="5lD-0V-6iE"/>
+                                        <exclude reference="58Z-CE-LKr"/>
+                                        <exclude reference="Cj5-L8-do3"/>
+                                        <exclude reference="e7x-hs-fHA"/>
+                                        <exclude reference="uGR-La-YKo"/>
+                                        <exclude reference="9HU-JU-tO3"/>
+                                        <exclude reference="G7d-yx-n6z"/>
+                                        <exclude reference="p3O-X1-JwN"/>
+                                        <exclude reference="kQd-Dv-EFO"/>
+                                        <exclude reference="DEd-QN-IOn"/>
+                                        <exclude reference="iFB-5P-5wO"/>
+                                        <exclude reference="Nhe-wX-u48"/>
+                                        <exclude reference="M7i-Ak-Jvg"/>
+                                        <exclude reference="eEr-Am-Woa"/>
+                                        <exclude reference="Ufy-gH-8cq"/>
+                                        <exclude reference="Ot1-LP-0S2"/>
+                                        <exclude reference="X8l-5t-mUH"/>
+                                        <exclude reference="laU-dF-EeZ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="140" y="494" width="320" height="106"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="40" y="94" width="320" height="106"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="40" y="494" width="320" height="106"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="subviews">
+                                        <include reference="8dL-KV-B5d"/>
+                                        <include reference="DkX-Aj-jtZ"/>
+                                        <include reference="Nhc-j9-4Jy"/>
+                                        <include reference="pev-Lv-Vv2"/>
+                                        <include reference="Lla-KU-Dsl"/>
+                                        <include reference="KWa-AF-R6J"/>
+                                        <include reference="qsi-v8-wGu"/>
+                                        <include reference="sut-zp-DIQ"/>
+                                        <include reference="arp-qt-Qxv"/>
+                                        <include reference="5lD-0V-6iE"/>
+                                        <include reference="58Z-CE-LKr"/>
+                                        <include reference="Cj5-L8-do3"/>
+                                        <include reference="e7x-hs-fHA"/>
+                                        <include reference="uGR-La-YKo"/>
+                                        <include reference="9HU-JU-tO3"/>
+                                        <include reference="G7d-yx-n6z"/>
+                                        <include reference="p3O-X1-JwN"/>
+                                        <include reference="kQd-Dv-EFO"/>
+                                        <include reference="DEd-QN-IOn"/>
+                                        <include reference="iFB-5P-5wO"/>
+                                        <include reference="Nhe-wX-u48"/>
+                                        <include reference="M7i-Ak-Jvg"/>
+                                        <include reference="eEr-Am-Woa"/>
+                                        <include reference="Ufy-gH-8cq"/>
+                                        <include reference="Ot1-LP-0S2"/>
+                                        <include reference="X8l-5t-mUH"/>
+                                        <include reference="laU-dF-EeZ"/>
+                                    </mask>
+                                </variation>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dL-KV-B5d">
-                                <rect key="frame" x="6" y="346" width="30" height="30"/>
-                                <state key="normal" title="Q" backgroundImage="tecla.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="teclaPressed.png"/>
-                                <connections>
-                                    <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="d8G-2c-hNT"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DkX-Aj-jtZ">
-                                <rect key="frame" x="37" y="346" width="30" height="30"/>
-                                <state key="normal" title="W" backgroundImage="tecla.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="teclaPressed.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jac-Ut-Vg1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nhc-j9-4Jy">
-                                <rect key="frame" x="68" y="346" width="30" height="30"/>
-                                <state key="normal" title="E" backgroundImage="tecla.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="teclaPressed.png"/>
-                                <connections>
-                                    <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="drq-hY-NhQ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pev-Lv-Vv2">
-                                <rect key="frame" x="99" y="346" width="30" height="30"/>
-                                <state key="normal" title="R" backgroundImage="tecla.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="teclaPressed.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Tw8-Zf-9yK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lla-KU-Dsl">
-                                <rect key="frame" x="130" y="346" width="30" height="30"/>
-                                <state key="normal" title="T" backgroundImage="tecla.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="teclaPressed.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="X5d-ZY-QCB"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWa-AF-R6J">
-                                <rect key="frame" x="161" y="346" width="30" height="30"/>
-                                <state key="normal" title="Y" backgroundImage="tecla.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="teclaPressed.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="l4M-qL-bwO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qsi-v8-wGu">
-                                <rect key="frame" x="192" y="346" width="30" height="30"/>
-                                <state key="normal" title="U" backgroundImage="tecla.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="teclaPressed.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="KQ6-lK-Z6V"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sut-zp-DIQ">
-                                <rect key="frame" x="223" y="346" width="30" height="30"/>
-                                <state key="normal" title="I" backgroundImage="tecla.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="teclaPressed.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="URB-Qg-3Eb"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arp-qt-Qxv">
-                                <rect key="frame" x="254" y="346" width="30" height="30"/>
-                                <state key="normal" title="O" backgroundImage="tecla.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="teclaPressed.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="TID-mJ-AMi"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5lD-0V-6iE">
-                                <rect key="frame" x="285" y="346" width="30" height="30"/>
-                                <state key="normal" title="P" backgroundImage="tecla.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="teclaPressed.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0Ks-se-6qa"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58Z-CE-LKr">
-                                <rect key="frame" x="21" y="378" width="30" height="30"/>
-                                <state key="normal" title="A" backgroundImage="tecla.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="teclaPressed.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0Fv-Ub-012"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cj5-L8-do3">
-                                <rect key="frame" x="52" y="378" width="30" height="30"/>
-                                <state key="normal" title="S" backgroundImage="tecla.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="teclaPressed.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dqL-kk-92K"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7x-hs-fHA">
-                                <rect key="frame" x="83" y="378" width="30" height="30"/>
-                                <state key="normal" title="D" backgroundImage="tecla.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="teclaPressed.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="LZB-cw-Sce"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGR-La-YKo">
-                                <rect key="frame" x="114" y="378" width="30" height="30"/>
-                                <state key="normal" title="F" backgroundImage="tecla.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="teclaPressed.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="aC9-lq-Amb"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9HU-JU-tO3">
-                                <rect key="frame" x="145" y="378" width="30" height="30"/>
-                                <state key="normal" title="G" backgroundImage="tecla.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="teclaPressed.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bU8-TA-vaM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G7d-yx-n6z">
-                                <rect key="frame" x="176" y="378" width="30" height="30"/>
-                                <state key="normal" title="H" backgroundImage="tecla.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="teclaPressed.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="SMJ-AH-2kr"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3O-X1-JwN">
-                                <rect key="frame" x="207" y="378" width="30" height="30"/>
-                                <state key="normal" title="J" backgroundImage="tecla.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="teclaPressed.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ecB-oF-RY3"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQd-Dv-EFO">
-                                <rect key="frame" x="238" y="378" width="30" height="30"/>
-                                <state key="normal" title="K" backgroundImage="tecla.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="teclaPressed.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="MAU-Ti-wyn"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEd-QN-IOn">
-                                <rect key="frame" x="269" y="378" width="30" height="30"/>
-                                <state key="normal" title="L" backgroundImage="tecla.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="teclaPressed.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="nXE-GZ-oef"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="laU-dF-EeZ">
-                                <rect key="frame" x="52" y="410" width="30" height="30"/>
-                                <state key="normal" title="Z" backgroundImage="tecla.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="teclaPressed.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="rKS-8s-fJh"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFB-5P-5wO">
-                                <rect key="frame" x="83" y="410" width="30" height="30"/>
-                                <state key="normal" title="X" backgroundImage="tecla.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="teclaPressed.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="KXE-i1-cij"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nhe-wX-u48">
-                                <rect key="frame" x="114" y="410" width="30" height="30"/>
-                                <state key="normal" title="C" backgroundImage="tecla.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="teclaPressed.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qgy-A9-TAF"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7i-Ak-Jvg">
-                                <rect key="frame" x="145" y="410" width="30" height="30"/>
-                                <state key="normal" title="V" backgroundImage="tecla.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="teclaPressed.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2nV-aO-RXJ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEr-Am-Woa">
-                                <rect key="frame" x="176" y="410" width="30" height="30"/>
-                                <state key="normal" title="B" backgroundImage="tecla.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="teclaPressed.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="m6r-Ei-kTt"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ufy-gH-8cq">
-                                <rect key="frame" x="207" y="410" width="30" height="30"/>
-                                <state key="normal" title="N" backgroundImage="tecla.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="teclaPressed.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="5ls-8O-Moc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ot1-LP-0S2">
-                                <rect key="frame" x="238" y="410" width="30" height="30"/>
-                                <state key="normal" title="M" backgroundImage="tecla.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="teclaPressed.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="OwN-e5-rXf"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IdU-K7-vbJ">
                                 <rect key="frame" x="77" y="28" width="166" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="166" id="4gu-Ie-aXy">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="332"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="40" id="kgI-GH-Ch2">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="80"/>
+                                    </constraint>
+                                </constraints>
                                 <state key="normal" backgroundImage="Listen.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -366,31 +553,14 @@
                                     <action selector="playWord:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="il3-Bo-2jz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8l-5t-mUH">
-                                <rect key="frame" x="282" y="308" width="36" height="30"/>
-                                <state key="normal" backgroundImage="Ok.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="Ok_Pressed.png"/>
-                                <connections>
-                                    <action selector="finishedWord:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7nC-zV-yeA"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="3sF-gG-tw8" secondAttribute="bottom" constant="354" id="cEL-PF-K9r"/>
+                            <constraint firstItem="IdU-K7-vbJ" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="FIl-g3-xEs"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="3sF-gG-tw8" secondAttribute="bottom" constant="200" id="QI1-HZ-MJ2"/>
+                            <constraint firstAttribute="centerX" secondItem="3sF-gG-tw8" secondAttribute="centerX" id="bCk-dn-7D8"/>
+                            <constraint firstAttribute="centerX" secondItem="IdU-K7-vbJ" secondAttribute="centerX" id="pHg-1u-ARV"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="cEL-PF-K9r"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="constraints">
-                                <include reference="cEL-PF-K9r"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <segue destination="JLt-Mk-BIj" kind="presentation" identifier="CallWinLose" id="DmI-z0-8mc"/>
@@ -398,7 +568,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="367.5" y="86.619718309859152"/>
+            <point key="canvasLocation" x="367.5" y="86.25"/>
         </scene>
         <!--Rankings-->
         <scene sceneID="nIt-wY-bt0">

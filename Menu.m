@@ -23,7 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [Chartboost showInterstitial:CBLocationMainMenu];
+    //[Chartboost showInterstitial:CBLocationMainMenu];
     
     [coinsPocket setFont:[UIFont fontWithName:@"Delicious-Roman" size:18]];
     [playBtn.titleLabel setFont:[UIFont fontWithName:@"Delicious-Roman" size:25]];
