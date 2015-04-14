@@ -231,9 +231,6 @@
                                         <state key="selected" backgroundImage="teclaPressed.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="96" y="69" width="60" height="60"/>
-                                        </variation>
                                         <connections>
                                             <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0Fv-Ub-012"/>
                                         </connections>
@@ -255,9 +252,6 @@
                                         <state key="selected" backgroundImage="teclaPressed.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="158" y="69" width="60" height="60"/>
-                                        </variation>
                                         <connections>
                                             <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dqL-kk-92K"/>
                                         </connections>
@@ -279,9 +273,6 @@
                                         <state key="selected" backgroundImage="teclaPressed.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="219" y="69" width="60" height="60"/>
-                                        </variation>
                                         <connections>
                                             <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="LZB-cw-Sce"/>
                                         </connections>
@@ -303,9 +294,6 @@
                                         <state key="selected" backgroundImage="teclaPressed.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="280" y="69" width="60" height="60"/>
-                                        </variation>
                                         <connections>
                                             <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="aC9-lq-Amb"/>
                                         </connections>
@@ -327,9 +315,6 @@
                                         <state key="selected" backgroundImage="teclaPressed.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="341" y="69" width="60" height="60"/>
-                                        </variation>
                                         <connections>
                                             <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bU8-TA-vaM"/>
                                         </connections>
@@ -351,9 +336,6 @@
                                         <state key="selected" backgroundImage="teclaPressed.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="402" y="69" width="60" height="60"/>
-                                        </variation>
                                         <connections>
                                             <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="SMJ-AH-2kr"/>
                                         </connections>
@@ -375,9 +357,6 @@
                                         <state key="selected" backgroundImage="teclaPressed.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="463" y="69" width="60" height="60"/>
-                                        </variation>
                                         <connections>
                                             <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ecB-oF-RY3"/>
                                         </connections>
@@ -399,9 +378,6 @@
                                         <state key="selected" backgroundImage="teclaPressed.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="524" y="69" width="60" height="60"/>
-                                        </variation>
                                         <connections>
                                             <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="MAU-Ti-wyn"/>
                                         </connections>
@@ -423,9 +399,6 @@
                                         <state key="selected" backgroundImage="teclaPressed.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="585" y="69" width="60" height="60"/>
-                                        </variation>
                                         <connections>
                                             <action selector="keyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="nXE-GZ-oef"/>
                                         </connections>
