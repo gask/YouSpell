@@ -14,6 +14,7 @@
 #import "AppDelegate.h"
 #import <CommonCrypto/CommonDigest.h>
 #import <AdSupport/AdSupport.h>
+#import "ALSdk.h"
 
 @implementation AppDelegate
 static timesOpened;
@@ -29,6 +30,8 @@ static timesOpened;
     CLLocation *loc = mgr.location;
     [InMobi setLocationWithLatitude:loc.coordinate.latitude longitude:loc.coordinate.longitude accuracy:loc.horizontalAccuracy];
     [mgr startUpdatingLocation];
+    [ALSdk initializeSdk];
+
     
     userDefaults = [NSUserDefaults standardUserDefaults];
     timesOpened = [userDefaults integerForKey:@"timesOpened"];

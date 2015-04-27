@@ -126,7 +126,7 @@ static int timesPlayed;
 {
     
     //NSLog(@"1 2 3");
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     //NSLog(@"1- 2 3");
     DefinitionView *vc = [storyboard instantiateViewControllerWithIdentifier:@"DefinitionVC"];
     //NSLog(@"1 2- 3");

@@ -10,6 +10,7 @@
 #import "AppConstants.h"
 #import <Chartboost/Chartboost.h>
 #import <Chartboost/CBNewsfeed.h>
+#import "ALInterstitialAd.h"
 
 @interface Menu ()
 
@@ -24,6 +25,10 @@
     // Do any additional setup after loading the view.
     
     //[Chartboost showInterstitial:CBLocationMainMenu];
+    if([ALInterstitialAd isReadyForDisplay]){
+        NSLog(@"appLovinReady");
+        [ALInterstitialAd show];
+    }else NSLog(@"appLovingNotReady");
     
     [coinsPocket setFont:[UIFont fontWithName:@"Delicious-Roman" size:18]];
     [playBtn.titleLabel setFont:[UIFont fontWithName:@"Delicious-Roman" size:25]];
