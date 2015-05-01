@@ -136,20 +136,28 @@
     
     if([cell.contentView viewWithTag:19] != nil)
     {
+        CGRect easyBaseFrame = cell.easyBlue.frame;
+        CGRect mediumBaseFrame = cell.mediumBlue.frame;
+        CGRect hardBaseFrame = cell.hardBlue.frame;
+        
         UIView *easyBar = [cell.contentView viewWithTag:19];
         UIView *mediumBar = [cell.contentView viewWithTag:20];
         UIView *hardBar = [cell.contentView viewWithTag:21];
         
-        [easyBar setFrame:CGRectMake(58, 127, 40* [[themeData[indexPath.row] objectForKey:@"easyPercStreak"] floatValue]/100.0, 6)];
-        [mediumBar setFrame:CGRectMake(157, 127, 40* [[themeData[indexPath.row] objectForKey:@"mediumPercStreak"] floatValue]/100.0, 6)];
-        [hardBar setFrame:CGRectMake(255, 127, 40* [[themeData[indexPath.row] objectForKey:@"hardPercStreak"] floatValue]/100.0, 6)];
+        [easyBar setFrame:CGRectMake(easyBaseFrame.origin.x, easyBaseFrame.origin.y, 40* [[themeData[indexPath.row] objectForKey:@"easyPercStreak"] floatValue]/100.0, 6)];
+        [mediumBar setFrame:CGRectMake(mediumBaseFrame.origin.x, mediumBaseFrame.origin.y, 40* [[themeData[indexPath.row] objectForKey:@"mediumPercStreak"] floatValue]/100.0, 6)];
+        [hardBar setFrame:CGRectMake(hardBaseFrame.origin.x, hardBaseFrame.origin.y, 40* [[themeData[indexPath.row] objectForKey:@"hardPercStreak"] floatValue]/100.0, 6)];
         
     }
     else
     {
-        CGRect easyBarFrame = CGRectMake(58, 127, 40, 6);
-        CGRect mediumBarFrame = CGRectMake(157, 127, 40, 6);
-        CGRect hardBarFrame = CGRectMake(255, 127, 40, 6);
+        CGRect easyBaseFrame = cell.easyBlue.frame;
+        CGRect mediumBaseFrame = cell.mediumBlue.frame;
+        CGRect hardBaseFrame = cell.hardBlue.frame;
+        
+        CGRect easyBarFrame = CGRectMake(easyBaseFrame.origin.x, easyBaseFrame.origin.y, easyBaseFrame.size.width, 6);
+        CGRect mediumBarFrame = CGRectMake(mediumBaseFrame.origin.x, mediumBaseFrame.origin.y, mediumBaseFrame.size.width, 6);
+        CGRect hardBarFrame = CGRectMake(hardBaseFrame.origin.x, hardBaseFrame.origin.y, hardBaseFrame.size.width, 6);
         
         easyBarFrame.size.width *= [[themeData[indexPath.row] objectForKey:@"easyPercStreak"] floatValue]/100.0;
         mediumBarFrame.size.width *= [[themeData[indexPath.row] objectForKey:@"mediumPercStreak"] floatValue]/100.0;
