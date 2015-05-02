@@ -29,7 +29,7 @@
         [self setTitle:letter forState:UIControlStateSelected];
         [self setTitle:letter forState:UIControlStateHighlighted];
         self.position = pos;
-        self.selected = YES;
+        self.isSelected = YES;
         self.isButton = state;
         self.titleLabel.numberOfLines = 1;
         self.titleLabel.adjustsFontSizeToFitWidth = YES;
@@ -85,7 +85,7 @@
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"FlushButtons" object:[NSNumber numberWithInteger:self.position]];
     
-    //self.selected = YES;
+    //self.isSelected = YES;
     //[self setBackgroundColor:[UIColor redColor]];
     
     

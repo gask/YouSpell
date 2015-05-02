@@ -42,14 +42,20 @@ static int timesPlayed;
 
 - (void) resizeLetters: (float)newSize andNumberOfLetters: (float) numberOfLetters
 {
-    for(NSInteger u = 0 ; u < strlen(self.word) ; u++)
+    float multiplier = 1;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) multiplier = 1.0f;
+    float letterY = self.definitionBtn.frame.origin.y-newSize*multiplier;
+    
+    for(int u = 0 ; u < (int)self.word.length ; u++)
     {
+        NSLog(@"u: %i", u);
         LetterButton *tButton = (LetterButton *) [rightWordLetters objectAtIndex:u];
         
-        float startingXPos = self.view.center.x - (numberOfLetters/2.0f * newSize);
+        float startingXPos = self.view.center.x - (numberOfLetters/2.0f * newSize * multiplier);
         
-        [tButton setFrame:CGRectMake(startingXPos+u*newSize, self.view.center.y, newSize*1.3f, newSize)];
-        if(u == strlen(self.word)-1) [tButton setFrame:CGRectMake(startingXPos+u*newSize, self.view.center.y, newSize, newSize)];
+        [tButton setFrame:CGRectMake(startingXPos+u*newSize*multiplier, letterY, newSize*1.3f*multiplier, newSize*multiplier)];
+        
+        if(u == self.word.length-1) [tButton setFrame:CGRectMake(startingXPos+u*newSize*multiplier, letterY, newSize*multiplier, newSize*multiplier)];
 
         
     }
@@ -130,7 +136,7 @@ static int timesPlayed;
     //NSLog(@"1- 2 3");
     DefinitionView *vc = [storyboard instantiateViewControllerWithIdentifier:@"DefinitionVC"];
     //NSLog(@"1 2- 3");
-    vc.word = self.stringWord;
+    vc.word = self.word;
     
     NSInteger selWord = [[[NSUserDefaults standardUserDefaults] objectForKey:@"selectedWord"] integerValue];
     NSDictionary *td = [[wordsArray objectAtIndex: selectedTheme] objectAtIndex:selWord];
@@ -187,20 +193,20 @@ static int timesPlayed;
     wordsToBeTried = [[[NSUserDefaults standardUserDefaults] objectForKey:@"wordsToBeTried"] mutableCopy];
     
     selectedTheme = [[[NSUserDefaults standardUserDefaults] objectForKey:@"selectedTheme"] integerValue];
-    NSInteger themeWords = [[wordsArray objectAtIndex:selectedTheme] count];
     
-    float percentage = 0.0f;
+    
+    
     
     self.view.autoresizesSubviews = NO;
     
-    CGRect frame = CGRectMake(40, 66, 240, 8);
+    
     
     if(self.didWon)
     {
         self.feedback.text = @"You WON!! Let's break that record!";
         titleBack.image = [UIImage imageNamed:@"WLTitleGreen.png"];
         
-        percentage = (float)(themeWords-wordsToBeTried.count)/themeWords;
+        
         [self.nextWordBtn setTitle:@"Next word" forState:UIControlStateNormal];
         
         
@@ -214,7 +220,7 @@ static int timesPlayed;
         self.feedback.text = @"Sorry, better luck next time!";
         titleBack.image = [UIImage imageNamed:@"WLTitleRed.png"];
         
-        percentage = (float)(themeWords-wordsToBeTried.count-1)/themeWords;
+        
         [self.nextWordBtn setTitle:@"Restart" forState:UIControlStateNormal];
         
         NSInteger coins = [[NSUserDefaults standardUserDefaults] integerForKey:COINS];
@@ -223,6 +229,62 @@ static int timesPlayed;
         [gainedCoins setText:@"+1 coin"];
     }
     
+    
+    
+    
+    //self.stringWord = [NSString stringWithUTF8String:self.word];
+    self.transitionController = [[TransitionDelegate alloc] init];
+    
+    self.themeLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"selectedThemeName"];
+    
+    ////// Criação da palavra certa //////
+    
+    rightWordLetters = [NSMutableArray array];
+    
+    float spaceAvailable = 300.0;
+    float maxLetterSize = 50.0;
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        spaceAvailable = 750.0;
+        maxLetterSize = 75.0;
+    }
+    
+    lettersSize = maxLetterSize;
+    
+    lettersSize = spaceAvailable/(self.word.length);
+    
+    if(lettersSize > maxLetterSize) lettersSize = maxLetterSize;
+    
+    for(NSInteger i = 0 ; i < self.word.length ; i++)
+    {
+        const char *tutuco = [self.word cStringUsingEncoding:NSASCIIStringEncoding];
+        
+        //NSLog(@"%d",i);
+        LetterButton *l = [[LetterButton alloc] initWithFrame: CGRectMake(0,0,0,0) position:i andLetter: [NSString stringWithFormat:@"%c" , tutuco[i]] andState:typeLabel];
+        
+        [rightWordLetters addObject:l];
+        
+        if(i == 0) [l setBackgroundImage:[UIImage imageNamed:@"First Piece"] forState:UIControlStateNormal];
+        else if(i == self.word.length-1) [l setBackgroundImage:[UIImage imageNamed:@"Last Piece"] forState:UIControlStateNormal];
+        
+        [self.view addSubview:l];
+    }
+    
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [self resizeLetters:lettersSize andNumberOfLetters:(float)self.word.length];
+    
+    float percentage = 0.0f;
+    
+    NSInteger themeWords = [[wordsArray objectAtIndex:selectedTheme] count];
+    if(self.didWon) percentage = (float)(themeWords-wordsToBeTried.count)/themeWords;
+    else percentage = (float)(themeWords-wordsToBeTried.count-1)/themeWords;
+    
+    CGRect frame = CGRectMake(self.blueBar.frame.origin.x, self.blueBar.frame.origin.y+self.blueBar.frame.size.height/2-8/2, self.blueBar.frame.size.width, 8);
+    
+    NSLog(@"fr: %@", NSStringFromCGRect(self.blueBar.frame));
     self.progressPerc.text = [NSString stringWithFormat:@"%.0f%%", percentage*100];
     frame.size.width *= percentage;
     
@@ -232,37 +294,6 @@ static int timesPlayed;
     
     [self.view insertSubview:bar aboveSubview:self.blueBar];
     
-    self.stringWord = [NSString stringWithUTF8String:self.word];
-    self.transitionController = [[TransitionDelegate alloc] init];
-    
-    self.themeLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"selectedThemeName"];
-    
-    ////// Criação da palavra certa //////
-    
-    rightWordLetters = [NSMutableArray array];
-    lettersSize = INITIAL_LETTERSIZE;
-    
-    lettersSize = SPACE/(strlen(self.word));
-    
-    if(lettersSize > INITIAL_LETTERSIZE) lettersSize = INITIAL_LETTERSIZE;
-    
-    for(NSInteger i = 0 ; i < strlen(self.word) ; i++)
-    {
-        //NSLog(@"%d",i);
-        LetterButton *l = [[LetterButton alloc] initWithFrame: CGRectMake(0,0,0,0) position:i andLetter: [NSString stringWithFormat:@"%c" , self.word[i]] andState:typeLabel];
-        
-        [rightWordLetters addObject:l];
-        
-        if(i == 0) [l setBackgroundImage:[UIImage imageNamed:@"First Piece"] forState:UIControlStateNormal];
-        else if(i == strlen(self.word)-1) [l setBackgroundImage:[UIImage imageNamed:@"Last Piece"] forState:UIControlStateNormal];
-        
-        [self.view addSubview:l];
-    }
-    
-    [self resizeLetters:lettersSize andNumberOfLetters:(float)strlen(self.word)];
-}
-
--(void)viewDidAppear:(BOOL)animated{
     NSLog(@"viewDidAppear");
     int timesOpenedApp = [AppDelegate returnTimesOpened];
     NSLog(@"timesOpenedApp: %d", timesOpenedApp);

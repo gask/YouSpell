@@ -26,6 +26,9 @@
     NSInteger correctKeyIndex;
     NSMutableArray *correctArrayKeys;
     NSMutableArray *sceneButtons;
+    
+    float spaceAvailable;
+    float initialLetterSize;
 }
 
 @property NSString *theWord;

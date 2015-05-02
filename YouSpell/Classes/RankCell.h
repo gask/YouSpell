@@ -25,4 +25,5 @@
 @property (strong, nonatomic) IBOutlet UIView *mediumBlue;
 @property (strong, nonatomic) IBOutlet UIView *hardBlue;
 
+
 @end

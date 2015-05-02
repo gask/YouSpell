@@ -21,8 +21,8 @@
 
 @property (nonatomic) IBOutlet UILabel *feedback;
 @property (nonatomic) BOOL didWon;
-@property (nonatomic) const char *word;
-@property (nonatomic) NSString *stringWord;
+@property (nonatomic) NSString *word;
+//@property (nonatomic) NSString *stringWord;
 @property (nonatomic) IBOutlet UILabel *themeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *progressPerc;
 @property (strong, nonatomic) IBOutlet UIView *blueBar;

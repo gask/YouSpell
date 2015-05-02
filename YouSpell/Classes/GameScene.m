@@ -48,14 +48,16 @@
         }
         else
         {
-            float lSize = INITIAL_LETTERSIZE;
+            float lSize = initialLetterSize;
             //float keysSize = INITIAL_LETTERSIZE*(float)(keysArray.count+1);
             
             //NSLog(@"tenta ser um pouco inteligente: %f", keysSize);
             
-            lSize = SPACE/(keysArray.count+1);
             
-            if(lSize > INITIAL_LETTERSIZE) lSize = INITIAL_LETTERSIZE;
+            
+            lSize = spaceAvailable/(keysArray.count+1);
+            
+            if(lSize > initialLetterSize) lSize = initialLetterSize;
             [self resizeLetters:lSize andNumberOfLetters:(float)keysArray.count+1 resizeLast:NO];
             
             LetterButton *l = [[LetterButton alloc] initWithFrame: [self calculateLetterPositionWithNumberOfLetters:(float)keysArray.count+1 andActualSize:lSize] position:keysArray.count+1 andLetter: buttonPressed.titleLabel.text andState:typeButton];
@@ -73,14 +75,20 @@
 }
 
 - (CGRect) calculateLetterPositionWithNumberOfLetters: (float) numberOfLetters andActualSize: (float)size
-{    
-    float xPosition = self.view.center.x - (numberOfLetters/2.0f * size) + (numberOfLetters-1) * size;
+{
+    float multiplier = 1;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) multiplier = 1.0f;
     
-    return CGRectMake(xPosition,self.view.center.y,size*1.3f,size);
+    float xPosition = self.view.center.x - (numberOfLetters/2.0f * size*multiplier) + (numberOfLetters-1) * size * multiplier;
+    
+    return CGRectMake(xPosition,self.view.center.y - size * multiplier,size*1.3f*multiplier,size*multiplier);
 }
 
 - (void) resizeLetters: (float)newSize andNumberOfLetters: (float) numberOfLetters resizeLast: (BOOL)doLast
 {
+    float multiplier = 1;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) multiplier = 1.0f;
+    
     //NSLog(@"newSize: %f",newSize);
     //NSLog(@"Then newSize: %f",newSize);
     
@@ -89,10 +97,10 @@
         LetterButton *tButton = (LetterButton *) [keysArray objectAtIndex:u];
         //CGSize nSize = CGSizeMake(newSize, newSize);
         
-        float startingXPos = self.view.center.x - (numberOfLetters/2.0f * newSize);
+        float startingXPos = self.view.center.x - (numberOfLetters/2.0f * newSize*multiplier);
         
-        [tButton setFrame:CGRectMake(startingXPos+u*newSize, self.view.center.y - newSize, newSize*1.3f, newSize)];
-        if(doLast && u == self.theWord.length-1) [tButton setFrame:CGRectMake(startingXPos+u*newSize, self.view.center.y - newSize, newSize, newSize)];
+        [tButton setFrame:CGRectMake(startingXPos+u*newSize*multiplier, self.view.center.y - newSize*multiplier, newSize*1.3f*multiplier, newSize*multiplier)];
+        if(doLast && u == self.theWord.length-1) [tButton setFrame:CGRectMake(startingXPos+u*newSize*multiplier, self.view.center.y - newSize*multiplier, newSize*multiplier, newSize*multiplier)];
     }
 }
 
@@ -177,9 +185,9 @@
     if(self.theWord.length > keysArray.count) letras = self.theWord.length;
     else letras = keysArray.count;
     
-    newSize = SPACE/letras;
+    newSize = spaceAvailable/letras;
     
-    if(newSize > INITIAL_LETTERSIZE) newSize = INITIAL_LETTERSIZE;
+    if(newSize > initialLetterSize) newSize = initialLetterSize;
     
     [self resizeLetters:newSize andNumberOfLetters:letras resizeLast:NO];
     
@@ -192,15 +200,18 @@
     [lastKey setFrame:CGRectMake(lastKey.frame.origin.x, lastKey.frame.origin.y, lastKey.frame.size.width/1.3f, lastKey.frame.size.height)];
     
     //NSMutableArray *correctKeysArray = [NSMutableArray array];
-    float startingXPos = self.view.center.x - (letras/2.0f * newSize);
+    float multiplier = 1;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) multiplier = 1.0f;
+    
+    float startingXPos = self.view.center.x - (letras/2.0f * newSize*multiplier);
     
     for (NSInteger j = 0 ; j < self.theWord.length ; j++)
     {
         //LetterButton *key = [keysArray objectAtIndex:j];
         
-        CGRect tRect = CGRectMake(startingXPos+j*newSize, self.view.center.y - newSize, newSize*1.3f, newSize);
+        CGRect tRect = CGRectMake(startingXPos+j*newSize*multiplier, self.view.center.y - newSize*multiplier, newSize*1.3f*multiplier, newSize*multiplier);
         
-        if(j == self.theWord.length-1) tRect = CGRectMake(startingXPos+j*newSize, self.view.center.y-newSize, newSize, newSize);
+        if(j == self.theWord.length-1) tRect = CGRectMake(startingXPos+j*newSize*multiplier, self.view.center.y-newSize*multiplier, newSize*multiplier, newSize*multiplier);
         
         
         UIButton *jButton = [[UIButton alloc] initWithFrame: tRect];
@@ -289,7 +300,7 @@
         // Get destination view
         WinLose *vc = [segue destinationViewController];
         
-        vc.word = [self.theWord cStringUsingEncoding:NSASCIIStringEncoding];
+        vc.word = self.theWord;//[self.theWord cStringUsingEncoding:NSASCIIStringEncoding];
         
         if(gameWon)
         {
@@ -384,7 +395,7 @@
                 
             }
             
-            tButton.selected = NO;
+            tButton.isSelected = NO;
             
         }
         
@@ -408,7 +419,7 @@
                 [rButton setBackgroundImage:[UIImage imageNamed:@"Mid Piece Selected"] forState:UIControlStateNormal];
             }
             
-            rButton.selected = YES;
+            rButton.isSelected = YES;
         }
         
     }
@@ -430,13 +441,13 @@
         tb.position = y+1;
     }
     
-    float lSize = INITIAL_LETTERSIZE;
+    float lSize = initialLetterSize;
     
     //NSLog(@"tenta ser um pouco inteligente: %f", keysSize);
     
-    lSize = SPACE/(keysArray.count);
+    lSize = spaceAvailable/(keysArray.count);
     
-    if(lSize > INITIAL_LETTERSIZE) lSize = INITIAL_LETTERSIZE;
+    if(lSize > initialLetterSize) lSize = initialLetterSize;
     [self resizeLetters:lSize andNumberOfLetters:(float)keysArray.count resizeLast:NO];
     
     /*for (NSInteger y = 0; y < keysArray.count; y++)
@@ -452,6 +463,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    spaceAvailable = 300.0;
+    initialLetterSize  = 50.0;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        spaceAvailable = 750.0;
+        initialLetterSize = 75.0;
+    }
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"back72.png"]]];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleFlush:) name:@"FlushButtons" object:nil];
@@ -489,11 +506,11 @@
     
     if(levelSelected == 0 || levelSelected == 1)
     {
-        float lSize = INITIAL_LETTERSIZE;
+        float lSize = initialLetterSize;
         
-        lSize = SPACE/(self.theWord.length);
+        lSize = spaceAvailable/(self.theWord.length);
         
-        if(lSize > INITIAL_LETTERSIZE) lSize = INITIAL_LETTERSIZE;
+        if(lSize > initialLetterSize) lSize = initialLetterSize;
         
         const char *wordChars = [self.theWord cStringUsingEncoding:NSASCIIStringEncoding];
         

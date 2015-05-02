@@ -17,7 +17,7 @@
 #import "ALSdk.h"
 
 @implementation AppDelegate
-static timesOpened;
+static NSInteger timesOpened;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

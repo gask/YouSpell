@@ -92,6 +92,12 @@
     }
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [mainTable reloadData];
+    NSLog(@"viewDidAppear");
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -110,39 +116,29 @@
     return themeData.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    RankCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RankCell" forIndexPath:indexPath];
+- (void)tableView:(UITableView *)tableView willDisplayCell:(RankCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    [cell.themeTitle setText: [themeData[indexPath.row] objectForKey:@"themeName"]];
-    [cell.themeImage setImage:[UIImage imageNamed:[NSString stringWithFormat:@"a%i.png", (int)indexPath.row+1]]];
-    //NSLog(@"%@",[NSString stringWithFormat:@"%.1f%%",[[themeData[indexPath.row] objectForKey:@"easyPercentage"] floatValue]]);
-    [cell.easyPercentage setText:[NSString stringWithFormat:@"%.1f%%",[[themeData[indexPath.row] objectForKey:@"easyPercentage"] floatValue]]];
-    [cell.mediumPercentage setText:[NSString stringWithFormat:@"%.1f%%",[[themeData[indexPath.row] objectForKey:@"mediumPercentage"] floatValue]]];
-    [cell.hardPercentage setText:[NSString stringWithFormat:@"%.1f%%",[[themeData[indexPath.row] objectForKey:@"hardPercentage"]floatValue]]];
-    [cell.easyStreak setText:[NSString stringWithFormat:@"%@",[themeData[indexPath.row] objectForKey:@"easyStreak"]]];
-    [cell.mediumStreak setText:[NSString stringWithFormat:@"%@",[themeData[indexPath.row] objectForKey:@"mediumStreak"]]];
-    [cell.hardStreak setText:[NSString stringWithFormat:@"%@",[themeData[indexPath.row] objectForKey:@"hardStreak"]]];
-    
-    if([[themeData[indexPath.row] objectForKey:@"easyPercentage"] floatValue] == 100.0)
-        [cell.easyStar setImage:[UIImage imageNamed:@"bronzeStar.png"]];
-    else [cell.easyStar setImage:[UIImage imageNamed:@"starPlaceholder.png"]];
-    if ([[themeData[indexPath.row] objectForKey:@"mediumPercentage"] floatValue] == 100.0)
-        [cell.mediumStar setImage:[UIImage imageNamed:@"silverStar.png"]];
-    else [cell.mediumStar setImage:[UIImage imageNamed:@"starPlaceholder.png"]];
-    if([[themeData[indexPath.row] objectForKey:@"hardPercentage"] floatValue] == 100.0)
-        [cell.hardStar setImage:[UIImage imageNamed:@"goldStar.png"]];
-    else [cell.hardStar setImage:[UIImage imageNamed:@"starPlaceholder.png"]];
+    CGRect easyBaseFrame = cell.easyBlue.frame;
+    CGRect mediumBaseFrame = cell.mediumBlue.frame;
+    CGRect hardBaseFrame = cell.hardBlue.frame;
     
     if([cell.contentView viewWithTag:19] != nil)
     {
-        CGRect easyBaseFrame = cell.easyBlue.frame;
-        CGRect mediumBaseFrame = cell.mediumBlue.frame;
-        CGRect hardBaseFrame = cell.hardBlue.frame;
-        
         UIView *easyBar = [cell.contentView viewWithTag:19];
         UIView *mediumBar = [cell.contentView viewWithTag:20];
         UIView *hardBar = [cell.contentView viewWithTag:21];
+        
+        easyBaseFrame.origin.y = easyBaseFrame.origin.y + easyBaseFrame.size.height/2 - 3;
+        mediumBaseFrame.origin.y = mediumBaseFrame.origin.y + mediumBaseFrame.size.height/2 - 3;
+        hardBaseFrame.origin.y = hardBaseFrame.origin.y + hardBaseFrame.size.height/2 - 3;
+        
+        easyBaseFrame.size.height = 6;
+        mediumBaseFrame.size.height = 6;
+        hardBaseFrame.size.height = 6;
+        
+        [easyBar setFrame:easyBaseFrame];
+        [mediumBar setFrame:mediumBaseFrame];
+        [hardBar setFrame:hardBaseFrame];
         
         [easyBar setFrame:CGRectMake(easyBaseFrame.origin.x, easyBaseFrame.origin.y, 40* [[themeData[indexPath.row] objectForKey:@"easyPercStreak"] floatValue]/100.0, 6)];
         [mediumBar setFrame:CGRectMake(mediumBaseFrame.origin.x, mediumBaseFrame.origin.y, 40* [[themeData[indexPath.row] objectForKey:@"mediumPercStreak"] floatValue]/100.0, 6)];
@@ -151,13 +147,13 @@
     }
     else
     {
-        CGRect easyBaseFrame = cell.easyBlue.frame;
-        CGRect mediumBaseFrame = cell.mediumBlue.frame;
-        CGRect hardBaseFrame = cell.hardBlue.frame;
+        float xEasy = 13+45+20+15-20+2;
+        float xMedium = [UIScreen mainScreen].bounds.size.width/2-20+20;
+        float xHard = [UIScreen mainScreen].bounds.size.width-63-8;
         
-        CGRect easyBarFrame = CGRectMake(easyBaseFrame.origin.x, easyBaseFrame.origin.y, easyBaseFrame.size.width, 6);
-        CGRect mediumBarFrame = CGRectMake(mediumBaseFrame.origin.x, mediumBaseFrame.origin.y, mediumBaseFrame.size.width, 6);
-        CGRect hardBarFrame = CGRectMake(hardBaseFrame.origin.x, hardBaseFrame.origin.y, hardBaseFrame.size.width, 6);
+        CGRect easyBarFrame = CGRectMake(xEasy, easyBaseFrame.origin.y+easyBaseFrame.size.height/2-3, easyBaseFrame.size.width, 6);
+        CGRect mediumBarFrame = CGRectMake(xMedium, mediumBaseFrame.origin.y+mediumBaseFrame.size.height/2-3, mediumBaseFrame.size.width, 6);
+        CGRect hardBarFrame = CGRectMake(xHard, hardBaseFrame.origin.y+hardBaseFrame.size.height/2-3, hardBaseFrame.size.width, 6);
         
         easyBarFrame.size.width *= [[themeData[indexPath.row] objectForKey:@"easyPercStreak"] floatValue]/100.0;
         mediumBarFrame.size.width *= [[themeData[indexPath.row] objectForKey:@"mediumPercStreak"] floatValue]/100.0;
@@ -179,6 +175,35 @@
         [cell.contentView insertSubview:mediumBar aboveSubview:cell.mediumBlue];
         [cell.contentView insertSubview:hardBar aboveSubview:cell.hardBlue];
     }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    RankCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RankCell" forIndexPath:indexPath];
+    
+    [cell.themeTitle setText: [themeData[indexPath.row] objectForKey:@"themeName"]];
+    [cell.themeImage setImage:[UIImage imageNamed:[NSString stringWithFormat:@"a%i.png", (int)indexPath.row+1]]];
+    //NSLog(@"%@",[NSString stringWithFormat:@"%.1f%%",[[themeData[indexPath.row] objectForKey:@"easyPercentage"] floatValue]]);
+    [cell.easyPercentage setText:[NSString stringWithFormat:@"%.1f%%",[[themeData[indexPath.row] objectForKey:@"easyPercentage"] floatValue]]];
+    [cell.mediumPercentage setText:[NSString stringWithFormat:@"%.1f%%",[[themeData[indexPath.row] objectForKey:@"mediumPercentage"] floatValue]]];
+    [cell.hardPercentage setText:[NSString stringWithFormat:@"%.1f%%",[[themeData[indexPath.row] objectForKey:@"hardPercentage"]floatValue]]];
+    [cell.easyStreak setText:[NSString stringWithFormat:@"%@",[themeData[indexPath.row] objectForKey:@"easyStreak"]]];
+    [cell.mediumStreak setText:[NSString stringWithFormat:@"%@",[themeData[indexPath.row] objectForKey:@"mediumStreak"]]];
+    [cell.hardStreak setText:[NSString stringWithFormat:@"%@",[themeData[indexPath.row] objectForKey:@"hardStreak"]]];
+    
+    if([[themeData[indexPath.row] objectForKey:@"easyPercentage"] floatValue] == 100.0)
+        [cell.easyStar setImage:[UIImage imageNamed:@"bronzeStar.png"]];
+    else [cell.easyStar setImage:[UIImage imageNamed:@"starPlaceholder.png"]];
+    
+    if ([[themeData[indexPath.row] objectForKey:@"mediumPercentage"] floatValue] == 100.0)
+        [cell.mediumStar setImage:[UIImage imageNamed:@"silverStar.png"]];
+    else [cell.mediumStar setImage:[UIImage imageNamed:@"starPlaceholder.png"]];
+    
+    if([[themeData[indexPath.row] objectForKey:@"hardPercentage"] floatValue] == 100.0)
+        [cell.hardStar setImage:[UIImage imageNamed:@"goldStar.png"]];
+    else [cell.hardStar setImage:[UIImage imageNamed:@"starPlaceholder.png"]];
+    
+    
     
     
     
