@@ -14,6 +14,7 @@
 #import <Chartboost/Chartboost.h>
 #import <Chartboost/CBNewsfeed.h>
 #import "AppDelegate.h"
+#import "ALInterstitialAd.h"
 
 static int timesPlayed;
 
@@ -167,6 +168,19 @@ static int timesPlayed;
     [self.definitionBtn setFrame:CGRectMake(0, self.view.center.y+lettersSize, oldPlace.size.width, oldPlace.size.height)];
 }
 
+-(void)displayChartboost{
+    [Chartboost showInterstitial:CBLocationGameScreen];
+}
+
+-(void)displayAppLovin{
+    if([ALInterstitialAd isReadyForDisplay]){
+        NSLog(@"appLovinReady");
+        [ALInterstitialAd show];
+    }else{
+        [self displayChartboost];
+    }
+}
+
 - (void)viewDidLoad{
     [super viewDidLoad];
     NSLog(@"winLose");
@@ -176,8 +190,11 @@ static int timesPlayed;
     int timesPlayedRest = timesPlayed%4;
     NSLog(@"timesPlayedRest: %d", timesPlayedRest);
     if(timesPlayed%4 == 0){
-        NSLog(@"showChartboost");
-        [Chartboost showInterstitial:CBLocationGameScreen];
+        int ramdom = arc4random_uniform(2);
+        NSLog(@"random: %d", ramdom);
+        if(ramdom==0) [self displayChartboost];
+        else [self displayAppLovin];
+
     }
 
     alreadyRated = [[NSUserDefaults standardUserDefaults] boolForKey:@"alreadyRated"];

@@ -36,6 +36,7 @@ static NSInteger timesOpened;
     userDefaults = [NSUserDefaults standardUserDefaults];
     timesOpened = [userDefaults integerForKey:@"timesOpened"];
     [self updateTimesOpened];
+    [application setStatusBarHidden:YES];
     
     return YES;
 }

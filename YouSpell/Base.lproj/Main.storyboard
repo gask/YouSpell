@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="29M-58-mOO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="29M-58-mOO">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -1591,7 +1591,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEL-ob-Hec">
-                                <rect key="frame" x="26" y="529" width="112" height="30"/>
+                                <rect key="frame" x="26" y="474" width="112" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="EuT-6o-lG4">
                                         <variation key="heightClass=regular-widthClass=regular" constant="45"/>
@@ -1643,7 +1643,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TmN-la-VMa">
-                                <rect key="frame" x="462" y="529" width="112" height="30"/>
+                                <rect key="frame" x="462" y="474" width="112" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="112" id="JlL-nZ-xSn">
                                         <variation key="heightClass=regular-widthClass=regular" constant="168"/>
@@ -1795,7 +1795,7 @@
                             <constraint firstItem="Jig-xf-Y6u" firstAttribute="leading" secondItem="qE2-93-J27" secondAttribute="trailing" constant="-170" id="zSH-37-nrO">
                                 <variation key="heightClass=regular-widthClass=regular" constant="-560"/>
                             </constraint>
-                            <constraint firstItem="zEL-ob-Hec" firstAttribute="top" secondItem="tEO-mh-ry4" secondAttribute="bottom" constant="65" id="zdp-e1-2j7">
+                            <constraint firstItem="zEL-ob-Hec" firstAttribute="top" secondItem="tEO-mh-ry4" secondAttribute="bottom" constant="10" id="zdp-e1-2j7">
                                 <variation key="heightClass=regular-widthClass=regular" constant="133"/>
                             </constraint>
                         </constraints>
@@ -1952,8 +1952,8 @@
         <image name="teclaPressed.png" width="134" height="134"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1qj-aH-AJL"/>
-        <segue reference="VMk-xP-rjr"/>
+        <segue reference="2vF-Fs-LNS"/>
         <segue reference="yYS-mE-i2t"/>
+        <segue reference="ZGQ-Gu-sIi"/>
     </inferredMetricsTieBreakers>
 </document>
