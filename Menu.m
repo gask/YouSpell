@@ -106,16 +106,7 @@
     //[self showInMobiBanner];
 }
 
--(void)showInMobiBanner{
-    self.banner = [[IMBanner alloc] initWithFrame:CGRectMake(0, 0, 320, 50) appId:@"6708b781839d47c29dadd2a3bc934e57" adSize:IM_UNIT_320x50];
-    self.banner.delegate = self;
-    [self.view addSubview:self.banner];
-    [self.banner loadBanner];
-    self.banner.refreshInterval = 90;
-}
-
 -(void)dealloc {
-    self.banner.delegate = nil;
 }
 
 - (void)didReceiveMemoryWarning
@@ -147,15 +138,6 @@
     }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-}
-
--(void)bannerDidReceiveAd:(IMBanner *)banner{
-    NSLog(@"finishedLoadingBanner");
-}
-
-- (void)banner:(IMBanner *)banner didFailToReceiveAdWithError:(IMError *)error {
-    NSString *errorMessage = [NSString stringWithFormat:@"Loading banner ad failed. Error code: %d, message: %@", [error code], [error localizedDescription]];
-    NSLog(@"%@", errorMessage);
 }
 
 @end

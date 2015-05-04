@@ -168,6 +168,10 @@ static int timesPlayed;
     [self.definitionBtn setFrame:CGRectMake(0, self.view.center.y+lettersSize, oldPlace.size.width, oldPlace.size.height)];
 }
 
+- (void)didFailToLoadInterstitial:(CBLocation)location withError:(CBLoadError)error{
+    [self displayAppLovin];
+}
+
 -(void)displayChartboost{
     [Chartboost showInterstitial:CBLocationGameScreen];
 }

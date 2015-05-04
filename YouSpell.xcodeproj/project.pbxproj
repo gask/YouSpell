@@ -1121,7 +1121,6 @@
 		B0FFF7B519CBD0E500B1A50F /* ThemeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FFF7B419CBD0E500B1A50F /* ThemeCell.m */; };
 		DEA41B081AEDDFE100ACFA32 /* libAppLovinSdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA41B071AEDDFE100ACFA32 /* libAppLovinSdk.a */; };
 		DEA41B0A1AEDE04200ACFA32 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA41B091AEDE04200ACFA32 /* CoreMedia.framework */; };
-		DEE635E21AD09B390012E3C3 /* libInMobi-4.5.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE635E11AD09B390012E3C3 /* libInMobi-4.5.1.a */; };
 		DEE635E51AD09B850012E3C3 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE635E41AD09B850012E3C3 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		DEE635E71AD09B9C0012E3C3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE635E61AD09B9C0012E3C3 /* AVFoundation.framework */; };
 		DEE635E91AD09ED50012E3C3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE635E81AD09ED50012E3C3 /* CoreLocation.framework */; };
@@ -2304,18 +2303,6 @@
 		DEA41B061AEDDFE100ACFA32 /* ALTargetingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALTargetingData.h; sourceTree = "<group>"; };
 		DEA41B071AEDDFE100ACFA32 /* libAppLovinSdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAppLovinSdk.a; sourceTree = "<group>"; };
 		DEA41B091AEDE04200ACFA32 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		DEE635D61AD09B390012E3C3 /* IMBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMBanner.h; sourceTree = "<group>"; };
-		DEE635D71AD09B390012E3C3 /* IMBannerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMBannerDelegate.h; sourceTree = "<group>"; };
-		DEE635D81AD09B390012E3C3 /* IMConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMConstants.h; sourceTree = "<group>"; };
-		DEE635D91AD09B390012E3C3 /* IMError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMError.h; sourceTree = "<group>"; };
-		DEE635DA1AD09B390012E3C3 /* IMIncentivisedDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMIncentivisedDelegate.h; sourceTree = "<group>"; };
-		DEE635DB1AD09B390012E3C3 /* IMInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMInterstitial.h; sourceTree = "<group>"; };
-		DEE635DC1AD09B390012E3C3 /* IMInterstitialDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMInterstitialDelegate.h; sourceTree = "<group>"; };
-		DEE635DD1AD09B390012E3C3 /* IMNative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMNative.h; sourceTree = "<group>"; };
-		DEE635DE1AD09B390012E3C3 /* IMNativeDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMNativeDelegate.h; sourceTree = "<group>"; };
-		DEE635DF1AD09B390012E3C3 /* InMobi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InMobi.h; sourceTree = "<group>"; };
-		DEE635E01AD09B390012E3C3 /* InMobiAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InMobiAnalytics.h; sourceTree = "<group>"; };
-		DEE635E11AD09B390012E3C3 /* libInMobi-4.5.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libInMobi-4.5.1.a"; sourceTree = "<group>"; };
 		DEE635E41AD09B850012E3C3 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		DEE635E61AD09B9C0012E3C3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		DEE635E81AD09ED50012E3C3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -2354,7 +2341,6 @@
 				DEE635E71AD09B9C0012E3C3 /* AVFoundation.framework in Frameworks */,
 				B0F8142419C4E1A200D34B17 /* AudioToolbox.framework in Frameworks */,
 				DEE635E51AD09B850012E3C3 /* AdSupport.framework in Frameworks */,
-				DEE635E21AD09B390012E3C3 /* libInMobi-4.5.1.a in Frameworks */,
 				B0AA79DA19A55FD300C9C554 /* CoreGraphics.framework in Frameworks */,
 				85D13C7519FEDFC400ED0F6D /* StoreKit.framework in Frameworks */,
 				B0AA79DC19A55FD300C9C554 /* UIKit.framework in Frameworks */,
@@ -3585,7 +3571,6 @@
 		B0AA7A1219A560EB00C9C554 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				DEE635E31AD09B430012E3C3 /* Inmobi */,
 				8551C3B019D3B94F00BA7402 /* AppConstants.h */,
 				8540F3D61A13C24200908094 /* RankCell.h */,
 				8540F3D71A13C24200908094 /* RankCell.m */,
@@ -3671,25 +3656,6 @@
 				DEA41B061AEDDFE100ACFA32 /* ALTargetingData.h */,
 			);
 			path = headers;
-			sourceTree = "<group>";
-		};
-		DEE635E31AD09B430012E3C3 /* Inmobi */ = {
-			isa = PBXGroup;
-			children = (
-				DEE635D61AD09B390012E3C3 /* IMBanner.h */,
-				DEE635D71AD09B390012E3C3 /* IMBannerDelegate.h */,
-				DEE635D81AD09B390012E3C3 /* IMConstants.h */,
-				DEE635D91AD09B390012E3C3 /* IMError.h */,
-				DEE635DA1AD09B390012E3C3 /* IMIncentivisedDelegate.h */,
-				DEE635DB1AD09B390012E3C3 /* IMInterstitial.h */,
-				DEE635DC1AD09B390012E3C3 /* IMInterstitialDelegate.h */,
-				DEE635DD1AD09B390012E3C3 /* IMNative.h */,
-				DEE635DE1AD09B390012E3C3 /* IMNativeDelegate.h */,
-				DEE635DF1AD09B390012E3C3 /* InMobi.h */,
-				DEE635E01AD09B390012E3C3 /* InMobiAnalytics.h */,
-				DEE635E11AD09B390012E3C3 /* libInMobi-4.5.1.a */,
-			);
-			name = Inmobi;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -7,17 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "IMBanner.h"
-#import "IMBannerDelegate.h"
-#import "IMError.h"
 #import <Chartboost/Chartboost.h>
 
-@interface Menu : UIViewController <IMBannerDelegate, ChartboostDelegate>{
+@interface Menu : UIViewController <ChartboostDelegate>{
     IBOutlet UILabel *coinsPocket;
     IBOutlet UIButton *storeBtn;
     IBOutlet UIButton *playBtn;
 }
-@property (nonatomic, strong) IMBanner *banner;
-
 
 @end

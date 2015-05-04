@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "InMobi.h"
-#import "IMConstants.h"
 #import <Chartboost/Chartboost.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, ChartboostDelegate> {

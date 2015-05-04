@@ -25,11 +25,6 @@ static NSInteger timesOpened;
     
     [SpellIAP sharedInstance];
     [Chartboost startWithAppId:@"55215d0f04b016709b0bb0e3" appSignature:@"b5ab27b15b0bcbb9e51177a246c0a6e70db3418f" delegate:self];
-    [InMobi initialize:@"6708b781839d47c29dadd2a3bc934e57"];
-    CLLocationManager *mgr = [[CLLocationManager alloc] init];
-    CLLocation *loc = mgr.location;
-    [InMobi setLocationWithLatitude:loc.coordinate.latitude longitude:loc.coordinate.longitude accuracy:loc.horizontalAccuracy];
-    [mgr startUpdatingLocation];
     [ALSdk initializeSdk];
 
     
