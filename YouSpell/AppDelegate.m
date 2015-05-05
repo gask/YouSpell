@@ -55,13 +55,13 @@ static NSInteger timesOpened;
 
 -(void)updateTimesOpened{
     timesOpened++;
-    NSLog(@"timesOpened: %d", timesOpened);
+    NSLog(@"timesOpened: %i", timesOpened);
     [userDefaults setInteger:timesOpened forKey:@"timesOpened"];
     [userDefaults synchronize];
 }
 
 +(int)returnTimesOpened{
-    return timesOpened;
+    return (int)timesOpened;
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
