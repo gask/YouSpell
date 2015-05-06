@@ -323,7 +323,7 @@ static int timesPlayed;
         UIAlertController *ratePopUp = [UIAlertController alertControllerWithTitle:@"Rate us!" message:@"Rate us and spread the spell word!" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *yesRate = [UIAlertAction actionWithTitle:@"Yes!" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
             NSLog(@"YesRate!");
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@", @"605379719"]]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@", @"930710061"]]];
             //[[NSUserDefaults standardUserDefaults] boolForKey:@"alreadyRated"];
             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"alreadyRated"];
             [[NSUserDefaults standardUserDefaults] synchronize];
